@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Monomaniac+One&family=Orbitron&family=Tilt+Prism&family=Turret+Road:wght@200;400&display=swap');
+.main-getstart{
+    background-color: #111726 ;
+    color: aliceblue;
+    height: 750px;
+}
+
+.layer-image{
+    position: absolute;
+    /* left: 0px; */
+    /* top: 0px; */
+    z-index: 1;
+}
+
+.get-start{
+    /* background-image: url("../../Assets/layer.png");
+    background-repeat: no-repeat; */
+    /* padding: 40px; */
+    height: 650px;
+    /* border: 1px solid white; */
+    display: flex;
+}
+
+.get-start-i{
+    padding: 100px;
+    /* border: 1px solid white; */
+    width: 60%;
+}
+
+.get-start-ii{
+    padding-right: 20px;
+    padding-top: 100px;
+    width: 40%;
+    /* border: 1px solid white; */
+
+}
+
+.img-get-start{
+    margin-left: -48px;
+    width: 500px;
+}
+
+.title-div{
+    
+    font-size: 20px;
+    padding-top: 150px;
+}
+
+.title-div-i{
+    font-family: 'Bruno Ace', cursive;
+font-family: 'Monomaniac One', sans-serif;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Tilt Prism', cursive;
+font-family: 'Turret Road', cursive;
+}
+
+.title-div-ii{
+    font-family: 'Bruno Ace', cursive;
+font-family: 'Gruppo', sans-serif;
+font-family: 'Monomaniac One', sans-serif;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Tilt Prism', cursive;
+font-family: 'Turret Road', cursive;
+}
+
+.btn-start{
+    padding: 8px;
+    /* margin-left: 30px; */
+    border-radius: 20px;
+    font-weight: 700;
+    background-color: #1be2ef;
+    width: 200px;
+}
+
+.btn-start:hover{
+    color: white ;
+    padding: 10px;
+    /* margin-left: 30px; */
+    border-radius: 20px;
+    font-weight: 700;
+    background-color: #bf724c;
+    width: 200px;
+}
+
+

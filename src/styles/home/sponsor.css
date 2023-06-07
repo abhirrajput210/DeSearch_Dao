@@ -1,0 +1,37 @@
+.sponsor-page{
+}
+
+.sponsor-images{
+    justify-content: center;
+    align-items: center;
+    /* width: 10px; */
+    display: flex;
+}
+
+#push-image{
+    width: 150px;
+}
+
+.i-i{
+    /* display: flex; */
+}
+/* .i-ii{
+    display: flex;
+} */
+.i-iii{
+    /* display: flex; */
+}
+
+.imagess{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 200px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.sponsor-title{
+    font-weight:500;
+    margin-top: 20px;
+    text-align: center;
+}
