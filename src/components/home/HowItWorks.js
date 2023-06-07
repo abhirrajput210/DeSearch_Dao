@@ -1,6 +1,6 @@
-import React from 'react'
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import "../../styles/home/HowItWorks.css"
+import React from "react";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "../../styles/home/HowItWorks.css";
 
 const howWorksContent = [
   {
@@ -39,21 +39,28 @@ function HowItWorks() {
     <div className="">
       <div className="main-div">
         <div className="boxContent container-fluid px-4 px-md-5 pb-5">
-  
-          <div className="work-head py-2">
-            <p className=" d-flex justify-content-center">How DeSearch Dao Works?</p>
+          <div className="work-head">
+            <p className=" d-flex justify-content-center">
+              How DeSearch Dao Works?
+            </p>
           </div>
 
           <div className="main-works-box d-flex">
-          
             <div className="how-works-content align-self-stretch">
               <div>
                 {howWorksContent.map((item, key) => (
                   <div className="mb-3 d-flex " index={key}>
-                    <div className="pt-1"> <i className="bi bi-square"></i> </div> &nbsp; &nbsp; <div><span className="how-works-head">{item.head}</span> &nbsp;
-                    <span className="how-works-sub-content">
-                      {item.content}
-                    </span></div>
+                    <div className="pt-1">
+                      {" "}
+                      <i className="bi bi-square"></i>{" "}
+                    </div>{" "}
+                    &nbsp; &nbsp;{" "}
+                    <div>
+                      <span className="how-works-head">{item.head}</span> &nbsp;
+                      <span className="how-works-sub-content">
+                        {item.content}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -62,7 +69,7 @@ function HowItWorks() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default HowItWorks
+export default HowItWorks;

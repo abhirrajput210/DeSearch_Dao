@@ -1,5 +1,5 @@
 .main-div{
-  background-color: whitesmoke;
+  background-color: rgb(213, 122, 122);
   background-size: cover;
   background-position: 100% 100%;
   /* margin-top: 8%; */
@@ -7,6 +7,10 @@
 
 .work-box {
   margin: 4% 0;
+}
+
+.work-head{
+  /* margin-top: 25px; */
 }
 
 .work-head {
@@ -20,6 +24,7 @@
   flex-direction: column;
   margin-top: 5%;
 }
+
 
 .work-instruction-div{
   margin: 0 auto;
