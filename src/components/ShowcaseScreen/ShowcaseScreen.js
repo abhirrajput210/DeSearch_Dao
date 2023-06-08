@@ -40,7 +40,7 @@ function ShowcaseScreen() {
       {cardData.map((card) => (
         <div className='card-container' key={card.id}>
           <div className='image-container'>
-            <img src={card.img} alt='img' style={{ width: '100%', height: '380px', objectFit: 'contain' }}/>
+            <img src={card.img} alt='img' style={{ width: '400px', height: '400px', objectFit: 'contain' }}/>
           </div>
 
           <div className='card-content'>

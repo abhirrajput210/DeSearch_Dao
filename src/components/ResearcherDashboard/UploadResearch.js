@@ -110,7 +110,7 @@ function UploadResearch() {
 
             <div className="mb-3">
               <label htmlFor="detaileddesc" className="form-label">
-                <span className="researchDetailText"> Detailed Description </span>
+                <span className="researchDetailText"> Detailed Description: </span>
               </label>
               <textarea
                 className="form-control researchInput"

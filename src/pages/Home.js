@@ -1,5 +1,6 @@
 import React from "react";
-import Navbar from "../components/navbar/Navbar";
+// import Navbar from "../components/navbar/Navbar";
+import Navbar from "../components/NewNavbar/Navbar";
 import GetStarted from "../components/home/GetStarted";
 import Sponsors from "../components/home/Sponsors";
 import HowItWorks from "../components/home/HowItWorks";
