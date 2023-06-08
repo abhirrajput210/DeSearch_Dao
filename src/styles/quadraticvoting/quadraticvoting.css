@@ -1,0 +1,40 @@
+.main-page-voting-i{
+    margin-left:0px ;
+    margin-top:0px;
+    /* border: 1px solid black; */
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    text-align: center;
+    /* background-color: black; */
+}
+
+.voting-page-title-i{
+    align-items: center;
+    font-weight:900;
+    font-size: 50px;
+    /* border: 1px solid black; */
+}
+
+.voting-page-title-ii{
+    font-size: 30px;
+}
+
+.category-div{
+
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+}
+
+.option-btn{
+    font-size: 20px;
+    width: 160px;
+    border-radius: 10px;
+    font-weight: 900;
+    background-color: #86C8BC;
+    padding: 15px;
+    word-wrap: normal;
+}
+
+.reseach-category-container{
+    /* border: 1px solid black; */
+}

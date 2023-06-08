@@ -1,0 +1,24 @@
+.main-pagesss{
+    display: flex;
+}
+
+.left-div{
+    font-size: 22px;
+    padding: 20px;
+    background-color: #1D267D;
+    /* border: 1px solid black; */
+    height:600px;
+}
+
+li{
+    list-style: none;
+}
+
+.nav-list{
+    background-color: #D4ADFC;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}

@@ -1,5 +1,7 @@
 /* Navbar styles */
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Bungee+Inline&family=Gruppo&family=Monomaniac+One&family=Orbitron&family=Tilt+Prism&family=Turret+Road:wght@200;400&display=swap');
 .navbar {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,12 +11,30 @@
   
   .logo img {
     margin-left: 30px;
-    width: 190px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo{
+    display: flex;
   }
   
   .connect-wallet {
     margin-right: 10px;
+  }
+
+  .logoo{
+    font-size: 30px;
+    padding-top: 10px;
+    margin-left: 30px;
+    font-weight: 900;
+    font-family: 'Bruno Ace SC', cursive;
+font-family: 'Bungee Inline', cursive;
+font-family: 'Gruppo', sans-serif;
+font-family: 'Monomaniac One', sans-serif;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Tilt Prism', cursive;
+font-family: 'Turret Road', cursive;
   }
   
   .connect-btn {

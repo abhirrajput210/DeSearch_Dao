@@ -8,6 +8,7 @@ export default function Navbar() {
       <nav class="navbar">
         <div class="logo">
           <img src={logo} alt="Logo" />
+          <div className="logoo">Desearch DAO</div>
         </div>
         <div class="connect-wallet">
           <button class="connect-btn">Connect Wallet</button>

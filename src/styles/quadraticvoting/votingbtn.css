@@ -1,0 +1,31 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .minus,
+  .plus {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .num {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 10px;
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  
