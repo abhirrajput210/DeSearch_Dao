@@ -6,14 +6,16 @@ import HowItWorks from "../components/home/HowItWorks";
 // import Sidebar from "../components/SideBar/Sidebar";
 import ContributorDashboard from "../components/ContributorDashboard/ContributorDashboard";
 import ActiveResearches from "../components/ContributorDashboard/ActiveResearches";
+import Crowdfunding from "../components/Crowd Funding/Crowdfunding";
 
 function Home() {
   return (
     <div>
       <Navbar />
+      <Crowdfunding />
       {/* <ActiveResearches /> */}
       {/* <Sidebar /> */}
-      <ContributorDashboard />
+      {/* <ContributorDashboard /> */}
       {/* <GetStarted />
       <HowItWorks />
       <Sponsors /> */}

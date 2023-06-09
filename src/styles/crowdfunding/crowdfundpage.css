@@ -69,3 +69,17 @@
     padding: 13px;
     font-size: 20px;
 }
+
+.fund-to-dao-show-component{
+    padding-right: 350px;
+    /* display: flex; */
+    padding-bottom: 100px;
+    /* justify-content: center; */
+    /* border: 1px solid black; */
+}
+
+.scroll-message{
+    font-size: 30px;
+    margin-top: 40px;
+    font-weight:500;
+}
