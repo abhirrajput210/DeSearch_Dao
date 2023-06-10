@@ -1,22 +1,47 @@
-import "./App.css";
-// import Navbar from './components/home/Navbar';
-// import Navbar from './components/navbar/Navbar';
-import HowItWorks from "./components/home/HowItWorks";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ShowcaseScreen from "./components/ShowcaseScreen/ShowcaseScreen";
+import CardDetailsScreen from "./components/ShowcaseScreen/CardDetailsScreen";
+import "@rainbow-me/rainbowkit/styles.css";
+import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { configureChains, createConfig, WagmiConfig } from "wagmi";
+import { mainnet, polygon, optimism, arbitrum } from "wagmi/chains";
+import { alchemyProvider } from "wagmi/providers/alchemy";
+import { publicProvider } from "wagmi/providers/public";
 import Home from "./pages/Home";
-// import BecomeDaoMember from './components/BecomeMember/BecomeDaoMember';
-// import ShowcaseScreen from "./components/ShowcaseScreen/ShowcaseScreen";
-import UploadResearch from "./components/ResearcherDashboard/UploadResearch";
 
 function App() {
+  const { chains, publicClient } = configureChains(
+    [mainnet, polygon, optimism, arbitrum],
+    [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
+  );
+
+  const { connectors } = getDefaultWallets({
+    appName: "My RainbowKit App",
+    projectId: "YOUR_PROJECT_ID",
+    chains,
+  });
+
+  const wagmiConfig = createConfig({
+    autoConnect: true,
+    connectors,
+    publicClient,
+  });
+
   return (
     <>
-      <Home />
-      {/* <Navbar/> */}
-      {/* <HowItWorks /> */}
-      {/* <BecomeDaoMember/> */}
-      {/* <ShowcaseScreen/> */}
-      {/* <UploadResearch/> */}
-      {/* <h1 className='text-center bg-danger text-white my-5'>Shree Ganeshay Namah</h1> */}
+      <WagmiConfig config={wagmiConfig}>
+        <RainbowKitProvider chains={chains}>
+          {/* <h1>hello</h1> */}
+          <Home />
+          <Router>
+            <Routes>
+              <Route path="/" component={<Home />} />
+              <Route path="/details/:id" component={<Home />} />
+            </Routes>
+          </Router>
+        </RainbowKitProvider>
+      </WagmiConfig>
     </>
   );
 }

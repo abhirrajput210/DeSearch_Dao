@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../Assets/Logo.png";
 import "../../styles/navbar.css";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export default function Navbar() {
   return (
@@ -11,7 +12,8 @@ export default function Navbar() {
           <div className="logoo">Desearch DAO</div>
         </div>
         <div class="connect-wallet">
-          <button class="connect-btn">Connect Wallet</button>
+          <ConnectButton />
+          {/* <button class="connect-btn">Connect W</button> */}
         </div>
       </nav>
     </div>

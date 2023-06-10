@@ -7,18 +7,20 @@ import HowItWorks from "../components/home/HowItWorks";
 import ContributorDashboard from "../components/ContributorDashboard/ContributorDashboard";
 import ActiveResearches from "../components/ContributorDashboard/ActiveResearches";
 import Crowdfunding from "../components/Crowd Funding/Crowdfunding";
+import ShowcaseScreen from "../components/ShowcaseScreen/ShowcaseScreen";
 
 function Home() {
   return (
     <div>
       <Navbar />
-      <Crowdfunding />
+      {/* <ShowcaseScreen /> */}
+      {/* <Crowdfunding /> */}
       {/* <ActiveResearches /> */}
       {/* <Sidebar /> */}
       {/* <ContributorDashboard /> */}
-      {/* <GetStarted />
+      <GetStarted />
       <HowItWorks />
-      <Sponsors /> */}
+      <Sponsors />
     </div>
   );
 }
