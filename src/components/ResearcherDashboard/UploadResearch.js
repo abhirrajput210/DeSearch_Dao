@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "../../styles/ResearcherDashboard/UploadResearch.css";
+import "../../styles/researcherDashboard/UploadResearch.css";
 
 function UploadResearch() {
   const [formData, setFormData] = useState({
@@ -174,9 +174,15 @@ function UploadResearch() {
               />
             </div>
 
-            <button type="submit" className="rounded-pill researchSubmit mt-3">
-              Submit
+            <div className="d-flex justify-content-center mt-3">
+            <button type="submit" className="rounded-pill researchSubmit mr-3">
+              Draft
             </button>
+            <div className="mx-2"></div>
+            <button type="submit" className="rounded-pill researchSubmit">
+              Publish
+            </button>
+          </div>
           </form>
         </div>
       </div>

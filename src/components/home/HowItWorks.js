@@ -55,7 +55,7 @@ function HowItWorks() {
                       <i className="bi bi-square"></i>{" "}
                     </div>{" "}
                     &nbsp; &nbsp;{" "}
-                    <div>
+                    <div className="points">
                       <span className="how-works-head">{item.head}</span> &nbsp;
                       <span className="how-works-sub-content">
                         {item.content}

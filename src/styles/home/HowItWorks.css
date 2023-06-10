@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Bungee+Inline&family=Gruppo&family=Monomaniac+One&family=Orbitron&family=Tilt+Prism&family=Turret+Road:wght@200;400&display=swap');
 .main-div{
   background-color: whitesmoke;
   background-size: cover;
@@ -22,8 +23,24 @@
   margin-top: 3%;
 }
 
+.points{
+  font-family: 'Bruno Ace', cursive;
+font-family: 'Bungee Inline', cursive;
+font-family: 'Gruppo', sans-serif;
+font-family: 'Monomaniac One', sans-serif;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Tilt Prism', cursive;
+font-family: 'Turret Road', cursive;
+}
 
 .work-instruction-div{
+  font-family: 'Bruno Ace', cursive;
+font-family: 'Bungee Inline', cursive;
+font-family: 'Gruppo', sans-serif;
+font-family: 'Monomaniac One', sans-serif;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Tilt Prism', cursive;
+font-family: 'Turret Road', cursive;
   margin: 0 auto;
   width: fit-content;
   padding: 2rem 0 3rem 0;

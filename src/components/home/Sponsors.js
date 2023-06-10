@@ -5,7 +5,7 @@ import ens from "../../Assets/Sponsors/ens.png";
 import push from "../../Assets/Sponsors/push.png";
 import lighthouse from "../../Assets/Sponsors/lighthouse.png";
 import spheron from "../../Assets/Sponsors/spheron.png";
-import "../../styles/home/sponsor.css";
+import "../../styles/home/Sponsor.css";
 
 function Sponsors() {
   return (

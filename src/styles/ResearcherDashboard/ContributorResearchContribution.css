@@ -1,36 +1,36 @@
-.researchPageBg {
+.conResPageBg {
     background-color: white;
     padding: 5% 10%;
     margin-top: 100px;
   }
   
-  .researchBg {
+  .conResBg {
     background-color: whitesmoke;
     border-radius: 5rem;
     padding: 3% 10%;
   }
   
-  .researchHead {
+  .conResHead {
     font-size: 2rem;
     font-weight: 600;
   }
   
-  .researchSubHead {
+  .conResSubHead {
     font-size: 1rem;
     font-weight: 600;
   }
   
-  .researchInput {
+  .conResInput {
     background-color: #f3f3f3;
   }
   
-  .researchLabel,
-  .researchDetailText {
+  .conResLabel,
+  .conResDetailText {
     font-size: 1.2rem;
     font-weight: 600;
   }
   
-  .researchSubmit {
+  .conResSubmit {
     background-color: #000;
     color: #fff;
     font-weight: 600;
@@ -41,7 +41,7 @@
     transition: ease-in-out 0.4s;
   }
   
-  .researchSubmit:hover {
+  .conResSubmit:hover {
     background-color: #fff;
     color: #000;
     border: 2px solid black;

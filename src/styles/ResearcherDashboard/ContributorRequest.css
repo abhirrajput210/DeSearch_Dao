@@ -1,0 +1,68 @@
+.conreq-main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    margin-bottom: 20px;
+  }
+
+  .conreq-card-container {
+    width: 500px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    margin: 20px;
+    margin-top: 40px;
+    border-radius: 2rem;
+    padding: 20px;
+    background-color: whitesmoke;
+  }
+  
+  .conreqLabel{
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .conreqInput {
+    background-color: #f3f3f3;
+  }
+  
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .conreqSubmit {
+    background-color: #00ff00;
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 25%;
+    padding: 0.5rem 0;
+    border: none;
+    transition: 0.3s ease;
+  }
+
+  .conreqSubmit:hover{
+    background-color: #f0f0f0;
+  }
+  
+  .conreqSubmit.rejected {
+    background-color: #ff0000;
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 25%;
+    padding: 0.5rem 0;
+    border: none;
+    transition: 0.3s ease;
+  }
+
+  .conreqSubmit.rejected:hover{
+    background-color: #f0f0f0;
+  }
+  

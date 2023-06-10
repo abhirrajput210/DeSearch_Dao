@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Gruppo&family=Monomaniac+One&family=Orbitron&family=Tilt+Prism&family=Turret+Road:wght@200;400&display=swap');
+.main-crowd-funding-page{
+    background-color: #F8E8EE;
+    display: block;
+}
+.crowd-funding-title-i{
+    padding: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900px;
+    font-family: 'Bungee Inline', cursive;
+    font-family: 'Gruppo', sans-serif;
+    font-family: 'Monomaniac One', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+    font-family: 'Tilt Prism', cursive;
+    font-family: 'Turret Road', cursive;
+}
+
+.crowd-funding-content-ii{
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    background-color: #0C134F;
+    margin-right: 100px;
+    margin-left: 100px;
+    /* color: #FEFF86; */
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    /* border: 1px solid black; */
+    font-family: 'Bungee Inline', cursive;
+    font-family: 'Gruppo', sans-serif;
+    font-family: 'Monomaniac One', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+    font-family: 'Tilt Prism', cursive;
+    font-family: 'Turret Road', cursive;
+    font-weight:600 ;
+    color:white;
+}
+
+.crowd-funding-button{
+    text-align: center;
+    padding-bottom: 150px;
+    padding-top: 25px;
+}
+
+.crowd-funding-button-iii{
+    border-radius: 22px;
+    font-weight: 700;
+    color: white;
+    background-color: cadetblue;
+    width: 200px;
+    padding: 12px;
+    font-size: 18px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.i-i-i{
+    font-weight: 900;
+}
+
+.crowd-funding-button-iii:hover{
+    border-radius: 22px;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(6, 44, 45);
+    width: 200px;
+    padding: 13px;
+    font-size: 20px;
+}

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Gruppo&family=Monomaniac+One&family=Orbitron&family=Tilt+Prism&family=Turret+Road:wght@200;400&display=swap');
+.fund-to-dao-main-page{
+    font-family: 'Bungee Inline', cursive;
+font-family: 'Gruppo', sans-serif;
+font-family: 'Monomaniac One', sans-serif;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Tilt Prism', cursive;
+font-family: 'Turret Road', cursive;
+    /* margin-left: 500px; */
+    border-radius: 20px;
+    margin-left:350px;
+    margin-top:100px;
+    /* color: aliceblue; */
+    background-color:#FFD6EC;
+    /* width:1300px; */
+    /* height: 600px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+
+.fund-to-dao-i{
+    font-weight: 800;
+    padding-top: 20px;
+    text-align: center;
+    align-items: center;
+}
+.fund-to-dao-ii{
+    font-size: 25px;
+    text-align: center;
+    align-items: center;
+    padding: 50px;
+}
+.fund-to-dao-iii{
+    padding: 30px;
+    text-align: center;
+    align-items: center;
+}
+
+.pay-btn{
+    background-color: #7743DB;
+    color: aliceblue;
+    font-weight: 700;
+    width: 150px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.input-pay{
+    border-radius: 5px;
+}

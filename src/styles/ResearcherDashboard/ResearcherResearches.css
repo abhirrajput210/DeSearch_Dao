@@ -1,0 +1,112 @@
+.rrMain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin:15px;
+    margin-bottom: 20px;
+}
+
+.rr-card-container{
+    width: 330px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.3s;
+    margin:30px;
+    margin-top: 40px;
+    animation: ease-in;
+    border-radius: 2rem;
+}
+
+.rr-card-container:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 0px;
+}
+
+.rr-image-container img{
+    height:200px;
+    width:300px;
+}
+
+.rr-content-container{
+    margin: 1rem;
+    margin-top: 0.3rem;
+    padding: 2px;
+}
+
+.rr-content-title{
+    width:300px;
+    height:40px;
+}
+
+.rr-content-description{
+    width:300px;
+    height:100px;
+}
+
+.rr-content-btn{
+    display: flex;
+    justify-content: center;
+}
+
+.rr-content-btn button{
+    margin-top: 10px;
+    padding: 0.5rem;
+    background-color: blue;
+    border: none;
+    transition: 2s;
+    /* margin-bottom: 0.5rem; */
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+    color: white;
+}
+
+.rr-content-title{
+    margin-bottom: 0.5 rem;
+}
+
+.rr-content-description{
+    margin-top: 10px;
+    overflow: hidden;
+    text-align: justify;
+}
+
+h3,p{
+    margin: 0;
+    padding: 0;
+}
+
+.rr-content-btn button:hover{
+    background: #8758FF;
+    transition: background 0.5s;
+}
+
+.add-research-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 100px;
+  }
+  
+  .add-research-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    
+  }
+  
+  .add-research-icon {
+    margin-right: 5px;
+    font-weight: bold;
+  }
+  
+
+  

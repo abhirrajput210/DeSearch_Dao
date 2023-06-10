@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "../../styles/BecomeMember/BecomeDaoMember.css"
+import "../../styles/becomeMember/BecomeDaoMember.css"
 
 function BecomeDaoMember() {
     const [tokenValue, setTokenValue] = useState(0);

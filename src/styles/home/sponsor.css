@@ -1,4 +1,6 @@
 .sponsor-page{
+    background-color: #111726;
+    margin-top: -20px;
 }
 
 .sponsor-images{
@@ -34,4 +36,6 @@
     font-weight:500;
     margin-top: 20px;
     text-align: center;
+    color: white;
+    padding-top: 20px;
 }

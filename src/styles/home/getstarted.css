@@ -22,21 +22,26 @@
 }
 
 .get-start-i{
+    /* margin-top: 90px; */
+    /* color: #111726; */
+    margin-right: 20px;
+    /* background-color: #1be2ef; */
+    /* border-radius:0px 900px 900px 0px; */
     padding: 100px;
     /* border: 1px solid white; */
-    width: 60%;
+    width: 50%;
 }
 
 .get-start-ii{
     padding-right: 20px;
     padding-top: 100px;
-    width: 40%;
+    width: 50%;
     /* border: 1px solid white; */
 
 }
 
 .img-get-start{
-    margin-left: -48px;
+    margin-left: 98px;
     width: 500px;
 }
 
@@ -47,14 +52,18 @@
 }
 
 .title-div-i{
+    background: -webkit-linear-gradient(rgb(188, 12, 241), rgb(212, 4, 4));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: 'Bruno Ace', cursive;
-font-family: 'Monomaniac One', sans-serif;
-font-family: 'Orbitron', sans-serif;
-font-family: 'Tilt Prism', cursive;
-font-family: 'Turret Road', cursive;
+    font-family: 'Monomaniac One', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+    font-family: 'Tilt Prism', cursive;
+    font-family: 'Turret Road', cursive;
 }
 
 .title-div-ii{
+    font-size: larger;
     font-family: 'Bruno Ace', cursive;
 font-family: 'Gruppo', sans-serif;
 font-family: 'Monomaniac One', sans-serif;
@@ -64,8 +73,10 @@ font-family: 'Turret Road', cursive;
 }
 
 .btn-start{
+    font-family: 'Turret Road';
     padding: 8px;
     /* margin-left: 30px; */
+    border: none;
     border-radius: 20px;
     font-weight: 700;
     background-color: #1be2ef;
@@ -78,8 +89,14 @@ font-family: 'Turret Road', cursive;
     /* margin-left: 30px; */
     border-radius: 20px;
     font-weight: 700;
-    background-color: #bf724c;
+    background-color: #8758FF;
     width: 200px;
+    transition: 0.5s;
+}
+
+.button-start{
+    margin-top: 10px;
+    margin-left: -5px;
 }
 
 
