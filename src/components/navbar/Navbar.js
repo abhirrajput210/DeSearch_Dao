@@ -55,7 +55,7 @@ function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName="active" to="/contributor">
+              <NavLink activeClassName="active" to="/contributor-dashboard">
               <FontAwesomeIcon icon={faUser} className="icons" />
                 Contributor
               </NavLink>

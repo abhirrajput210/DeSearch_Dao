@@ -1,10 +1,13 @@
 import React from "react";
-// import "../../styles/ShowcaseScreen/ShowcaseScreen.css";
-import "../../styles/voting/Card.css";
+
+// import Card from "../Voting/Card";
 import abc from "../../Assets/sicentist using 1_1686046712622.png";
 import logo from "../../Assets/Logo.png";
-import Votingbtn from "./VotingBtn";
-function Card() {
+// import Votingbtn from "../Voting/Votingbtn";
+import "../../styles/ContributorDashboard/activeresearches.css";
+// import Quadraticvoting from "../Voting/Quadraticvoting";
+
+function ActiveResearches() {
   const cardData = [
     {
       id: 1,
@@ -37,9 +40,7 @@ function Card() {
   ];
   return (
     <div>
-      <div className="title-container">
-        {/* <h2 className="title">Research Forum</h2> */}
-      </div>
+      {/* <Quadraticvoting /> */}
       <div className="main">
         {cardData.map((card) => (
           <div className="card-container" key={card.id}>
@@ -64,12 +65,11 @@ function Card() {
             </div>
             <div className="card-btn pb-3 rounded-pill">
               <div>
-                <button className="rounded-pill px-3">View More</button>
+                <button className="rounded-pill px-3">
+                  Request for Contribute &nbsp;&gt;&gt;{" "}
+                </button>
               </div>
               <br />
-              <div>
-                <Votingbtn />
-              </div>
             </div>
           </div>
         ))}
@@ -77,4 +77,5 @@ function Card() {
     </div>
   );
 }
-export default Card;
+
+export default ActiveResearches;

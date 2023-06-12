@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Bungee+Inline&family=Gruppo&family=Monomaniac+One&family=Orbitron&family=Tilt+Prism&family=Turret+Road:wght@200;400&display=swap');
+.contributor-main-page-button-container{
+    display: flex;
+}
+
+.contributor-main-page-heading{
+    margin-top: 20px;
+    font-family: 'Bruno Ace SC', cursive;
+    font-family: 'Bungee Inline', cursive;
+    font-family: 'Gruppo', sans-serif;
+    font-family: 'Monomaniac One', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+    font-family: 'Tilt Prism', cursive;
+    font-family: 'Turret Road', cursive;
+    text-align: center;
+    padding: 15px;
+    /* border: 1px solid black; */
+    font-size: 30px;    
+    font-weight: 900;
+}
+
+.contributor-main-page-button-container{
+    margin-top: 20px;
+    /* border: 1px solid black; */
+    text-align: center;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active-request-btn{
+    margin-right: 100px;
+}
+
+#contributor-page-btn{
+    border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: cadetblue;
+    width: 200px;
+    border-radius: 26px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+#contributor-page-btn:hover{
+    /* border: 1px solid white; */
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    color: white;
+    font-weight: 600;
+    font-size: 21px;
+    background-color: rgb(7, 53, 55);
+    width: 200px;
+    border-radius: 26px;
+    padding: 12px;
+    margin-bottom: 30px;
+}
+
+.show-contributor-component{
+    padding: 10px;
+    /* display: flex; */
+    /* width: 1000px; */
+    height: 800px;
+    /* border: 1px solid black; */
+}

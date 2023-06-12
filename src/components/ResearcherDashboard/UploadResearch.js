@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import lighthouse from '@lighthouse-web3/sdk';
 import "../../styles/researcherDashboard/UploadResearch.css";
 
 function UploadResearch() {
@@ -8,7 +9,7 @@ function UploadResearch() {
     cpimage: '',
     abstract: '',
     detaileddesc: '',
-    rwfile: '',
+    rwInput: '',
     fundsneeded: '',
     githublink: '',
     references: '',
@@ -27,18 +28,36 @@ function UploadResearch() {
     console.log("Form Data:", formData);
     // Perform any additional actions here, such as sending the data to a server
 
+    uploadFile(formData);
     setFormData({
         title: '',
         category: '',
         cpimage: '',
         abstract: '',
         detaileddesc: '',
-        rwfile: '',
+        rwInput: '',
         fundsneeded: '',
         githublink: '',
         references: '',
       });
   };
+
+  const uploadFile = async (file) => {
+
+    const formDataString = JSON.stringify(formData);
+    console.log("FormDataString",formDataString);
+
+    const progressCallback = (progressData) => {
+      let percentageDone = 100 - (progressData?.total / progressData?.uploaded)?.toFixed(2);
+      console.log(percentageDone);
+    };
+  
+    // Push file to Lighthouse node
+    const output = await lighthouse.upload(formDataString, 'f7307e7d.4fb8dbe89254425da7ffe433793390a1', progressCallback);
+    console.log('File Status:', output);
+  
+    console.log('Visit at https://gateway.lighthouse.storage/ipfs/' + output.data.Hash);
+  };  
 
   return (
     <>
@@ -50,7 +69,7 @@ function UploadResearch() {
             </div>
             <p className="text-center researchSubHead ">You must be a DAO Member to upload research work</p>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} encType="multipart/form-data">
 
             <div className="mb-3">
               <label htmlFor="title" className="form-label researchLabel">
@@ -123,14 +142,14 @@ function UploadResearch() {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="rwfile" className="form-label researchLabel">
+              <label htmlFor="rwInput" className="form-label researchLabel">
                 Research Work File:
               </label>
               <input
                 type="file"
                 className="form-control researchInput"
-                id="rwfile"
-                value={formData.rwfile}
+                id="rwInput"
+                value={formData.rwInput}
                 onChange={handleChange}
               />
             </div>
@@ -179,7 +198,7 @@ function UploadResearch() {
               Draft
             </button>
             <div className="mx-2"></div>
-            <button type="submit" className="rounded-pill researchSubmit">
+            <button type="submit" className="rounded-pill researchSubmit" onClick={handleSubmit}>
               Publish
             </button>
           </div>

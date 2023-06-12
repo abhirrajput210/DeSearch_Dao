@@ -1,7 +1,14 @@
-import React from "react";
-import "../../styles/crowdFunding/CrowdFundPage.css";
+import React, { useState } from "react";
+import "../../styles/crowdfunding/crowdfundpage.css";
+import Fundtodao from "../Crowd Funding/Fundtodao"; // Import the Fundtodao component
 
 function Crowdfunding() {
+  const [showFundtodao, setShowFundtodao] = useState(false); // State to control whether to show the Fundtodao component
+
+  const handleFundtodaoClick = () => {
+    setShowFundtodao(true); // Set the state to show the Fundtodao component
+  };
+
   return (
     <div>
       <div className="main-crowd-funding-page">
@@ -29,8 +36,23 @@ function Crowdfunding() {
           </p>
         </div>
         <div className="crowd-funding-button">
-          <button className="crowd-funding-button-iii">Fund to DAO</button>
+          {/* Show the Fundtodao component when the button is clicked */}
+          <button
+            className="crowd-funding-button-iii"
+            onClick={handleFundtodaoClick}
+          >
+            Fund to DAO
+          </button>
+          {/* Display the message when showFundtodao is true */}
+          {showFundtodao && (
+            <div className="scroll-message">
+              Scroll for Fund to DAO &#128071;
+            </div>
+          )}
         </div>
+      </div>
+      <div className="fund-to-dao-show-component">
+        {showFundtodao && <Fundtodao />}
       </div>
     </div>
   );

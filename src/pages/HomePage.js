@@ -5,7 +5,7 @@ import GetStarted from "../components/home/GetStarted";
 import Sponsors from "../components/home/Sponsors";
 import HowItWorks from "../components/home/HowItWorks";
 
-function Home() {
+function HomePage() {
   return (
     <div>
       <GetStarted />
@@ -15,4 +15,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

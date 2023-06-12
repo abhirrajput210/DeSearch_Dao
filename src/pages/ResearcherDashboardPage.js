@@ -1,7 +1,7 @@
 import React from 'react'
 import MainResearcherDashboard from '../components/researcherDashboard/MainResearcherDashboard'
 
-function ResearcherDashboard() {
+function ResearcherDashboardPage() {
   return (
     <div>
       <MainResearcherDashboard />
@@ -9,4 +9,4 @@ function ResearcherDashboard() {
   )
 }
 
-export default ResearcherDashboard
+export default ResearcherDashboardPage

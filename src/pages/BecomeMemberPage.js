@@ -1,7 +1,7 @@
 import React from 'react'
 import BecomeDaoMember from '../components/becomeMember/BecomeDaoMember'
 
-function BecomeMember() {
+function BecomeMemberPage() {
   return (
     <div>
       <BecomeDaoMember />
@@ -9,4 +9,4 @@ function BecomeMember() {
   )
 }
 
-export default BecomeMember
+export default BecomeMemberPage

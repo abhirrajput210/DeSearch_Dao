@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/quadraticVoting/VotingBtn.css";
+import "../../styles/voting/VotingBtn.css";
 
 function Votingbtn() {
   const [count, setCount] = useState(1);

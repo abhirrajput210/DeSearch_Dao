@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/quadraticVoting/QuadraticVoting.css";
+import "../../styles/voting/QuadraticVoting.css";
 import Card from "./Card";
 
 function Quadraticvoting() {

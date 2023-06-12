@@ -1,0 +1,123 @@
+.card-body-request-status {
+  font-size: 20px;
+  height: 300px;
+  padding: 30px;
+  border-radius: 10px;
+  /* border: 1px solid black; */
+  width: 350px;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  vertical-align: top;
+  text-align: left;
+  box-sizing: border-box; /* Include padding and border in the card's width */
+}
+
+.card-request-status {
+  display: flex;
+  margin: 15px;
+  border: none;
+}
+
+.contribute-btn-request-status {
+  
+  margin-top:0px; 
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.btn-primary{
+  /* font-size: 10px; */
+}
+.card-body-request-status {
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  position: relative;
+  width: 350px;
+  height: 250px;
+  border-radius: 5px;
+  background-color: #fff;
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); */
+  /* transition: all 0.3s ease-in-out; */
+}
+
+/* Create the hidden pseudo-element */
+/* include the shadow for the end state */
+.card-body-request-status::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 350px;
+  height: 250px;
+  opacity: 0;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* The fast way */
+.make-it-fast {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Pre-render the bigger shadow, but hide it */
+.make-it-fast::after {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Transition to showing the bigger shadow on hover */
+.make-it-fast:hover::after {
+  opacity: 1;
+}
+
+/* Scale up the box */
+.card-body-request-status:hover {
+  transform: scale(1.2, 1.2);
+}
+
+/* Fade in the pseudo-element with the bigger shadow */
+.card-body:hover::after {
+  /* opacity: 1; */
+}
+
+@media screen and (max-width: 980px) {
+  .card-body-request-status {
+    width: calc(50% - 40px);
+    margin-right: 0px;
+  }
+
+  .card-request-status:nth-child(2n+1) .card-body {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .card-body-request-status {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.card-display-request-status{
+  display: flex;
+}
+
+.card-text-request-status{
+  /* border: 1px solid black; */
+  width: 350px;
+  font-size: 15px;
+  padding: 25px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.input-request-status{
+  font-size: 12px;
+  margin: 10px;
+  width: 250px;
+  border: 0.2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

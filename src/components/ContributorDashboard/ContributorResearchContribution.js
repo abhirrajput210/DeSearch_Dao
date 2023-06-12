@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "../../styles/researcherDashboard/ContributorResearchContribution.css";
+import "../../styles/ContributorDashboardPage/ContributorResearchContribution.css";
 
 function ContributorResearchContribution() {
   const initialFormData = {
@@ -8,7 +8,7 @@ function ContributorResearchContribution() {
     conResCpImage: '',
     conResAbstract: '',
     conResDetailedDesc: '',
-    conResRwFile: '',
+    conResrwInput: '',
     conResFundsNeeded: '',
     conResGithubLink: '',
     conResReferences: '',
@@ -25,7 +25,7 @@ function ContributorResearchContribution() {
       conResCpImage: 'Prefilled CoverPage Image',
       conResAbstract: 'Prefilled Abstract',
       conResDetailedDesc: 'Editable Detailed Description',
-      conResRwFile: '', // No prefilled value for this field
+      conResrwInput: '', // No prefilled value for this field
       conResFundsNeeded: '', // No prefilled value for this field
       conResGithubLink: 'Editable GitHub Link',
       conResReferences: 'Editable References',
@@ -134,13 +134,13 @@ function ContributorResearchContribution() {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="conResRwFile" className="form-label conResLabel">
+              <label htmlFor="conResrwInput" className="form-label conResLabel">
                 Research Work File:
               </label>
               <input
                 type="file"
                 className="form-control conResInput"
-                id="conResRwFile"
+                id="conResrwInput"
                 onChange={handleEditableFieldChange} // Handle changes for editable field
               />
             </div>
