@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/ContributorDashboard/requeststatus.css";
+import "../../styles/contributorDashboard/requeststatus.css";
 
 // Dummy data
 const dummyData = [

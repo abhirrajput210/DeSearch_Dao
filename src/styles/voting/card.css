@@ -1,4 +1,4 @@
-.main{
+.main-quadratic-voting-page{
     display: flex;
     /* flex-wrap: wrap; */
     justify-content: space-between;
@@ -7,20 +7,20 @@
     /* background-color: black; */
     margin-bottom: 20px;
 }
-.title-container {
+.title-container-quadratic-voting-page {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
     margin-top: 20px;
   }
-  .title {
+  .title-quadratic-voting-page {
     padding: 13px;
     border-radius: 15px;
     background-color: black;
     color: white;
   }
-.card-container{
+.card-container-quadratic-voting-page{
     /* display: flex; */
     width: 350px;
     overflow: hidden;
@@ -32,22 +32,22 @@
     animation: ease-in;
     border-radius: 2rem;
 }
-.card-container:hover{
+.card-container-quadratic-voting-page:hover{
     transform: scale(1.1);
     box-shadow: 0px 0px 15px 0px;
 }
-.image-container img{
+.image-container-quadratic-voting-page img{
     overflow: hidden;
     height: 10px;
     width: 10px;
 }
 
-.image-container{
+.image-container-quadratic-voting-page{
     border-radius: 10px;
     margin-top: 10px;
 
 }
-.card-content{
+.card-content-quadratic-voting-page{
     margin: 1rem;
     margin-top: 0.3rem;
 }
@@ -56,14 +56,14 @@ h3,p{
     margin: 0;
     padding: 0;
 }
-.card-title{
+.card-title-quadratic-voting-page{
     margin-bottom: 0.5 rem;
 }
-.card-btn{
+.card-btn-quadratic-voting-page{
     display: flex;
     justify-content: center;
 }
-.card-btn button{
+.card-btn-quadratic-voting-page button{
     margin-right: 10px;
     padding: 0.2rem;
     background-color: blue;

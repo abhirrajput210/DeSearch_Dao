@@ -7,8 +7,11 @@ import ResearcherDashboardPage from "./pages/ResearcherDashboardPage";
 import ShowcaseScreenPage from "./pages/ShowcaseScreenPage";
 import UploadResearchPage from "./pages/UploadResearchPage";
 import CardDetailsScreen from "./components/showcaseScreen/CardDetailsScreen";
+import ContributorDashboardPage from "./pages/ContributorDashboardPage";
+import QuadraticVotingPage from "./pages/QuadraticVotingPage";
 import abc from "./Assets/sicentist using 1_1686046712622.png";
 import logo from "./Assets/Logo.png";
+import CrowdFundingPage from "./pages/CrowdFundingPage";
 
 function App() {
   const cardData = [
@@ -47,9 +50,10 @@ function App() {
         <Route path="/dao-member" element={<BecomeMemberPage />} />
         <Route path="/researcher" element={<ResearcherDashboardPage />} />
         <Route path="/upload-research" element={<UploadResearchPage />} />
-        {/* <Route path="/details/:id" element={<CardDetailsScreen />} /> */}
         <Route path="/details/:id" element={<CardDetailsScreen cardData={cardData} />} />
-        {/* <Route path="/contributor-dashboard" element={<ContributorDashboardPage />} /> */}
+        <Route path="/contributor-dashboard" element={<ContributorDashboardPage />} />
+        <Route path="/quadratic-voting" element={<QuadraticVotingPage />} />
+        <Route path="/crowd-funding" element={<CrowdFundingPage />} />
       </Routes>
       </BrowserRouter>
     </>

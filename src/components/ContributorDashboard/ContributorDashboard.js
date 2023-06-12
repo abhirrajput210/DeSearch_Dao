@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/ContributorDashboard/contributordashboard.css";
+import "../../styles/contributorDashboard/contributordashboard.css";
 import RequestStatus from "./RequestStatus";
 import ActiveResearches from "./ActiveResearches";
 // import Quadraticvoting from "../Voting/Quadraticvoting";
@@ -19,18 +19,18 @@ function ContributorDashboard() {
         </div>
         <div className="contributor-main-page">
           <div className="contributor-main-page-button-container">
-            <div className="active-request-button">
+            <div className="contributor-active-request-button">
               <button
-                className="active-request-btn"
+                className="contributor-active-request-btn"
                 id="contributor-page-btn"
                 onClick={() => handleButtonClick("activeResearches")}
               >
                 Active Request
               </button>
             </div>
-            <div className="request-status-button">
+            <div className="contributor-request-status-button">
               <button
-                className="request-status-btn"
+                className="contributor-request-status-btn"
                 id="contributor-page-btn"
                 onClick={() => handleButtonClick("requestStatus")}
               >

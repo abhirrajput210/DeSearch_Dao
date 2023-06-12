@@ -71,7 +71,7 @@ function Navbar() {
 
         <li>
           <FontAwesomeIcon icon={faCoins} className="icons" />
-          <NavLink activeClassName="active" to="/crowdfunding">
+          <NavLink activeClassName="active" to="/crowd-funding">
             Crowd Funding
           </NavLink>
         </li>

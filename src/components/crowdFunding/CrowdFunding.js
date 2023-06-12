@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../../styles/crowdfunding/crowdfundpage.css";
-import Fundtodao from "../Crowd Funding/Fundtodao"; // Import the Fundtodao component
+import "../../styles/crowdFunding/crowdfundpage.css";
+import FundToDao from "./FundToDao" // Import the Fundtodao component
 
 function Crowdfunding() {
   const [showFundtodao, setShowFundtodao] = useState(false); // State to control whether to show the Fundtodao component
@@ -52,7 +52,7 @@ function Crowdfunding() {
         </div>
       </div>
       <div className="fund-to-dao-show-component">
-        {showFundtodao && <Fundtodao />}
+        {showFundtodao && <FundToDao />}
       </div>
     </div>
   );
