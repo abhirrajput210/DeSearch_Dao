@@ -37,13 +37,13 @@ function Card() {
   ];
   return (
     <div>
-      <div className="title-container">
+      <div className="title-container-quadratic-voting-page">
         {/* <h2 className="title">Research Forum</h2> */}
       </div>
-      <div className="main">
+      <div className="main-quadratic-voting-page">
         {cardData.map((card) => (
-          <div className="card-container" key={card.id}>
-            <div className="image-container">
+          <div className="card-container-quadratic-voting-page" key={card.id}>
+            <div className="image-container-quadratic-voting-page">
               <img
                 src={card.img}
                 alt="img"
@@ -54,17 +54,19 @@ function Card() {
                 }}
               />
             </div>
-            <div className="card-content">
-              <div className="card-title">
+            <div className="card-content-quadratic-voting-page">
+              <div className="card-title-quadratic-voting-page">
                 <h5>{card.title}</h5>
               </div>
-              <div className="card-body">
+              <div className="card-body-quadratic-voting-page">
                 <p>{card.description}</p>
               </div>
             </div>
-            <div className="card-btn pb-3 rounded-pill">
+            <div className="card-btn-quadratic-voting-page pb-3 rounded-pill">
               <div>
-                <button className="rounded-pill px-3">View More</button>
+                <button className="rounded-pill-quadratic-voting-page px-3">
+                  View More
+                </button>
               </div>
               <br />
               <div>

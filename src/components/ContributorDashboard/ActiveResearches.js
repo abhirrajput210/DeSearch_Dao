@@ -40,10 +40,10 @@ function ActiveResearches() {
   return (
     <div>
       {/* <Quadraticvoting /> */}
-      <div className="main">
+      <div className="main-active-researchers">
         {cardData.map((card) => (
-          <div className="card-container" key={card.id}>
-            <div className="image-container">
+          <div className="card-container-active-researchers" key={card.id}>
+            <div className="image-container-active-researchers">
               <img
                 src={card.img}
                 alt="img"
@@ -54,15 +54,15 @@ function ActiveResearches() {
                 }}
               />
             </div>
-            <div className="card-content">
-              <div className="card-title">
+            <div className="card-content-active-researchers">
+              <div className="card-title-active-researchers">
                 <h5>{card.title}</h5>
               </div>
-              <div className="card-body">
+              <div className="card-body-active-researchers">
                 <p>{card.description}</p>
               </div>
             </div>
-            <div className="card-btn pb-3 rounded-pill">
+            <div className="card-btn-active-researchers pb-3 rounded-pill">
               <div>
                 <button className="rounded-pill px-3">
                   Request for Contribute &nbsp;&gt;&gt;{" "}
