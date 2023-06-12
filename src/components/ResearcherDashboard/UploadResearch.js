@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import lighthouse from '@lighthouse-web3/sdk';
 import "../../styles/researcherDashboard/UploadResearch.css";
 
 function UploadResearch() {
@@ -28,7 +27,6 @@ function UploadResearch() {
     console.log("Form Data:", formData);
     // Perform any additional actions here, such as sending the data to a server
 
-    uploadFile(formData);
     setFormData({
         title: '',
         category: '',
@@ -41,23 +39,6 @@ function UploadResearch() {
         references: '',
       });
   };
-
-  const uploadFile = async (file) => {
-
-    const formDataString = JSON.stringify(formData);
-    console.log("FormDataString",formDataString);
-
-    const progressCallback = (progressData) => {
-      let percentageDone = 100 - (progressData?.total / progressData?.uploaded)?.toFixed(2);
-      console.log(percentageDone);
-    };
-  
-    // Push file to Lighthouse node
-    const output = await lighthouse.upload(formDataString, 'f7307e7d.4fb8dbe89254425da7ffe433793390a1', progressCallback);
-    console.log('File Status:', output);
-  
-    console.log('Visit at https://gateway.lighthouse.storage/ipfs/' + output.data.Hash);
-  };  
 
   return (
     <>
