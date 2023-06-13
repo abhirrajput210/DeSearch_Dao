@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import Card from "../voting/Card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import abc from "../../Assets/sicentist using 1_1686046712622.png";
 import logo from "../../Assets/Logo.png";
 // import Votingbtn from "../Voting/Votingbtn";
-import "../../styles/contributorDashboard/activeresearches.css";
+import "../../styles/ContributorDashboard/activeresearches.css";
 // import Quadraticvoting from "../Voting/Quadraticvoting";
 
 function ActiveResearches() {
@@ -99,7 +100,7 @@ function ActiveResearches() {
         <div className="popup">
           <div className="popup-content">
             <button className="cancel-button" onClick={handlePopupCancel}>
-              Cancel
+              <FontAwesomeIcon icon={faTimes} /> {/* Cancel icon */}
             </button>
             <h2 className="popup-title">Contribution Detail</h2>
             <div className="popup-card-details">
@@ -116,7 +117,7 @@ function ActiveResearches() {
               </div>
             </div>
             <div className="popup-input-container">
-              <h3>Enter Your Contribution Detail</h3>
+              <h5>Enter Your Contribution Detail</h5>
               <input
                 type="textarea"
                 value={contributionDetail}

@@ -1,12 +1,12 @@
-import React from 'react'
-import MainResearcherDashboard from '../components/researcherDashboard/MainResearcherDashboard'
+import React from "react";
+import MainResearcherDashboard from "../components/ResearcherDashboard/MainResearcherDashboard";
 
 function ResearcherDashboardPage() {
   return (
     <div>
       <MainResearcherDashboard />
     </div>
-  )
+  );
 }
 
-export default ResearcherDashboardPage
+export default ResearcherDashboardPage;

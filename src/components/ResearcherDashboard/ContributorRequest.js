@@ -1,30 +1,30 @@
-import React from 'react';
-import "../../styles/researcherDashboard/ContributorRequest.css";
+import React from "react";
+import "../../styles/ResearcherDashboard/ContributorRequest.css";
 
 function ContributorRequest() {
   // Example data array
   const data = [
     {
-      title: 'Title 1',
-      abstract: 'Abstract 1',
-      contributorAddress: 'Address 1',
-      contributionDetails: 'Details 1',
+      title: "Title 1",
+      abstract: "Abstract 1",
+      contributorAddress: "Address 1",
+      contributionDetails: "Details 1",
     },
     {
-      title: 'Title 2',
-      abstract: 'Abstract 2',
-      contributorAddress: 'Address 2',
-      contributionDetails: 'Details 2',
+      title: "Title 2",
+      abstract: "Abstract 2",
+      contributorAddress: "Address 2",
+      contributionDetails: "Details 2",
     },
-    
+
     // Add more data objects as needed
   ];
 
   return (
     <div>
-      <div className='conreq-main'>
+      <div className="conreq-main">
         {data.map((item, index) => (
-          <div className='conreq-card-container' key={index}>
+          <div className="conreq-card-container" key={index}>
             <div className="mb-3">
               <label htmlFor="title" className="form-label conreqLabel">
                 Title:
@@ -51,7 +51,10 @@ function ContributorRequest() {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="contributorAddress" className="form-label conreqLabel">
+              <label
+                htmlFor="contributorAddress"
+                className="form-label conreqLabel"
+              >
                 Contributor Address:
               </label>
               <input
@@ -63,7 +66,10 @@ function ContributorRequest() {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="contributionDetails" className="form-label conreqLabel">
+              <label
+                htmlFor="contributionDetails"
+                className="form-label conreqLabel"
+              >
                 Contribution Details:
               </label>
               <textarea
@@ -74,12 +80,18 @@ function ContributorRequest() {
               />
             </div>
 
-            <div className='btnClass'>
+            <div className="btnClass">
               <div className="button-wrapper">
-                <button type="submit" className="rounded-pill conreqSubmit mt-3">
+                <button
+                  type="submit"
+                  className="rounded-pill conreqSubmit mt-3"
+                >
                   Accept
                 </button>
-                <button type="submit" className="rounded-pill conreqSubmit mt-3 rejected">
+                <button
+                  type="submit"
+                  className="rounded-pill conreqSubmit mt-3 rejected"
+                >
                   Reject
                 </button>
               </div>

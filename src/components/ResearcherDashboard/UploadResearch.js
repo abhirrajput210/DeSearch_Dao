@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import "../../styles/researcherDashboard/UploadResearch.css";
+import React, { useState } from "react";
+import "../../styles/ResearcherDashboard/UploadResearch.css";
 
 function UploadResearch() {
   const [formData, setFormData] = useState({
-    title: '',
-    category: '',
-    cpimage: '',
-    abstract: '',
-    detaileddesc: '',
-    rwInput: '',
-    fundsneeded: '',
-    githublink: '',
-    references: '',
+    title: "",
+    category: "",
+    cpimage: "",
+    abstract: "",
+    detaileddesc: "",
+    rwInput: "",
+    fundsneeded: "",
+    githublink: "",
+    references: "",
   });
 
   const handleChange = (e) => {
@@ -28,16 +28,16 @@ function UploadResearch() {
     // Perform any additional actions here, such as sending the data to a server
 
     setFormData({
-        title: '',
-        category: '',
-        cpimage: '',
-        abstract: '',
-        detaileddesc: '',
-        rwInput: '',
-        fundsneeded: '',
-        githublink: '',
-        references: '',
-      });
+      title: "",
+      category: "",
+      cpimage: "",
+      abstract: "",
+      detaileddesc: "",
+      rwInput: "",
+      fundsneeded: "",
+      githublink: "",
+      references: "",
+    });
   };
 
   return (
@@ -48,10 +48,11 @@ function UploadResearch() {
             <div className="d-flex justify-content-center align-items-center">
               <p className="researchHead">Upload Research Work</p>
             </div>
-            <p className="text-center researchSubHead ">You must be a DAO Member to upload research work</p>
+            <p className="text-center researchSubHead ">
+              You must be a DAO Member to upload research work
+            </p>
           </div>
           <form onSubmit={handleSubmit} encType="multipart/form-data">
-
             <div className="mb-3">
               <label htmlFor="title" className="form-label researchLabel">
                 Title:
@@ -110,7 +111,10 @@ function UploadResearch() {
 
             <div className="mb-3">
               <label htmlFor="detaileddesc" className="form-label">
-                <span className="researchDetailText"> Detailed Description: </span>
+                <span className="researchDetailText">
+                  {" "}
+                  Detailed Description:{" "}
+                </span>
               </label>
               <textarea
                 className="form-control researchInput"
@@ -175,14 +179,21 @@ function UploadResearch() {
             </div>
 
             <div className="d-flex justify-content-center mt-3">
-            <button type="submit" className="rounded-pill researchSubmit mr-3">
-              Draft
-            </button>
-            <div className="mx-2"></div>
-            <button type="submit" className="rounded-pill researchSubmit" onClick={handleSubmit}>
-              Publish
-            </button>
-          </div>
+              <button
+                type="submit"
+                className="rounded-pill researchSubmit mr-3"
+              >
+                Draft
+              </button>
+              <div className="mx-2"></div>
+              <button
+                type="submit"
+                className="rounded-pill researchSubmit"
+                onClick={handleSubmit}
+              >
+                Publish
+              </button>
+            </div>
           </form>
         </div>
       </div>

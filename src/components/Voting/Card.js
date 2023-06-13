@@ -3,7 +3,7 @@ import React from "react";
 import "../../styles/voting/card.css";
 import abc from "../../Assets/sicentist using 1_1686046712622.png";
 import logo from "../../Assets/Logo.png";
-import Votingbtn from "./VotingBtn";
+import Votingbtn from "./Votingbtn";
 function Card() {
   const cardData = [
     {
@@ -45,6 +45,7 @@ function Card() {
           <div className="card-container-quadratic-voting-page" key={card.id}>
             <div className="image-container-quadratic-voting-page">
               <img
+                // className="image-container-of-card"
                 src={card.img}
                 alt="img"
                 style={{

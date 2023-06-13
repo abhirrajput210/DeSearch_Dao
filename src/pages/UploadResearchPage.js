@@ -1,12 +1,12 @@
-import React from 'react'
-import UploadResearch from "../components/researcherDashboard/UploadResearch"
+import React from "react";
+import UploadResearch from "../components/ResearcherDashboard/UploadResearch";
 
 function UploadResearchPage() {
   return (
     <div>
       <UploadResearch />
     </div>
-  )
+  );
 }
 
-export default UploadResearchPage
+export default UploadResearchPage;

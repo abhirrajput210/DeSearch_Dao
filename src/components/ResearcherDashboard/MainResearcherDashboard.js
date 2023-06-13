@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import ContributorRequest from './ContributorRequest';
-import ResearcherResearches from './ResearcherResearches';
-import '../../styles/researcherDashboard/MainResearcherDashboard.css';
+import React, { useState } from "react";
+import ContributorRequest from "./ContributorRequest";
+import ResearcherResearches from "./ResearcherResearches";
+import "../../styles/ResearcherDashboard/MainResearcherDashboard.css";
 
 function MainResearcherDashboard() {
-  const [activeComponent, setActiveComponent] = useState('researches');
+  const [activeComponent, setActiveComponent] = useState("researches");
 
   const handleResearchesClick = () => {
-    setActiveComponent('researches');
+    setActiveComponent("researches");
   };
 
   const handleContributorRequestClick = () => {
-    setActiveComponent('contributors');
+    setActiveComponent("contributors");
   };
 
   const renderComponent = () => {
     switch (activeComponent) {
-      case 'researches':
+      case "researches":
         return <ResearcherResearches />;
-      case 'contributors':
+      case "contributors":
         return <ContributorRequest />;
       default:
         return <ResearcherResearches />;
@@ -28,22 +28,27 @@ function MainResearcherDashboard() {
   return (
     <div>
       <div className="researcher-dashboard-main-class-title-container">
-        <h2 className="researcher-dashboard-main-class-title">Researcher Dashboard</h2>
-        
+        <h2 className="researcher-dashboard-main-class-title">
+          Researcher Dashboard
+        </h2>
       </div>
 
       <div className="researcher-dashboard-main-class">
         <div className="researcher-dashboard-main-class-btn row">
           <button
             type="button"
-            className={`researcher-research-btn col-12 col-md-5 ${activeComponent === 'researches' ? 'active' : ''}`}
+            className={`researcher-research-btn col-12 col-md-5 ${
+              activeComponent === "researches" ? "active" : ""
+            }`}
             onClick={handleResearchesClick}
           >
             My Researches
           </button>
           <button
             type="button"
-            className={`contributor-request-btn col-12 col-md-5 ${activeComponent === 'contributors' ? 'active' : ''}`}
+            className={`contributor-request-btn col-12 col-md-5 ${
+              activeComponent === "contributors" ? "active" : ""
+            }`}
             onClick={handleContributorRequestClick}
           >
             Contributors Requests

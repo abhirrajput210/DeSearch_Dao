@@ -1,8 +1,8 @@
 import React from "react";
-import "../../styles/home/GetStarted.css";
+import { Link } from "react-router-dom";
+import "../../styles/home/getstarted.css";
 import image from "../../Assets/sicentist.png";
 import layer from "../../Assets/layer.png";
-
 function GetStarted() {
   return (
     <div className="main-getstart">
@@ -19,7 +19,9 @@ function GetStarted() {
               </p>
             </div>
             <div className="button-start">
-              <button className="btn-start">Get Started</button>
+              <Link to="/showcase">
+                <button className="btn-start">Get Started</button>
+              </Link>
             </div>
           </div>
         </div>
@@ -30,5 +32,4 @@ function GetStarted() {
     </div>
   );
 }
-
 export default GetStarted;

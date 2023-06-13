@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import "../../styles/becomeMember/BecomeDaoMember.css"
+import React, { useState } from "react";
+import "../../styles/BecomeMember/BecomeDaoMember.css";
 
 function BecomeDaoMember() {
-    const [tokenValue, setTokenValue] = useState(0);
+  const [tokenValue, setTokenValue] = useState(0);
 
   const handleTokenChange = (event) => {
     setTokenValue(event.target.value);
@@ -45,13 +45,13 @@ function BecomeDaoMember() {
                     <label for="formGroupExampleInput2">Total Amount:</label>
                   </div>
                   <div className="col-12 col-md-6 ">
-                      <input
-                        type="text"
-                        class="form-control-plaintext"
-                        id="formGroupExampleInput2"
-                        value={1000}
-                        readOnly
-                      />
+                    <input
+                      type="text"
+                      class="form-control-plaintext"
+                      id="formGroupExampleInput2"
+                      value={1000}
+                      readOnly
+                    />
                   </div>
                 </div>
                 <div className="MemberBuyTokenBtn-class">
@@ -61,7 +61,7 @@ function BecomeDaoMember() {
                       className="MemberBuyTokenBtn col-12 col-md-10"
                       onClick={handleBuyToken}
                     >
-                        Buy Token
+                      Buy Token
                     </button>
                   </div>
                 </div>
@@ -71,7 +71,7 @@ function BecomeDaoMember() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default BecomeDaoMember
+export default BecomeDaoMember;

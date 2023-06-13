@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/contributorDashboard/contributordashboard.css";
+import "../../styles/ContributorDashboard/contributordashboard.css";
 import RequestStatus from "./RequestStatus";
 import ActiveResearches from "./ActiveResearches";
 // import Quadraticvoting from "../Voting/Quadraticvoting";
