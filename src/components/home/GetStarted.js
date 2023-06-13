@@ -1,7 +1,6 @@
 import React from "react";
 import "../../styles/home/GetStarted.css";
 import image from "../../Assets/sicentist.png";
-import layer from "../../Assets/layer.png";
 
 function GetStarted() {
   return (

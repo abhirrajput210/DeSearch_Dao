@@ -1,17 +1,78 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
+import { ethers } from 'ethers';
+import { tokenInstance } from '../contracts';
+import { useNavigate } from 'react-router-dom';
 import "../../styles/becomeMember/BecomeDaoMember.css"
 
 function BecomeDaoMember() {
-    const [tokenValue, setTokenValue] = useState(0);
+  const navigate = useNavigate();
+  const [numOfTokens, setNumOfTokens] = useState("");
+  const [tknAmtResult, setTknAmtResult] = useState("");
+  const [tokenPrice, setTokenPrice] = useState("");
 
-  const handleTokenChange = (event) => {
-    setTokenValue(event.target.value);
+  const tokenFunc = async () => {
+    try{
+      const { ethereum } = window;
+        if (ethereum) {
+          const provider = new ethers.providers.Web3Provider(ethereum);
+          const signer = provider.getSigner();
+          if (!provider) {
+            console.log("Metamask is not installed, please install!");
+          }
+          const conToken = await tokenInstance();
+          const tokenPrice = await conToken.tokenPrice();
+          console.log("Token Price :",tokenPrice)
+          const hexValue = tokenPrice._hex;
+          console.log(hexValue)
+
+          const decimalValue = parseInt(hexValue, 16);
+          setTokenPrice(decimalValue);
+          console.log("Decimal Value",decimalValue)
+
+          const finalValue = decimalValue / Math.pow(10, 18);
+
+          console.log("Final Value",decimalValue / Math.pow(10, 18))
+        }
+    }catch (error){
+      console.log(error);
+    }
+  }
+
+  const getTokenPrice = async () => {
+    try {
+      const { ethereum } = window;
+      if (ethereum) {
+        const provider = new ethers.providers.Web3Provider(ethereum);
+
+        if (!provider) {
+          console.log("Metamask is not installed, please install!");
+        }
+        const conToken = await tokenInstance();
+        const tokenPrice1 = await conToken.tokenPrice();
+        console.log("TokenPrice :",tokenPrice1);
+        const hexValue = tokenPrice1._hex;
+        const decimalValue = parseInt(hexValue, 16);
+        console.log("Decimal Value",decimalValue);
+
+        // console.log(decimalValue / Math.pow(10, 18));
+        setTokenPrice(decimalValue);
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
-  const handleBuyToken = () => {
-    const totalAmount = tokenValue * 1000;
-    alert(`Total Amount: ${totalAmount}`);
-  };
+  useEffect(() => {
+    setTknAmtResult(
+      // to convert value into ETH from wei
+      numOfTokens ? (tokenPrice * numOfTokens)  : "0"
+    );
+  }, [numOfTokens]);
+
+  useEffect(() => {
+    getTokenPrice();
+  }, []);
+
   return (
     <>
       <div className="container-fluid BDMPageBg">
@@ -35,8 +96,10 @@ function BecomeDaoMember() {
                       class="TokenAmtInput-class"
                       id="formGroupExampleInput"
                       placeholder="Enter your tokens"
-                      value={tokenValue}
-                      onChange={handleTokenChange}
+                      value={numOfTokens}
+                      onChange={(e) => {
+                        setNumOfTokens(e.target.value);
+                      }}
                     />
                   </div>
                 </div>
@@ -44,22 +107,29 @@ function BecomeDaoMember() {
                   <div className="col-12 col-md-6 BDMPage-LabelTitle">
                     <label for="formGroupExampleInput2">Total Amount:</label>
                   </div>
+                  
                   <div className="col-12 col-md-6 ">
+                    {/* <p className='TknAmtResult-class' >{`$${tknAmtResult}`}</p> */}
+                    {tknAmtResult ? (
                       <input
                         type="text"
                         class="form-control-plaintext"
                         id="formGroupExampleInput2"
-                        value={1000}
+                        value={tknAmtResult}
                         readOnly
                       />
+                    ) : (
+                      ""
+                    )}
                   </div>
                 </div>
+
                 <div className="MemberBuyTokenBtn-class">
                   <div className="MemberBuyTokenBtn row">
                     <button
                       type="button"
                       className="MemberBuyTokenBtn col-12 col-md-10"
-                      onClick={handleBuyToken}
+                      onClick={tokenFunc}
                     >
                         Buy Token
                     </button>

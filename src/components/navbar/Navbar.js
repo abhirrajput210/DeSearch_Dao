@@ -41,6 +41,13 @@ function Navbar() {
           </NavLink>
         </li>
 
+        <li>
+          <FontAwesomeIcon icon={faChartLine} className="icons" />
+          <NavLink activeClassName="active" to="/dao-member">
+           Dao Member
+          </NavLink>
+        </li>
+
         <li
           className={`has-submenu ${submenuOpen ? 'open' : ''}`}
           onMouseEnter={handleSubmenuToggle}
@@ -56,7 +63,7 @@ function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName="active" to="/contributor-dashboard-page">
+              <NavLink activeClassName="active" to="/contributor-dashboard">
               <FontAwesomeIcon icon={faUser} className="icons" />
                 Contributor
               </NavLink>
