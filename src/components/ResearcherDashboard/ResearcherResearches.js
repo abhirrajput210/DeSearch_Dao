@@ -45,7 +45,7 @@ function ResearcherResearches() {
           onClick={handleAddResearch}
         >
           <span className="add-research-icon">
-            <FontAwesomeIcon icon={faPlus} className="icons" />
+            <FontAwesomeIcon icon={faPlus} className="icons-add-research" />
           </span>{" "}
           Add Researches
         </button>

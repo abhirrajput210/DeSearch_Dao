@@ -49,9 +49,9 @@ function Card() {
                 src={card.img}
                 alt="img"
                 style={{
-                  width: "100%",
-                  height: "80px",
-                  objectFit: "contain",
+                  width: "380px",
+                  height: "280px",
+                  objectFit: "cover",
                 }}
               />
             </div>

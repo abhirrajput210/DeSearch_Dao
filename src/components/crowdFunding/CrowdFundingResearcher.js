@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 import lighthouse from "@lighthouse-web3/sdk";
-import "../../styles/ResearcherDashboard/UploadResearch.css";
+import "../../styles/crowdfunding/CrowdFundingResearcher.css";
 
-function UploadResearch() {
+function CrowdFundingResearcher() {
   const [formData, setFormData] = useState({
     title: "",
     category: "",
@@ -13,8 +14,6 @@ function UploadResearch() {
     fundsneeded: "",
     githublink: "",
     references: "",
-    paymentOption: "free", // Default to 'free'
-    researchCost: "", // Empty string initially
   });
 
   const progressCallback = (progressData) => {
@@ -80,31 +79,29 @@ function UploadResearch() {
       fundsneeded: "",
       githublink: "",
       references: "",
-      paymentOption: "free",
-      researchCost: "",
     });
   };
 
   return (
     <>
-      <div className="researchPageBg">
-        <div className="researchBg">
+      <div className="cfrPageBg">
+        <div className="cfrBg">
           <div className="text-center">
             <div className="d-flex justify-content-center align-items-center">
-              <p className="researchHead">Upload Research Work</p>
+              <p className="cfrHead">Upload Research Work For CrowdFunding</p>
             </div>
-            <p className="text-center researchSubHead ">
+            <p className="text-center cfrSubHead ">
               You must be a DAO Member to upload research work
             </p>
           </div>
           <form onSubmit={handleSubmit} encType="multipart/form-data">
             <div className="mb-3">
-              <label htmlFor="title" className="form-label researchLabel">
+              <label htmlFor="title" className="form-label cfrLabel">
                 Title:
               </label>
               <input
                 type="text"
-                className="form-control researchInput"
+                className="form-control cfrInput"
                 id="title"
                 value={formData.title}
                 onChange={handleChange}
@@ -112,11 +109,11 @@ function UploadResearch() {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="category" className="form-label researchLabel">
+              <label htmlFor="category" className="form-label cfrLabel">
                 Select your category:
               </label>
               <select
-                className="form-select researchInput"
+                className="form-select cfrInput"
                 id="category"
                 value={formData.category}
                 onChange={handleChange}
@@ -128,12 +125,12 @@ function UploadResearch() {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="cpimage" className="form-label researchLabel">
+              <label htmlFor="cpimage" className="form-label cfrLabel">
                 CoverPage Image:
               </label>
               <input
                 type="file"
-                className="form-control researchInput"
+                className="form-control cfrInput"
                 id="cpimage"
                 // value={formData.cpimage}
                 onChange={(e) => uploadImage(e.target.files)}
@@ -141,12 +138,12 @@ function UploadResearch() {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="abstract" className="form-label researchLabel">
+              <label htmlFor="abstract" className="form-label cfrLabel">
                 Abstract:
               </label>
               <input
                 type="textarea"
-                className="form-control researchInput"
+                className="form-control cfrInput"
                 rows="2"
                 id="abstract"
                 value={formData.abstract}
@@ -156,13 +153,10 @@ function UploadResearch() {
 
             <div className="mb-3">
               <label htmlFor="detaileddesc" className="form-label">
-                <span className="researchDetailText">
-                  {" "}
-                  Detailed Description:{" "}
-                </span>
+                <span className="cfrDetailText"> Detailed Description: </span>
               </label>
               <textarea
-                className="form-control researchInput"
+                className="form-control cfrInput"
                 placeholder="Description"
                 id="detaileddesc"
                 rows="3"
@@ -172,12 +166,12 @@ function UploadResearch() {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="rwInput" className="form-label researchLabel">
+              <label htmlFor="rwInput" className="form-label cfrLabel">
                 Research Work File:
               </label>
               <input
                 type="file"
-                className="form-control researchInput"
+                className="form-control cfrInput"
                 id="rwInput"
                 // value={formData.rwInput}
                 onChange={(e) => uploadFile(e.target.files)}
@@ -185,67 +179,25 @@ function UploadResearch() {
             </div>
 
             <div className="mb-3">
-              <label
-                htmlFor="paymentOption"
-                className="form-label researchLabel"
-              >
-                Payment Option:
+              <label htmlFor="fundsneeded" className="form-label cfrLabel">
+                Funds Needed:
               </label>
-              <div className="d-flex">
-                <div className="form-check mr-3">
-                  <input
-                    type="radio"
-                    id="paymentOption"
-                    value="free"
-                    checked={formData.paymentOption === "free"}
-                    onChange={handleChange}
-                    className="form-check-input"
-                  />
-                  <label htmlFor="free" className="form-check-label">
-                    Free
-                  </label>
-                </div>
-                <div className="form-check" style={{ marginLeft: "20px" }}>
-                  <input
-                    type="radio"
-                    id="paymentOption"
-                    value="paid"
-                    checked={formData.paymentOption === "paid"}
-                    onChange={handleChange}
-                    className="form-check-input"
-                  />
-                  <label htmlFor="paid" className="form-check-label">
-                    Paid
-                  </label>
-                </div>
-              </div>
+              <input
+                type="text"
+                className="form-control cfrInput"
+                id="fundsneeded"
+                value={formData.fundsneeded}
+                onChange={handleChange}
+              />
             </div>
 
-            {formData.paymentOption === "paid" && (
-              <div className="mb-3">
-                <label
-                  htmlFor="researchCost"
-                  className="form-label researchLabel"
-                >
-                  Research Cost:
-                </label>
-                <input
-                  type="text"
-                  className="form-control researchInput"
-                  id="researchCost"
-                  value={formData.researchCost}
-                  onChange={handleChange}
-                />
-              </div>
-            )}
-
             <div className="mb-3">
-              <label htmlFor="githublink" className="form-label researchLabel">
+              <label htmlFor="githublink" className="form-label cfrLabel">
                 Github Link:
               </label>
               <input
                 type="text"
-                className="form-control researchInput"
+                className="form-control cfrInput"
                 id="githublink"
                 value={formData.githublink}
                 onChange={handleChange}
@@ -253,12 +205,12 @@ function UploadResearch() {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="references" className="form-label researchLabel">
+              <label htmlFor="references" className="form-label cfrLabel">
                 References:
               </label>
               <input
                 type="text"
-                className="form-control researchInput"
+                className="form-control cfrInput"
                 id="references"
                 value={formData.references}
                 onChange={handleChange}
@@ -266,14 +218,8 @@ function UploadResearch() {
             </div>
 
             <div className="d-flex justify-content-center mt-3">
-              <button
-                type="submit"
-                className="rounded-pill researchSubmit mr-3"
-              >
-                Draft
-              </button>
               <div className="mx-2"></div>
-              <button type="submit" className="rounded-pill researchSubmit">
+              <button type="submit" className="rounded-pill cfrSubmit">
                 Publish
               </button>
             </div>
@@ -284,4 +230,4 @@ function UploadResearch() {
   );
 }
 
-export default UploadResearch;
+export default CrowdFundingResearcher;

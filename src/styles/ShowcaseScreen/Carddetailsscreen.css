@@ -1,6 +1,6 @@
 .main-card-details-screen-page{
     padding: 50px;
-    background-color: rgb(228, 224, 224);
+    background-color: #BAF56E;
     margin: 60px;
     margin-top: 130px;
     border-radius: 50px;
@@ -16,6 +16,7 @@
 }
 
 .image-card-details-screen{
+    background-color: aliceblue;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
@@ -31,8 +32,9 @@
 .card-details-screen-button-div button{
     padding: 10px;
     border-radius: 15px;
-    background-color: aquamarine;
+    background-color:  #8758FF;
     font-size: 20px;
+    color: aliceblue;
     font-weight: 700;
     border-color: aliceblue;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;

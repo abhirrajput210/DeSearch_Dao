@@ -12,6 +12,7 @@ import QuadraticVotingPage from "./pages/QuadraticVotingPage";
 import abc from "./Assets/sicentist using 1_1686046712622.png";
 import logo from "./Assets/Logo.png";
 import CrowdFundingPage from "./pages/CrowdFundingPage";
+import CrowdFundingResearcherPage from "./pages/CrowdFundingResearcherPage";
 
 function App() {
   const cardData = [

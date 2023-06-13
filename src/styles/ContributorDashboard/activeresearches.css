@@ -7,7 +7,7 @@
   margin-bottom: 20px;
 }
 .card-container-active-researchers {
-  width: 300px;
+  width: 340px;
   overflow: hidden;
   box-shadow: 0px 0px 15px -5px;
   transition: 0.3s;
@@ -47,20 +47,19 @@
 }
 .card-content-active-researchers {
   padding: 1rem;
+  
 }
 .card-title-active-researchers {
   margin-bottom: 0.5rem;
 }
 .card-body-active-researchers {
   font-size: 15px;
-  height: 80px;
+  height: 50px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  -webkit-box-decoration-break: clone;
-  overflow-wrap: break-word;
 }
 .card-btn-active-researchers {
   display: flex;
@@ -68,6 +67,8 @@
 }
 .card-btn-active-researchers button {
   margin-right: 10px;
+  width: 220px;
+  height: 50px;
   padding: 0.2rem;
   background-color: blue;
   border: none;

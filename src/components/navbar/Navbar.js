@@ -8,14 +8,16 @@ import {
   faUser,
   faCoins,
   faVoteYea,
-  faHome,
+  faCircle,
   faChevronDown,
   faUserGraduate,
+  faCompassDrafting,
 } from "@fortawesome/free-solid-svg-icons";
 import ConnectButtonCustom from "../ConnectButtonCustom";
 
 function Navbar() {
   const [submenuOpen, setSubmenuOpen] = useState(false);
+  const [submenuOpenCf, setSubmenuOpenCf] = useState(false);
 
   const handleSubmenuToggle = () => {
     setSubmenuOpen(!submenuOpen);
@@ -23,6 +25,14 @@ function Navbar() {
 
   const handleSubmenuClose = () => {
     setSubmenuOpen(false);
+  };
+
+  const handleSubmenuToggleCf = () => {
+    setSubmenuOpenCf(!submenuOpenCf);
+  };
+
+  const handleSubmenuCloseCf = () => {
+    setSubmenuOpenCf(false);
   };
 
   return (
@@ -44,11 +54,11 @@ function Navbar() {
           onMouseEnter={handleSubmenuToggle}
           onMouseLeave={handleSubmenuClose}
         >
-          <NavLink activeClassName="active" to="/dao-member">
+          <NavLink to="/dao-member">
             <FontAwesomeIcon icon={faUser} className="icons" />
             DAO Member
-            <FontAwesomeIcon icon={faChevronDown} className="submenu-arrow" />
           </NavLink>
+          <FontAwesomeIcon icon={faChevronDown} className="submenu-arrow" />
           <ul className="submenu">
             <li>
               <NavLink activeClassName="active" to="/researcher">
@@ -63,24 +73,42 @@ function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName="active" to="/quadratic-voting">
-                <FontAwesomeIcon icon={faVoteYea} className="icons" />
+              <FontAwesomeIcon icon={faVoteYea} className="icons" />
+              <NavLink exact activeClassName="active" to="/quadratic-voting">
                 Quadratic Voting
               </NavLink>
             </li>
           </ul>
         </li>
 
-        <li>
-          <NavLink activeClassName="active" to="/crowd-funding">
-            <FontAwesomeIcon icon={faCoins} className="icons" />
-            Crowd Funding
-          </NavLink>
+        <li
+          className={`has-submenu ${submenuOpenCf ? "open" : ""}`}
+          onMouseEnter={handleSubmenuToggleCf}
+          onMouseLeave={handleSubmenuCloseCf}
+        >
+          <FontAwesomeIcon icon={faCoins} className="icons" />
+          CrowdFunding
+          <FontAwesomeIcon icon={faChevronDown} className="submenu-arrow" />
+          <ul className="submenu">
+            <li>
+              <NavLink activeClassName="active" to="/crowd-funding">
+                <FontAwesomeIcon icon={faUserGraduate} className="icons" />
+                For Dao
+              </NavLink>
+            </li>
+            <li>
+              <NavLink activeClassName="active" to="/crowd-funding-researcher">
+                <FontAwesomeIcon icon={faUser} className="icons" />
+                For Researcher
+              </NavLink>
+            </li>
+          </ul>
         </li>
       </ul>
 
-      <div style={{ marginLeft: "-270px" }}>
+      <div className="connect-button-container">
         <ConnectButtonCustom />
+        <FontAwesomeIcon icon={faUser} className="connectwalleticon" />
       </div>
     </nav>
   );

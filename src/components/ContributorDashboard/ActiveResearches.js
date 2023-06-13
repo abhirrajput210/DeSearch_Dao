@@ -68,7 +68,7 @@ function ActiveResearches() {
                 alt="img"
                 style={{
                   width: "100%",
-                  height: "auto",
+                  height: "210px",
                   objectFit: "cover",
                 }}
               />
@@ -87,7 +87,7 @@ function ActiveResearches() {
                   className="rounded-pill px-3"
                   onClick={() => handleRequestContribute(card)}
                 >
-                  Request for Contribute &gt;&gt;{" "}
+                  Request for Contribute 
                 </button>
               </div>
               <br />
