@@ -128,10 +128,13 @@ function ShowcaseScreen() {
               </div>
             </div>
             <div className='card-btn pb-3 rounded-pill'>
-              <Link to={`/details/${card.id}`} className='rounded-pill px-3'>
-                View More
-              </Link>
-            </div>
+  <button className='rounded-pill px-3'>
+    <Link to={`/details/${card.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+      View More
+    </Link>
+  </button>
+</div>
+
           </div>
         ))}
       </div>

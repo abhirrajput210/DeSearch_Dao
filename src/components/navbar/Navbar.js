@@ -3,11 +3,12 @@ import '../../styles/navbar/Navbar.css';
 import logo from '../../Assets/DesearchDaoLogo.png';
 import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChartLine, faUser, faCoins, faVoteYea, faHome, faChevronDown,faUserGraduate} from '@fortawesome/free-solid-svg-icons';
+import { faChartLine, faUser, faCoins, faVoteYea, faCircle, faChevronDown,faUserGraduate, faCompassDrafting} from '@fortawesome/free-solid-svg-icons';
 import ConnectButtonCustom from '../ConnectButtonCustom';
 
 function Navbar() {
   const [submenuOpen, setSubmenuOpen] = useState(false);
+  const [submenuOpenCf, setSubmenuOpenCf] = useState(false);
 
   const handleSubmenuToggle = () => {
     setSubmenuOpen(!submenuOpen);
@@ -17,6 +18,14 @@ function Navbar() {
     setSubmenuOpen(false);
   };
 
+  const handleSubmenuToggleCf = () => {
+    setSubmenuOpenCf(!submenuOpenCf);
+  };
+
+  const handleSubmenuCloseCf = () => {
+    setSubmenuOpenCf(false);
+  };
+
   return (
     <nav>
       <Link to="/">
@@ -24,12 +33,6 @@ function Navbar() {
       </Link>
 
       <ul className="navbar">
-        <li>
-          <FontAwesomeIcon icon={faHome} className="icons" />
-          <NavLink activeClassName="active" exact to="/">
-            Home
-          </NavLink>
-        </li>
 
         <li>
           <FontAwesomeIcon icon={faChartLine} className="icons" />
@@ -44,9 +47,7 @@ function Navbar() {
           onMouseLeave={handleSubmenuClose}
         >
           <FontAwesomeIcon icon={faUser} className="icons" />
-          <NavLink activeClassName="active" to="/dao-member">
             DAO Member<FontAwesomeIcon icon={faChevronDown} className="submenu-arrow" />
-          </NavLink>
           <ul className="submenu">
             <li>
               <NavLink activeClassName="active" to="/researcher">
@@ -55,31 +56,51 @@ function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName="active" to="/contributor-dashboard">
+              <NavLink activeClassName="active" to="/contributor-dashboard-page">
               <FontAwesomeIcon icon={faUser} className="icons" />
                 Contributor
               </NavLink>
             </li>
             <li>
           <FontAwesomeIcon icon={faVoteYea} className="icons" />
-          <NavLink activeClassName="active" to="/quadratic-voting">
+          <NavLink exact activeClassName="active" to="/quadratic-voting">
             Quadratic Voting
           </NavLink>
         </li>
           </ul>
         </li>
 
-        <li>
+        <li
+          className={`has-submenu ${submenuOpenCf ? 'open' : ''}`}
+          onMouseEnter={handleSubmenuToggleCf}
+          onMouseLeave={handleSubmenuCloseCf}
+        >
           <FontAwesomeIcon icon={faCoins} className="icons" />
-          <NavLink activeClassName="active" to="/crowd-funding">
-            Crowd Funding
-          </NavLink>
+            CrowdFunding<FontAwesomeIcon icon={faChevronDown} className="submenu-arrow" />
+          
+          <ul className="submenu">
+            <li>
+            <NavLink activeClassName="active" to="/crowd-funding">
+              <FontAwesomeIcon icon={faUserGraduate} className="icons" />
+                For Dao
+              </NavLink>
+            </li>
+            <li>
+              <NavLink activeClassName="active" to="/crowd-funding-researcher">
+              <FontAwesomeIcon icon={faUser} className="icons" />
+                For Researcher
+              </NavLink>
+            </li>
+            
+          </ul>
+
         </li>
 
       </ul>
 
-      <div style={{marginLeft:'-270px'}}>
+      <div className="connect-button-container">
               <ConnectButtonCustom />
+              <FontAwesomeIcon icon={faUser} className="connectwalleticon"/>
       </div>
     </nav>
   );

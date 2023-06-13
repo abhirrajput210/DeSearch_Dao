@@ -5,7 +5,7 @@ function Votingbtn() {
   const [count, setCount] = useState(1);
 
   const incrementCount = () => {
-    if (count < 99) {
+    if (count < 4) {
       setCount(count + 1);
     }
   };

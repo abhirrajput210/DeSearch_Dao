@@ -1,0 +1,50 @@
+.cfrPageBg {
+    background-color: white;
+    padding: 5% 10%;
+    margin-top: 100px;
+  }
+  
+  .cfrBg {
+    background-color: whitesmoke;
+    border-radius: 5rem;
+    padding: 3% 10%;
+  }
+  
+  .cfrHead {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .cfrSubHead {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .cfrInput {
+    background-color: #f3f3f3;
+  }
+  
+  .cfrLabel,
+  .cfrDetailText {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .cfrSubmit {
+    background-color: #000;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 20%;
+    padding: 0.5rem 0;
+    transition: ease-in-out 0.4s;
+  }
+  
+  .cfrSubmit:hover {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid black;
+  }
+  
+  

@@ -29,7 +29,6 @@ function MainResearcherDashboard() {
     <div>
       <div className="researcher-dashboard-main-class-title-container">
         <h2 className="researcher-dashboard-main-class-title">Researcher Dashboard</h2>
-        
       </div>
 
       <div className="researcher-dashboard-main-class">

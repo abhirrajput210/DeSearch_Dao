@@ -1,18 +1,59 @@
 import React, { useState } from 'react';
+import lighthouse from '@lighthouse-web3/sdk';
 import "../../styles/researcherDashboard/UploadResearch.css";
 
 function UploadResearch() {
   const [formData, setFormData] = useState({
     title: '',
     category: '',
-    cpimage: '',
+    cpimage: null,
     abstract: '',
     detaileddesc: '',
-    rwInput: '',
+    rwInput: null,
     fundsneeded: '',
     githublink: '',
     references: '',
+    paymentOption: 'free', // Default to 'free'
+    researchCost: '' // Empty string initially
   });
+
+  const progressCallback = (progressData) => {
+    let percentageDone =
+      100 - (progressData?.total / progressData?.uploaded)?.toFixed(2);
+    console.log(percentageDone);
+  };
+
+  const uploadImage = async (file) => {
+    const output = await lighthouse.upload(
+      file,
+      "ab880e13.35438030dd3344b3baf4bfc3cdde574f",
+      progressCallback
+    );
+    console.log("File Status:", output);
+
+    console.log(
+      "Visit at https://gateway.lighthouse.storage/ipfs/" + output.data.Hash
+    );
+
+    const cidUploadImage = "https://gateway.lighthouse.storage/ipfs/" + output.data.Hash;
+    return cidUploadImage;
+  };
+
+  const uploadFile = async (file) => {
+    const output = await lighthouse.upload(
+      file,
+      "ab880e13.35438030dd3344b3baf4bfc3cdde574f",
+      progressCallback
+    );
+    console.log("File Status:", output);
+
+    console.log(
+      "Visit at https://gateway.lighthouse.storage/ipfs/" + output.data.Hash
+    );
+
+    const cidUploadFile = "https://gateway.lighthouse.storage/ipfs/" + output.data.Hash;
+    return cidUploadFile;
+  };
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -30,13 +71,15 @@ function UploadResearch() {
     setFormData({
         title: '',
         category: '',
-        cpimage: '',
+        cpimage: null,
         abstract: '',
         detaileddesc: '',
-        rwInput: '',
+        rwInput: null,
         fundsneeded: '',
         githublink: '',
         references: '',
+        paymentOption: 'free',
+    researchCost: ''
       });
   };
 
@@ -89,8 +132,8 @@ function UploadResearch() {
                 type="file"
                 className="form-control researchInput"
                 id="cpimage"
-                value={formData.cpimage}
-                onChange={handleChange}
+                // value={formData.cpimage}
+                onChange={(e) => uploadImage(e.target.files)}
               />
             </div>
 
@@ -130,23 +173,57 @@ function UploadResearch() {
                 type="file"
                 className="form-control researchInput"
                 id="rwInput"
-                value={formData.rwInput}
-                onChange={handleChange}
+                // value={formData.rwInput}
+                onChange={(e) => uploadFile(e.target.files)}
               />
             </div>
 
             <div className="mb-3">
-              <label htmlFor="fundsneeded" className="form-label researchLabel">
-                Funds Needed:
-              </label>
-              <input
-                type="text"
-                className="form-control researchInput"
-                id="fundsneeded"
-                value={formData.fundsneeded}
-                onChange={handleChange}
-              />
-            </div>
+  <label htmlFor="paymentOption" className="form-label researchLabel">
+    Payment Option:
+  </label>
+  <div className="d-flex">
+    <div className="form-check mr-3">
+      <input
+        type="radio"
+        id="paymentOption"
+        value="free"
+        checked={formData.paymentOption === 'free'}
+        onChange={handleChange}
+        className="form-check-input"
+      />
+      <label htmlFor="free" className="form-check-label">Free</label>
+    </div>
+    <div className="form-check" style={{ marginLeft: '20px' }}>
+      <input
+        type="radio"
+        id="paymentOption"
+        value="paid"
+        checked={formData.paymentOption === 'paid'}
+        onChange={handleChange}
+        className="form-check-input"
+      />
+      <label htmlFor="paid" className="form-check-label">Paid</label>
+    </div>
+  </div>
+</div>
+
+
+
+{formData.paymentOption === 'paid' && (
+  <div className="mb-3">
+    <label htmlFor="researchCost" className="form-label researchLabel">
+      Research Cost:
+    </label>
+    <input
+      type="text"
+      className="form-control researchInput"
+      id="researchCost"
+      value={formData.researchCost}
+      onChange={handleChange}
+    />
+  </div>
+)}
 
             <div className="mb-3">
               <label htmlFor="githublink" className="form-label researchLabel">
@@ -179,7 +256,7 @@ function UploadResearch() {
               Draft
             </button>
             <div className="mx-2"></div>
-            <button type="submit" className="rounded-pill researchSubmit" onClick={handleSubmit}>
+            <button type="submit" className="rounded-pill researchSubmit">
               Publish
             </button>
           </div>

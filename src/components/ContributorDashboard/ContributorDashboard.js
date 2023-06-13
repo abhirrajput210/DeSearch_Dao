@@ -5,46 +5,53 @@ import ActiveResearches from "./ActiveResearches";
 // import Quadraticvoting from "../Voting/Quadraticvoting";
 
 function ContributorDashboard() {
-  const [activeComponent, setActiveComponent] = useState("activeResearches");
+  const [activeComponent, setActiveComponent] = useState('activeresearches');
 
-  const handleButtonClick = (component) => {
-    setActiveComponent(component);
+  const handleActiveResearchesClick = () => {
+    setActiveComponent('activeresearches');
   };
 
+  const handleRequestStatusClick = () => {
+    setActiveComponent('requeststatus');
+  };
+
+  const renderComponent = () => {
+    switch (activeComponent) {
+      case 'activeresearches':
+        return <ActiveResearches />;
+      case 'requeststatus':
+        return <RequestStatus />;
+      default:
+        return <activeresearches />;
+    }
+  };
   return (
+
     <div>
-      <div className="contributor-main-page">
-        <div className="contributor-main-page-heading">
-          Collaborative Workspace
-        </div>
-        <div className="contributor-main-page">
-          <div className="contributor-main-page-button-container">
-            <div className="contributor-active-request-button">
-              <button
-                className="contributor-active-request-btn"
-                id="contributor-page-btn"
-                onClick={() => handleButtonClick("activeResearches")}
-              >
-                Active Request
-              </button>
-            </div>
-            <div className="contributor-request-status-button">
-              <button
-                className="contributor-request-status-btn"
-                id="contributor-page-btn"
-                onClick={() => handleButtonClick("requestStatus")}
-              >
-                Request Status
-              </button>
-            </div>
-          </div>
-          <div className="show-contributor-component">
-            {activeComponent === "activeResearches" && <ActiveResearches />}
-            {activeComponent === "requestStatus" && <RequestStatus />}
-            {/* Render other components based on the activeComponent state */}
-          </div>
+      <div className="contributor-dashboard-main-class-title-container">
+        <h2 className="contributor-dashboard-main-class-title">Contributor Dashboard</h2>
+      </div>
+
+      <div className="contributor-dashboard-main-class">
+        <div className="contributor-dashboard-main-class-btn row">
+          <button
+            type="button"
+            className={`contributor-active-research-btn col-12 col-md-5 ${activeComponent === 'activeresearches' ? 'active' : ''}`}
+            onClick={handleActiveResearchesClick}
+          >
+            Active Researches
+          </button>
+          <button
+            type="button"
+            className={`contributor-request-status-btn col-12 col-md-5 ${activeComponent === 'requeststatus' ? 'active' : ''}`}
+            onClick={handleRequestStatusClick}
+          >
+            Request Status
+          </button>
         </div>
       </div>
+
+      <div>{renderComponent()}</div>
     </div>
   );
 }
