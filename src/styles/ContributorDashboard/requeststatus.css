@@ -38,7 +38,7 @@
 
 .card-display-request-status{
   box-shadow: rgba(143, 197, 120, 0.56) 0px 22px 70px 4px;
-  background-color: #BAF56E;
+  background-color:  #8758FF;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -69,5 +69,11 @@
 }
 
 .card-text-request-status{
-  background-color: aliceblue;
+  padding: 25px;
+  background-color: #BAF56E;
+}
+
+.btn-primary{
+  background-color: #8758FF;
+  color: aliceblue;
 }

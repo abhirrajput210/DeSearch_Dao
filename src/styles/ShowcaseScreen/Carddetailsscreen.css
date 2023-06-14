@@ -37,7 +37,14 @@
     color: aliceblue;
     font-weight: 700;
     border-color: aliceblue;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    box-shadow: rgba(212, 212, 222, 0.25) 0px 13px 27px -5px, rgba(240, 234, 234, 0.3) 0px 8px 16px -8px;
+}
+
+.card-details-screen-button-div button:hover{
+    background-color:  #211F23;
+    padding: 12px;
+    font-size: 22px;
+
 }
 
 .card-details-screen-button-div-i{

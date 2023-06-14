@@ -13,7 +13,7 @@ function Fundtodao() {
         <div className="fund-to-dao-ii">
           <label>Enter Fund Amount</label>
           <br />
-          <input className="input-pay"></input>
+          <input className="input-pay" type="number"></input>
         </div>
         <div className="fund-to-dao-iii">
           <button className="pay-btn">PAY</button>

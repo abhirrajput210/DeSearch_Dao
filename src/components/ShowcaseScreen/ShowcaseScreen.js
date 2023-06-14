@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, Routes, useParams } from "react-router-dom";
+import { Link, Route, Routes} from "react-router-dom";
 import CardDetailsScreen from "./CardDetailsScreen";
 import "../../styles/showcaseScreen/ShowcaseScreen.css";
 import abc from "../../Assets/sicentist using 1_1686046712622.png";
@@ -55,9 +55,10 @@ function ShowcaseScreen() {
           <div className="card-container-show-case-screen" key={card.id}>
             <div className="image-container-show-case-screen">
               <img
+                className="images-of-image-container"
                 src={card.img}
                 alt="img"
-                style={{ width: "100%", height: "380px", objectFit: "contain" }}
+                style={{ width: "100%", height: "200px", objectFit: "fill" }}
               />
             </div>
             <div className="card-content-show-case-screen">

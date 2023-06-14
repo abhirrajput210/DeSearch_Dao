@@ -1,13 +1,15 @@
 .main-show-case-screen{
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     border-radius: 50px;
-    background-color: #CCB8FF;
+    background-color:  #8758FF;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin:15px;
     margin-bottom: 20px;
+    height: 500px;
+    padding: 30px;
 }
 
 .title-container-show-case-screen {
@@ -20,24 +22,27 @@
   
   .title-show-case-screen {
     padding: 13px;
-    border-radius: 15px;
-    background-color: black;
-    color: white;
+    border-radius: 20px;
+    background-color: #BAF56E;
+    /* color: white; */
   }
 
 .card-container-show-case-screen{
+    font-size: 13px;
     background-color: white;
-    width: 350px;
+    width: 250px;
     height: auto;
     object-fit: cover;
     overflow: hidden;
     box-shadow: 0px 0px 15px -5px;
     transition: 0.3s;
-    margin:20px;
+    margin:10px;
     margin-top: 40px;
     animation: ease-in;
     border-radius: 2rem;
 }
+
+
 
 .card-container-show-case-screen:hover{
     transform: scale(1.1);
@@ -99,6 +104,8 @@ h3,p{
   
 
 .card-btn-show-case-screen button:hover{
-    background: rgba(27, 156, 252, 0.1);
+    /* background: rgba(27, 156, 252, 0.1); */
     transition: background 0.5s;
+    background-color: rgb(9, 147, 83);
+    color: aliceblue;
 }

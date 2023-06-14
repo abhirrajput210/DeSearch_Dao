@@ -10,7 +10,7 @@ import "../../styles/home/sponsor.css";
 function Sponsors() {
   return (
     <div className="sponsor-page">
-      <h1 className="sponsor-title">Powered By</h1>
+      <h2 className="sponsor-title">Powered By</h2>
       <div className="sponsor-images">
         {/* <div className="i-i"> */}
         <div className="images-sponsors">
