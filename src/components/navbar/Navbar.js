@@ -11,7 +11,7 @@ import {
   faChevronDown,
   faUserGraduate,
 } from "@fortawesome/free-solid-svg-icons";
-import ConnectButtonCustom from "../ConnectButtonCustom";
+import { ConnectWallet } from "@thirdweb-dev/react";
 
 function Navbar() {
   const [submenuOpen, setSubmenuOpen] = useState(false);
@@ -36,10 +36,11 @@ function Navbar() {
   return (
     <nav>
       <Link to="/">
-        <img src={logo} height="80px" width="180px" alt="logoImg" />
+        <img src={logo} height="80px" width="150px" alt="logoImg" />
       </Link>
 
       <ul className="navbar">
+
         <li>
           <NavLink activeClassName="active" to="/showcase">
             <FontAwesomeIcon icon={faChartLine} className="icons" />
@@ -103,12 +104,13 @@ function Navbar() {
             </li>
           </ul>
         </li>
+        <ConnectWallet theme="light" style={{height:"50px"}}/>
       </ul>
 
-      <div className="connect-button-container">
+      {/* <div className="connect-button-container">
         <ConnectButtonCustom />
         <FontAwesomeIcon icon={faUser} className="connectwalleticon" />
-      </div>
+      </div> */}
     </nav>
   );
 }

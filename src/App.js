@@ -12,7 +12,12 @@ import QuadraticVotingPage from "./pages/QuadraticVotingPage";
 import abc from "./Assets/sicentist using 1_1686046712622.png";
 import logo from "./Assets/Logo.png";
 import CrowdFundingPage from "./pages/CrowdFundingPage";
-import CrowdFundingResearcherPage from "./pages/CrowdFundingResearcherPage";
+import {
+  ThirdwebProvider,
+  metamaskWallet,
+  walletConnect,
+} from "@thirdweb-dev/react";
+import { Ethereum, Polygon, Mumbai } from "@thirdweb-dev/chains";
 
 function App() {
   const cardData = [
@@ -47,6 +52,11 @@ function App() {
   ];
   return (
     <>
+    <ThirdwebProvider
+      supportedWallets={[metamaskWallet(), walletConnect()]}
+      activeChain="polygon"
+supportedChains={[Mumbai, Ethereum, Polygon]}
+    >
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -67,6 +77,7 @@ function App() {
           <Route path="/crowd-funding" element={<CrowdFundingPage />} />
         </Routes>
       </BrowserRouter>
+      </ThirdwebProvider>
     </>
   );
 }

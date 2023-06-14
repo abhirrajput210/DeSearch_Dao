@@ -30,13 +30,6 @@ function ResearcherResearches() {
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
-    {
-      id: 4,
-      title: "Research 1",
-      img: logo,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
     // Add more research data as needed
   ];
 

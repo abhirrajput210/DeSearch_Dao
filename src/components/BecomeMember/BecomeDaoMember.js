@@ -1,6 +1,6 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState } from 'react'
 import { ethers } from 'ethers';
-import { tokenInstance, daoInstance } from '../contracts';
+import { tokenInstance } from '../contracts';
 import { useNavigate } from 'react-router-dom';
 import { useAccount } from 'wagmi';
 import "../../styles/becomeMember/BecomeDaoMember.css"
@@ -8,8 +8,6 @@ import "../../styles/becomeMember/BecomeDaoMember.css"
 function BecomeDaoMember() {
   const navigate = useNavigate();
   const [numOfTokens, setNumOfTokens] = useState("");
-  const [tknAmtResult, setTknAmtResult] = useState("");
-  const [tokenPrice, setTokenPrice] = useState("");
 
   const {address} = useAccount();
 
@@ -29,7 +27,6 @@ function BecomeDaoMember() {
           console.log(hexValue)
 
           const decimalValue = parseInt(hexValue, 16);
-          setTokenPrice(decimalValue);
           console.log("Decimal Value",decimalValue)
 
           const finalValue = decimalValue / Math.pow(10, 18);
@@ -45,49 +42,17 @@ function BecomeDaoMember() {
     }
   }
 
-  const getTokenPrice = async () => {
-    try {
-      const { ethereum } = window;
-      if (ethereum) {
-        const provider = new ethers.providers.Web3Provider(ethereum);
-
-        if (!provider) {
-          console.log("Metamask is not installed, please install!");
-        }
-        const conToken = await tokenInstance();
-        const tokenPrice1 = await conToken.tokenPrice();
-        console.log("TokenPrice :",tokenPrice1);
-        const hexValue = tokenPrice1._hex;
-        const decimalValue = parseInt(hexValue, 16);
-        console.log("Decimal Value",decimalValue);
-
-        // console.log(decimalValue / Math.pow(10, 18));
-        setTokenPrice(decimalValue);
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    setTknAmtResult(
-      // to convert value into ETH from wei
-      numOfTokens ? (tokenPrice * numOfTokens)  : "0"
-    );
-  }, [numOfTokens]);
-
-  useEffect(() => {
-    getTokenPrice();
-  }, []);
-
   return (
     <>
       <div className="container-fluid BDMPageBg">
         <div className="pb-4">
-          <div className="BDMPage-head pb-3 pb-sm-4 d-flex justify-content-center align-items-center">
-            <div className="become-member-head text-center">
-              BECOME A DAO MEMBER{" "}
-            </div>{" "}
+        <div className="text-center" style={{marginTop:"100px",paddingTop:"100px"}}>
+            <div className="d-flex justify-content-center align-items-center">
+              <p className="researchHead">Buy Tokens</p>
+            </div>
+            <p className="text-center researchSubHead ">
+              You Need To Buy Tokens For Becoming A Dao Member
+            </p>
           </div>
 
           <div className="d-lg-flex row pb-4 align-items-center BDMPage-form-content justify-content-around">
@@ -110,7 +75,7 @@ function BecomeDaoMember() {
                     />
                   </div>
                 </div>
-                <div className="form-group-BDMPage row mb-4">
+                {/* <div className="form-group-BDMPage row mb-4">
                   <div className="col-12 col-md-6 BDMPage-LabelTitle">
                     <label for="formGroupExampleInput2">Total Amount:</label>
                   </div>
@@ -128,7 +93,7 @@ function BecomeDaoMember() {
                       ""
                     )}
                   </div>
-                </div>
+                </div> */}
 
                 <div className="MemberBuyTokenBtn-class">
                   <div className="MemberBuyTokenBtn row">

@@ -14,7 +14,7 @@
   
   .BDMPage-form-content {
     height: fit-content;
-    padding-top: 3%;
+    padding-top: 3%
   }
 
   .BDMPage-box-bg {
@@ -33,7 +33,7 @@
     align-items: center;
     border: 1px solid #919191;
     border-radius: 1rem;
-    width: 100%;
+    width: 120%;
     padding: 0.8rem;
   }
   
@@ -79,5 +79,15 @@
     border-radius: 1rem;
     padding-left: 0.8rem; 
     background-color: white;
+  }
+  
+  .researchHead {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .researchSubHead {
+    font-size: 1rem;
+    font-weight: 600;
   }
   
