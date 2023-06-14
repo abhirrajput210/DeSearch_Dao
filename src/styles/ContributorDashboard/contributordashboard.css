@@ -16,7 +16,7 @@
   
   .contributor-active-research-btn,
   .contributor-request-status-btn {
-    background-color: #8758FF;
+    background-color: #BAF56E;
     border-radius: 100px;
     cursor: pointer;
     display: inline-block;
@@ -32,7 +32,8 @@
     touch-action: manipulation;
     width: 250px;
     height: 60px;
-    color: white;
+    /* color: white; */
+    font-weight: 800;
   }
   
   .contributor-active-research-btn:hover,
@@ -42,7 +43,8 @@
   
   .contributor-active-research-btn.active,
   .contributor-request-status-btn.active {
-    background-color: #6440d6;
+    background-color: #BAF56E;
+    font-weight: 800;
   }
   
   .contributor-dashboard-main-class-title-container {

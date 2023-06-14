@@ -1,14 +1,18 @@
-import React from 'react';
-import { getDefaultWallets, RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import '@rainbow-me/rainbowkit/styles.css';
-import { configureChains, createClient, WagmiConfig } from 'wagmi';
-import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
-import { alchemyProvider } from 'wagmi/providers/alchemy';
-import { publicProvider } from 'wagmi/providers/public';
+import React from "react";
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+  darkTheme,
+} from "@rainbow-me/rainbowkit";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "@rainbow-me/rainbowkit/styles.css";
+import { configureChains, createClient, WagmiConfig } from "wagmi";
+import { mainnet, polygon, optimism, arbitrum } from "wagmi/chains";
+import { alchemyProvider } from "wagmi/providers/alchemy";
+import { publicProvider } from "wagmi/providers/public";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 
 const BTTChain = {
@@ -34,7 +38,7 @@ const BTTChain = {
   testnet: true,
 };
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const { chains, provider } = configureChains(
   // [BTTChain],
@@ -43,29 +47,28 @@ const { chains, provider } = configureChains(
     jsonRpcProvider({
       rpc: (chain) => ({ http: "https://pre-rpc.bittorrentchain.io/" }),
     }),
-    alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
+    alchemyProvider({ apiKey: "sBJaf_DeCXnYD5KRiK36IeGjdc0hQCEs" }),
     // publicProvider(),
-
   ]
 );
 
 const { connectors } = getDefaultWallets({
-  appName: 'My RainbowKit App',
-  chains
+  appName: "My RainbowKit App",
+  chains,
 });
 
 const wagmiClient = createClient({
   autoConnect: true,
   connectors,
-  provider
-})
+  provider,
+});
 
 root.render(
   <React.StrictMode>
-     <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains} theme={darkTheme()} >
-    <App />
-    </RainbowKitProvider>
+    <WagmiConfig client={wagmiClient}>
+      <RainbowKitProvider chains={chains} theme={darkTheme()}>
+        <App />
+      </RainbowKitProvider>
     </WagmiConfig>
   </React.StrictMode>
 );

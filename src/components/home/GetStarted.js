@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import "../../styles/home/getstarted.css";
 import image from "../../Assets/sicentist.png";
 import layer from "../../Assets/layer.png";
+
+import { useAccount } from "wagmi";
 function GetStarted() {
+  const { address } = useAccount();
+  const walletAddress = address;
   return (
     <div className="main-getstart">
       <div className="get-start">

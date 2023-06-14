@@ -30,6 +30,13 @@ function ResearcherResearches() {
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
+    {
+      id: 4,
+      title: "Research 1",
+      img: logo,
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    },
     // Add more research data as needed
   ];
 
@@ -58,7 +65,7 @@ function ResearcherResearches() {
               <img
                 src={research.img}
                 alt="img"
-                style={{ width: "380px", height: "200px", objectFit: "cover" }}
+                style={{ width: "100%", height: "200px", objectFit: "fill" }}
               />
             </div>
 
