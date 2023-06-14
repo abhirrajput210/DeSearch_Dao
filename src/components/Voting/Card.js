@@ -1,5 +1,4 @@
 import React from "react";
-// import "../../styles/ShowcaseScreen/ShowcaseScreen.css";
 import "../../styles/voting/card.css";
 import abc from "../../Assets/sicentist using 1_1686046712622.png";
 import logo from "../../Assets/Logo.png";
@@ -26,14 +25,7 @@ function Card() {
       img: logo,
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industryLorem Ipsum is simply dummy text of the printing and typesetting industry..",
-    },
-    // {
-    //   id: 4,
-    //   title: "Card Title 4",
-    //   img: abc,
-    //   description:
-    //     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    // },
+    }
   ];
   return (
     <div>
@@ -45,6 +37,7 @@ function Card() {
           <div className="card-container-quadratic-voting-page" key={card.id}>
             <div className="image-container-quadratic-voting-page">
               <img
+                // className="image-container-of-card"
                 src={card.img}
                 alt="img"
                 style={{

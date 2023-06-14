@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/crowdFunding/crowdfundpage.css";
-import FundToDao from "./FundToDao" // Import the Fundtodao component
+import FundToDao from "./FundToDao"; // Import the Fundtodao component
 
 function Crowdfunding() {
   const [showFundtodao, setShowFundtodao] = useState(false); // State to control whether to show the Fundtodao component

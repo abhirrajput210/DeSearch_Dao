@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import lighthouse from '@lighthouse-web3/sdk';
+import React, { useState } from "react";
+import lighthouse from "@lighthouse-web3/sdk";
 import "../../styles/researcherDashboard/UploadResearch.css";
 
 function UploadResearch() {
   const [formData, setFormData] = useState({
-    title: '',
-    category: '',
+    title: "",
+    category: "",
     cpimage: null,
-    abstract: '',
-    detaileddesc: '',
+    abstract: "",
+    detaileddesc: "",
     rwInput: null,
-    fundsneeded: '',
-    githublink: '',
-    references: '',
-    paymentOption: 'free', // Default to 'free'
-    researchCost: '' // Empty string initially
+    fundsneeded: "",
+    githublink: "",
+    references: "",
+    paymentOption: "free", // Default to 'free'
+    researchCost: "", // Empty string initially
   });
 
   const progressCallback = (progressData) => {
@@ -35,7 +35,8 @@ function UploadResearch() {
       "Visit at https://gateway.lighthouse.storage/ipfs/" + output.data.Hash
     );
 
-    const cidUploadImage = "https://gateway.lighthouse.storage/ipfs/" + output.data.Hash;
+    const cidUploadImage =
+      "https://gateway.lighthouse.storage/ipfs/" + output.data.Hash;
     return cidUploadImage;
   };
 
@@ -51,7 +52,8 @@ function UploadResearch() {
       "Visit at https://gateway.lighthouse.storage/ipfs/" + output.data.Hash
     );
 
-    const cidUploadFile = "https://gateway.lighthouse.storage/ipfs/" + output.data.Hash;
+    const cidUploadFile =
+      "https://gateway.lighthouse.storage/ipfs/" + output.data.Hash;
     return cidUploadFile;
   };
 
@@ -69,18 +71,18 @@ function UploadResearch() {
     // Perform any additional actions here, such as sending the data to a server
 
     setFormData({
-        title: '',
-        category: '',
-        cpimage: null,
-        abstract: '',
-        detaileddesc: '',
-        rwInput: null,
-        fundsneeded: '',
-        githublink: '',
-        references: '',
-        paymentOption: 'free',
-    researchCost: ''
-      });
+      title: "",
+      category: "",
+      cpimage: null,
+      abstract: "",
+      detaileddesc: "",
+      rwInput: null,
+      fundsneeded: "",
+      githublink: "",
+      references: "",
+      paymentOption: "free",
+      researchCost: "",
+    });
   };
 
   return (
@@ -91,10 +93,11 @@ function UploadResearch() {
             <div className="d-flex justify-content-center align-items-center">
               <p className="researchHead">Upload Research Work</p>
             </div>
-            <p className="text-center researchSubHead ">You must be a DAO Member to upload research work</p>
+            <p className="text-center researchSubHead ">
+              You must be a DAO Member to upload research work
+            </p>
           </div>
           <form onSubmit={handleSubmit} encType="multipart/form-data">
-
             <div className="mb-3">
               <label htmlFor="title" className="form-label researchLabel">
                 Title:
@@ -153,7 +156,10 @@ function UploadResearch() {
 
             <div className="mb-3">
               <label htmlFor="detaileddesc" className="form-label">
-                <span className="researchDetailText"> Detailed Description: </span>
+                <span className="researchDetailText">
+                  {" "}
+                  Detailed Description:{" "}
+                </span>
               </label>
               <textarea
                 className="form-control researchInput"
@@ -179,51 +185,59 @@ function UploadResearch() {
             </div>
 
             <div className="mb-3">
-  <label htmlFor="paymentOption" className="form-label researchLabel">
-    Payment Option:
-  </label>
-  <div className="d-flex">
-    <div className="form-check mr-3">
-      <input
-        type="radio"
-        id="paymentOption"
-        value="free"
-        checked={formData.paymentOption === 'free'}
-        onChange={handleChange}
-        className="form-check-input"
-      />
-      <label htmlFor="free" className="form-check-label">Free</label>
-    </div>
-    <div className="form-check" style={{ marginLeft: '20px' }}>
-      <input
-        type="radio"
-        id="paymentOption"
-        value="paid"
-        checked={formData.paymentOption === 'paid'}
-        onChange={handleChange}
-        className="form-check-input"
-      />
-      <label htmlFor="paid" className="form-check-label">Paid</label>
-    </div>
-  </div>
-</div>
+              <label
+                htmlFor="paymentOption"
+                className="form-label researchLabel"
+              >
+                Payment Option:
+              </label>
+              <div className="d-flex">
+                <div className="form-check mr-3">
+                  <input
+                    type="radio"
+                    id="paymentOption"
+                    value="free"
+                    checked={formData.paymentOption === "free"}
+                    onChange={handleChange}
+                    className="form-check-input"
+                  />
+                  <label htmlFor="free" className="form-check-label">
+                    Free
+                  </label>
+                </div>
+                <div className="form-check" style={{ marginLeft: "20px" }}>
+                  <input
+                    type="radio"
+                    id="paymentOption"
+                    value="paid"
+                    checked={formData.paymentOption === "paid"}
+                    onChange={handleChange}
+                    className="form-check-input"
+                  />
+                  <label htmlFor="paid" className="form-check-label">
+                    Paid
+                  </label>
+                </div>
+              </div>
+            </div>
 
-
-
-{formData.paymentOption === 'paid' && (
-  <div className="mb-3">
-    <label htmlFor="researchCost" className="form-label researchLabel">
-      Research Cost:
-    </label>
-    <input
-      type="text"
-      className="form-control researchInput"
-      id="researchCost"
-      value={formData.researchCost}
-      onChange={handleChange}
-    />
-  </div>
-)}
+            {formData.paymentOption === "paid" && (
+              <div className="mb-3">
+                <label
+                  htmlFor="researchCost"
+                  className="form-label researchLabel"
+                >
+                  Research Cost:
+                </label>
+                <input
+                  type="text"
+                  className="form-control researchInput"
+                  id="researchCost"
+                  value={formData.researchCost}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
 
             <div className="mb-3">
               <label htmlFor="githublink" className="form-label researchLabel">
@@ -252,14 +266,17 @@ function UploadResearch() {
             </div>
 
             <div className="d-flex justify-content-center mt-3">
-            <button type="submit" className="rounded-pill researchSubmit mr-3">
-              Draft
-            </button>
-            <div className="mx-2"></div>
-            <button type="submit" className="rounded-pill researchSubmit">
-              Publish
-            </button>
-          </div>
+              <button
+                type="submit"
+                className="rounded-pill researchSubmit mr-3"
+              >
+                Draft
+              </button>
+              <div className="mx-2"></div>
+              <button type="submit" className="rounded-pill researchSubmit">
+                Publish
+              </button>
+            </div>
           </form>
         </div>
       </div>

@@ -1,7 +1,7 @@
 .card-body-request-status {
   font-size: 20px;
   height: 300px;
-  padding: 30px;
+  /* padding: 30px; */
   border-radius: 2rem;
   width: 350px;
   display: inline-block;
@@ -37,19 +37,24 @@
 }
 
 .card-display-request-status{
+  box-shadow: rgba(143, 197, 120, 0.56) 0px 22px 70px 4px;
+  background-color: #BAF56E;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
+  /* align-items: center; */
+  padding: 70px;
   margin:15px;
   margin-bottom: 20px;
   border-radius: 2rem;
+  /* height: max-content; */
+  height: 600px;
 }
 
 .card-text-request-status{
   width: 350px;
   font-size: 15px;
-  padding: 25px;
+  padding: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -59,6 +64,10 @@
   width: 250px;
   border: 0.2px solid black;
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-text-request-status{
+  background-color: aliceblue;
 }

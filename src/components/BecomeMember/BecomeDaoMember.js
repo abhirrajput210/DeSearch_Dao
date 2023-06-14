@@ -1,7 +1,8 @@
 import React, { useState,useEffect } from 'react'
 import { ethers } from 'ethers';
-import { tokenInstance } from '../contracts';
+import { tokenInstance, daoInstance } from '../contracts';
 import { useNavigate } from 'react-router-dom';
+import { useAccount } from 'wagmi';
 import "../../styles/becomeMember/BecomeDaoMember.css"
 
 function BecomeDaoMember() {
@@ -9,6 +10,8 @@ function BecomeDaoMember() {
   const [numOfTokens, setNumOfTokens] = useState("");
   const [tknAmtResult, setTknAmtResult] = useState("");
   const [tokenPrice, setTokenPrice] = useState("");
+
+  const {address} = useAccount();
 
   const tokenFunc = async () => {
     try{
@@ -30,8 +33,12 @@ function BecomeDaoMember() {
           console.log("Decimal Value",decimalValue)
 
           const finalValue = decimalValue / Math.pow(10, 18);
+          console.log("Final Value",decimalValue / Math.pow(10, 18));
+          console.log("Connected Address",address);
 
-          console.log("Final Value",decimalValue / Math.pow(10, 18))
+          const buyToken = conToken.tokenTransfer("0x969b78b356570B301e0200F98699Edc752a1200a", numOfTokens);
+
+          console.log("buyToken",buyToken);
         }
     }catch (error){
       console.log(error);
@@ -109,7 +116,6 @@ function BecomeDaoMember() {
                   </div>
                   
                   <div className="col-12 col-md-6 ">
-                    {/* <p className='TknAmtResult-class' >{`$${tknAmtResult}`}</p> */}
                     {tknAmtResult ? (
                       <input
                         type="text"
@@ -131,7 +137,7 @@ function BecomeDaoMember() {
                       className="MemberBuyTokenBtn col-12 col-md-10"
                       onClick={tokenFunc}
                     >
-                        Buy Token
+                      Buy Token
                     </button>
                   </div>
                 </div>
@@ -141,7 +147,7 @@ function BecomeDaoMember() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default BecomeDaoMember
+export default BecomeDaoMember;

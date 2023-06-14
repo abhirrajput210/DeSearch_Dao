@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../styles/home/GetStarted.css";
 import image from "../../Assets/sicentist.png";
 
@@ -18,7 +19,9 @@ function GetStarted() {
               </p>
             </div>
             <div className="button-start">
-              <button className="btn-start">Get Started</button>
+              <Link to="/showcase">
+                <button className="btn-start">Get Started</button>
+              </Link>
             </div>
           </div>
         </div>
@@ -29,5 +32,4 @@ function GetStarted() {
     </div>
   );
 }
-
 export default GetStarted;

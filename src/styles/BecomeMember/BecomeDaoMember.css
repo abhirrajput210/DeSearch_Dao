@@ -18,7 +18,7 @@
   }
 
   .BDMPage-box-bg {
-    background-color: aliceblue;
+    background-color:  #8758FF;
     border-radius: 3rem;
     width: fit-content;
     padding: 2rem !important;
@@ -78,5 +78,6 @@
     border: 1px solid #000;
     border-radius: 1rem;
     padding-left: 0.8rem; 
+    background-color: white;
   }
   
