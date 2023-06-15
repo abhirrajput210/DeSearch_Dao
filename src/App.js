@@ -12,6 +12,7 @@ import QuadraticVotingPage from "./pages/QuadraticVotingPage";
 import abc from "./Assets/sicentist using 1_1686046712622.png";
 import logo from "./Assets/Logo.png";
 import CrowdFundingPage from "./pages/CrowdFundingPage";
+import BuyTokensPage from "./pages/BuyTokensPage";
 import {
   ThirdwebProvider,
   metamaskWallet,
@@ -75,6 +76,7 @@ supportedChains={[Mumbai, Ethereum, Polygon]}
           />
           <Route path="/quadratic-voting" element={<QuadraticVotingPage />} />
           <Route path="/crowd-funding" element={<CrowdFundingPage />} />
+          <Route path="/buy-tokens" element={<BuyTokensPage />} />
         </Routes>
       </BrowserRouter>
       </ThirdwebProvider>

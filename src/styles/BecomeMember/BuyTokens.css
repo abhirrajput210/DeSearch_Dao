@@ -1,0 +1,80 @@
+.BTPageBg {
+    background-color: whitesmoke;
+    height: 100vh;
+  }
+  
+  .BTPage-form-content {
+    height: fit-content;
+    padding-top: 3%
+  }
+
+  .BTPage-box-bg {
+    background-color:  #8758FF;
+    border-radius: 3rem;
+    width: fit-content;
+    padding: 2rem !important;
+    font-size: 1.1rem;
+    font-weight: 550;
+    box-shadow: -2px 3px 27px -4px rgba(0, 0, 0, 0.44);
+  }
+  
+  .BTTokenAmtInput-class {
+    height: calc(2.25rem + 0.5rem);
+    display: flex;
+    align-items: center;
+    border: 1px solid #919191;
+    border-radius: 1rem;
+    width: 120%;
+    padding: 0.8rem;
+  }
+  
+  .form-group-BTPage {
+    margin: auto;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    align-items: center;
+    width: 100%;
+  }
+   
+  .BuyTokenBtn-class {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .BuyTokenBtn {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .BuyTokenBtn {
+    background-color: #000;
+    border-radius: 100px;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    width: 250px;
+    color: #fff;
+    /* width: fit-content; */
+  }
+  
+  .form-control-plaintext{
+    border: 1px solid #000;
+    border-radius: 1rem;
+    padding-left: 0.8rem; 
+    background-color: white;
+  }
+  
+  .BuyTokenHead {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .BuyTokenSubHead {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  

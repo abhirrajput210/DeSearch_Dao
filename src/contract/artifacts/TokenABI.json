@@ -98,6 +98,19 @@
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "tokensToBuy",
+				"type": "uint256"
+			}
+		],
+		"name": "buyTokens",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "spender",
 				"type": "address"
@@ -191,11 +204,11 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "newTokenPrice",
+				"name": "amount",
 				"type": "uint256"
 			}
 		],
-		"name": "setTokenPrice",
+		"name": "sellTokens",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -203,17 +216,12 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
 				"internalType": "uint256",
-				"name": "amount",
+				"name": "newTokenPrice",
 				"type": "uint256"
 			}
 		],
-		"name": "tokenTransfer",
+		"name": "setTokenPrice",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -305,6 +313,19 @@
 			}
 		],
 		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawFunds",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"

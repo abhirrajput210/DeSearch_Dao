@@ -2,63 +2,6 @@
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "addMember",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_researcher",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "title",
-				"type": "string"
-			}
-		],
-		"name": "createResearchProject",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "fundDAO",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "projectId",
-				"type": "uint256"
-			}
-		],
-		"name": "fundToWinner",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "address",
 				"name": "tokenAddress",
 				"type": "address"
@@ -66,6 +9,63 @@
 		],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "projectId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "fundAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "FundDistributed",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "member",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "tokenAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "MemberAdded",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "member",
+				"type": "address"
+			}
+		],
+		"name": "MemberRemoved",
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -87,50 +87,48 @@
 		"type": "event"
 	},
 	{
+		"anonymous": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "memberAddress",
-				"type": "address"
-			}
-		],
-		"name": "removeMember",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "renounceOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "transferOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
+				"indexed": true,
 				"internalType": "uint256",
 				"name": "projectId",
 				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "researcher",
+				"type": "address"
 			}
 		],
-		"name": "voteForProject",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
+		"name": "ResearchProjectCreated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "projectId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "voter",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "voteCount",
+				"type": "uint256"
+			}
+		],
+		"name": "VoteCast",
+		"type": "event"
 	},
 	{
 		"inputs": [
@@ -140,8 +138,72 @@
 				"type": "uint256"
 			}
 		],
-		"name": "withdrawFund",
+		"name": "addMember",
 		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "researcher",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "title",
+				"type": "string"
+			},
+			{
+				"internalType": "enum DataDAO.ProjectCategory",
+				"name": "category",
+				"type": "uint8"
+			},
+			{
+				"internalType": "string",
+				"name": "coverImage",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_abstract",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "description",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "researchWorkFile",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "githubLink",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "references",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "duration",
+				"type": "uint256"
+			}
+		],
+		"name": "createResearchProject",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
@@ -156,6 +218,26 @@
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "fundDAO",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "projectId",
+				"type": "uint256"
+			}
+		],
+		"name": "fundToWinner",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -230,6 +312,26 @@
 	{
 		"inputs": [
 			{
+				"internalType": "address",
+				"name": "memberAddress",
+				"type": "address"
+			}
+		],
+		"name": "removeMember",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
@@ -248,8 +350,48 @@
 				"type": "string"
 			},
 			{
+				"internalType": "enum DataDAO.ProjectCategory",
+				"name": "category",
+				"type": "uint8"
+			},
+			{
+				"internalType": "string",
+				"name": "coverImage",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_abstract",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "description",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "researchWorkFile",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "githubLink",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "references",
+				"type": "string"
+			},
+			{
 				"internalType": "uint256",
 				"name": "totalVotes",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "deadline",
 				"type": "uint256"
 			}
 		],
@@ -261,12 +403,56 @@
 		"name": "tokenContract",
 		"outputs": [
 			{
-				"internalType": "contract DeSearch",
+				"internalType": "contract IERC20",
 				"name": "",
 				"type": "address"
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "projectId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "voteCount",
+				"type": "uint256"
+			}
+		],
+		"name": "voteForProject",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawFund",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]
