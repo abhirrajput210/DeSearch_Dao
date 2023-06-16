@@ -3,24 +3,18 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "DAOAddress",
+				"name": "author",
 				"type": "address"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"inputs": [],
-		"name": "DAOContract",
-		"outputs": [
+			},
 			{
-				"internalType": "contract DataDAO",
-				"name": "",
-				"type": "address"
+				"internalType": "uint256",
+				"name": "category",
+				"type": "uint256"
 			}
 		],
-		"stateMutability": "view",
+		"name": "addContributorRequest",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -98,6 +92,149 @@
 		"name": "donateToCampaign",
 		"outputs": [],
 		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "contributorAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "enum Researcher.RequestStatus",
+				"name": "status",
+				"type": "uint8"
+			}
+		],
+		"name": "respondToContributorRequest",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "title",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "category",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "coverImage",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_abstract",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "description",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "researchWorkFile",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "github_link",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "references",
+				"type": "string"
+			}
+		],
+		"name": "submitFreePaper",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "title",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "category",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "coverImage",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_abstract",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "description",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "researchWorkFile",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "paid",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "github_link",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "references",
+				"type": "string"
+			}
+		],
+		"name": "submitPaidPaper",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "DAOAddress",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "DAOContract",
+		"outputs": [
+			{
+				"internalType": "contract DataDAO",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -201,6 +338,30 @@
 				"internalType": "uint256[]",
 				"name": "",
 				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "author",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "contributorAddress",
+				"type": "address"
+			}
+		],
+		"name": "getContributorRequestStatus",
+		"outputs": [
+			{
+				"internalType": "enum Researcher.RequestStatus",
+				"name": "",
+				"type": "uint8"
 			}
 		],
 		"stateMutability": "view",
@@ -353,107 +514,6 @@
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "title",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "category",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "coverImage",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_abstract",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "description",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "researchWorkFile",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "github_link",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "references",
-				"type": "string"
-			}
-		],
-		"name": "submitFreePaper",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "title",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "category",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "coverImage",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_abstract",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "description",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "researchWorkFile",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "paid",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "github_link",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "references",
-				"type": "string"
-			}
-		],
-		"name": "submitPaidPaper",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]

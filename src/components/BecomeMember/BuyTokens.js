@@ -3,11 +3,12 @@ import { ethers } from 'ethers';
 import { tokenInstance } from '../contracts';
 import "../../styles/becomeMember/BuyTokens.css"
 import {useAddress} from "@thirdweb-dev/react";
-
+import { Link, useNavigate } from 'react-router-dom';
 
 function BuyTokens() {
     const [numOfTokens, setNumOfTokens] = useState("0");
     const address = useAddress();
+    const navigate = useNavigate();
     
     const buyTokens = async () => {
       try {
@@ -22,12 +23,16 @@ function BuyTokens() {
           const conToken = await tokenInstance();
           const tokenPrice = await conToken.tokenPrice();
           const ethAmount = ethers.utils.parseEther(numOfTokens).mul(tokenPrice);
+          const finalAmount = ethAmount/Math.pow(10,18);
+
+          console.log("Eth Amount",ethAmount);
   
           const transaction = await conToken.buyTokens(numOfTokens, {
-            value: ethAmount,
+            value: finalAmount,
           });
           await transaction.wait();
           console.log("Tokens purchased successfully!");
+          navigate('/dao-member');
         }
       } catch (error) {
         console.log(error);

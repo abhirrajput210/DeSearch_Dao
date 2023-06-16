@@ -1,21 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import lighthouse from "@lighthouse-web3/sdk";
 import "../../styles/researcherDashboard/UploadResearch.css";
+import { researcherInstance } from "../contracts";
+import { ethers } from 'ethers';
+import {useAddress} from "@thirdweb-dev/react";
 
 function UploadResearch() {
+  const address = useAddress();
   const [formData, setFormData] = useState({
-    title: "",
-    category: "",
+    title: null,
+    category: null,
     cpimage: null,
-    abstract: "",
-    detaileddesc: "",
+    abstract: null,
+    detaileddesc: null,
     rwInput: null,
-    fundsneeded: "",
-    githublink: "",
-    references: "",
+    githublink: null,
+    references: null,
     paymentOption: "free", // Default to 'free'
-    researchCost: "", // Empty string initially
+    researchCost: null, // Empty string initially
   });
+
+  useEffect(() => {
+    console.log(formData);
+  }, [formData]);
 
   const progressCallback = (progressData) => {
     let percentageDone =
@@ -23,46 +30,38 @@ function UploadResearch() {
     console.log(percentageDone);
   };
 
-  const uploadImage = async (file) => {
-    const output = await lighthouse.upload(
-      file,
-      "ab880e13.35438030dd3344b3baf4bfc3cdde574f",
-      progressCallback
-    );
-    console.log("File Status:", output);
+  const uploadImage = async () => {
+    try {
+      console.log("in upload image function");
+      const file = formData.cpimage; // Access the file from the array
+      const output = await lighthouse.upload(
+        file,
+        "ab880e13.35438030dd3344b3baf4bfc3cdde574f",
+        progressCallback
+      );
+      console.log("File Status:", output);
 
-    console.log(
-      "Visit at https://gateway.lighthouse.storage/ipfs/" + output.data.Hash
-    );
-
-    const cidUploadImage =
-      "https://gateway.lighthouse.storage/ipfs/" + output.data.Hash;
-    return cidUploadImage;
+      return output;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const uploadFile = async (file) => {
-    const output = await lighthouse.upload(
-      file,
-      "ab880e13.35438030dd3344b3baf4bfc3cdde574f",
-      progressCallback
-    );
-    console.log("File Status:", output);
+  const uploadFile = async () => {
+    try {
+      console.log("in upload image function");
+      const file = formData.rwInput; // Access the file from the array
+      const output = await lighthouse.upload(
+        file,
+        "ab880e13.35438030dd3344b3baf4bfc3cdde574f",
+        progressCallback
+      );
+      console.log("File Status:", output);
 
-    console.log(
-      "Visit at https://gateway.lighthouse.storage/ipfs/" + output.data.Hash
-    );
-
-    const cidUploadFile =
-      "https://gateway.lighthouse.storage/ipfs/" + output.data.Hash;
-    return cidUploadFile;
-  };
-
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [id]: value,
-    }));
+      return output;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleSubmit = (e) => {
@@ -70,20 +69,82 @@ function UploadResearch() {
     console.log("Form Data:", formData);
     // Perform any additional actions here, such as sending the data to a server
 
-    setFormData({
-      title: "",
-      category: "",
-      cpimage: null,
-      abstract: "",
-      detaileddesc: "",
-      rwInput: null,
-      fundsneeded: "",
-      githublink: "",
-      references: "",
-      paymentOption: "free",
-      researchCost: "",
-    });
+    // setFormData({
+    //   title: "",
+    //   category: "",
+    //   cpimage: null,
+    //   abstract: "",
+    //   detaileddesc: "",  
+    //   rwInput: null,
+    //   fundsneeded: "",
+    //   githublink: "",
+    //   references: "",
+    //   paymentOption: "free",
+    //   researchCost: "",
+    // });
   };
+
+  const uploadResearchFunc = async (e) => {
+    try {
+      console.log("Form Data:", formData);
+      const researchCost = Number(formData.researchCost);
+      const outputCi = await uploadImage();
+      const ci = outputCi.data.Hash;
+
+      const outputRf = await uploadFile();
+      const rf = outputRf.data.Hash;
+
+      const { ethereum } = window;
+      if (ethereum) {
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        if (!provider) {
+          console.log("Metamask is not installed, please install!");
+        }
+        const researchCost = ethers.BigNumber.from(formData.researchCost);
+        const researcherCon = await researcherInstance();
+
+        // Call the appropriate smart contract function based on payment option
+        if (formData.paymentOption === "free") {
+       const tx = await researcherCon.submitFreePaper(
+        formData.title,
+        formData.category,
+        ci,
+        formData.abstract,
+        formData.detaileddesc,
+        rf,
+        formData.githublink,
+        formData.references,
+       );
+
+       console.log(tx);
+        await tx.wait();
+        console.log(researcherCon);
+      }else if (formData.paymentOption === "paid") {
+        const tx = await researcherCon.submitPaidPaper(
+          formData.title,
+          formData.category,
+          ci,
+          formData.abstract,
+          formData.detaileddesc,
+          rf,
+          researchCost,
+          formData.githublink,
+          formData.references,
+          
+        );
+
+        console.log(tx);
+        await tx.wait();
+        console.log(researcherCon);
+      }
+    }
+  }
+    catch (error) {
+      console.log(error);
+    }
+  };
+
 
   return (
     <>
@@ -107,7 +168,9 @@ function UploadResearch() {
                 className="form-control researchInput"
                 id="title"
                 value={formData.title}
-                onChange={handleChange}
+                onChange={(e) => {
+                  setFormData({ ...formData, title: e.target.value });
+                }}
               />
             </div>
 
@@ -119,11 +182,13 @@ function UploadResearch() {
                 className="form-select researchInput"
                 id="category"
                 value={formData.category}
-                onChange={handleChange}
+                onChange={(e) => {
+                  setFormData({ ...formData, category: e.target.value });
+                }}
               >
-                <option value="">Select category</option>
-                <option value="ABC">ABC</option>
-                <option value="DEF">DEF</option>
+                <option value="0">Select category</option>
+                <option value="1">ABC</option>
+                <option value="2">DEF</option>
               </select>
             </div>
 
@@ -136,7 +201,9 @@ function UploadResearch() {
                 className="form-control researchInput"
                 id="cpimage"
                 // value={formData.cpimage}
-                onChange={(e) => uploadImage(e.target.files)}
+                onChange={(e) => {
+                  setFormData({ ...formData, cpimage: e.target.value });
+                }}
               />
             </div>
 
@@ -150,7 +217,9 @@ function UploadResearch() {
                 rows="2"
                 id="abstract"
                 value={formData.abstract}
-                onChange={handleChange}
+                onChange={(e) => {
+                  setFormData({ ...formData, abstract: e.target.value });
+                }}
               />
             </div>
 
@@ -167,7 +236,9 @@ function UploadResearch() {
                 id="detaileddesc"
                 rows="3"
                 value={formData.detaileddesc}
-                onChange={handleChange}
+                onChange={(e) => {
+                  setFormData({ ...formData, detaileddesc: e.target.value });
+                }}
               ></textarea>
             </div>
 
@@ -179,8 +250,9 @@ function UploadResearch() {
                 type="file"
                 className="form-control researchInput"
                 id="rwInput"
-                // value={formData.rwInput}
-                onChange={(e) => uploadFile(e.target.files)}
+                onChange={(e) => {
+                  setFormData({ ...formData, rwInput: e.target.value });
+                }}
               />
             </div>
 
@@ -198,7 +270,9 @@ function UploadResearch() {
                     id="paymentOption"
                     value="free"
                     checked={formData.paymentOption === "free"}
-                    onChange={handleChange}
+                    onChange={(e) => {
+                      setFormData({ ...formData, paymentOption: e.target.value });
+                    }}
                     className="form-check-input"
                   />
                   <label htmlFor="free" className="form-check-label">
@@ -211,7 +285,9 @@ function UploadResearch() {
                     id="paymentOption"
                     value="paid"
                     checked={formData.paymentOption === "paid"}
-                    onChange={handleChange}
+                    onChange={(e) => {
+                      setFormData({ ...formData, paymentOption: e.target.value });
+                    }}
                     className="form-check-input"
                   />
                   <label htmlFor="paid" className="form-check-label">
@@ -234,7 +310,9 @@ function UploadResearch() {
                   className="form-control researchInput"
                   id="researchCost"
                   value={formData.researchCost}
-                  onChange={handleChange}
+                  onChange={(e) => {
+                    setFormData({ ...formData, researchCost: e.target.value });
+                  }}
                 />
               </div>
             )}
@@ -248,7 +326,9 @@ function UploadResearch() {
                 className="form-control researchInput"
                 id="githublink"
                 value={formData.githublink}
-                onChange={handleChange}
+                onChange={(e) => {
+                  setFormData({ ...formData, githublink: e.target.value });
+                }}
               />
             </div>
 
@@ -261,7 +341,9 @@ function UploadResearch() {
                 className="form-control researchInput"
                 id="references"
                 value={formData.references}
-                onChange={handleChange}
+                onChange={(e) => {
+                  setFormData({ ...formData, references: e.target.value });
+                }}
               />
             </div>
 
@@ -273,7 +355,7 @@ function UploadResearch() {
                 Draft
               </button>
               <div className="mx-2"></div>
-              <button type="submit" className="rounded-pill researchSubmit">
+              <button type="submit" className="rounded-pill researchSubmit" onClick={uploadResearchFunc}>
                 Publish
               </button>
             </div>

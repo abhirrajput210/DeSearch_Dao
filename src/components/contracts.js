@@ -2,9 +2,9 @@ import {ethers} from "ethers";
 import TokenABI from "../contract/artifacts/TokenABI.json";
 import DataDaoABI from "../contract/artifacts/DataDaoABI.json";
 import ResearcherABI from "../contract/artifacts/ResearcherABI.json";
-export const TOKEN_ADDRESS = "0x9aDB7948d3916b30d6846Dbd03734eA943aef713";
-export const DATA_DAO_ADDRESS = "0xD860c23C447C27B5f332836B647D47bD93E3A5c8";
-export const RESEARCHER_ADDRESS = "0xcDc1758997213dCd60ECd5D9bB19440b6748Ea7C";
+export const TOKEN_ADDRESS = "0x6F04385CF5501e9A66AE277bEA57965362248aA5";
+export const DATA_DAO_ADDRESS = "0x26Baaf48a4EFD298BdB9a889eDDeD692919a7093";
+export const RESEARCHER_ADDRESS = "0x564c88146De3C43B0d7e25Ba49beEe59B8De5d97";
 
 export const tokenInstance = async () => {
     const { ethereum } = window;

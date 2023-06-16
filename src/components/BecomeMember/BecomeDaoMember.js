@@ -1,14 +1,73 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles/becomeMember/BecomeDaoMember.css";
+import { tokenInstance, daoInstance } from '../contracts';
+import { ethers } from 'ethers';
+import {useAddress} from "@thirdweb-dev/react";
+
 function BecomeDaoMember() {
   const [tokenValue, setTokenValue] = useState(0);
+  const [tokenAvailable,setTokenAvailable] = useState(0);
+  const address = useAddress();
+
   const handleTokenChange = (event) => {
     setTokenValue(event.target.value);
+    console.log("Token Inputed",tokenValue);
   };
-  const handleBuyToken = () => {
-    const totalAmount = tokenValue * 1000;
-    alert(`Total Amount: ${totalAmount}`);
-  };
+
+  const getUserCreditDetails = async () => {
+    try {
+        const { ethereum } = window;
+        if (ethereum) {
+            const provider = new ethers.providers.Web3Provider(ethereum);
+            const signer = provider.getSigner();
+            if (!provider) {
+                console.log("Metamask is not installed, please install!");
+            }
+            const con = await tokenInstance();
+            const totalCredits = await con.balanceOf(address);
+            const creditsInDecimal = (parseInt(totalCredits._hex, 16)/Math.pow(10,18));
+            setTokenAvailable(creditsInDecimal);
+            console.log("Credits Available",creditsInDecimal);
+            // console.log(totalCredits)
+            return tokenAvailable;
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+useEffect(() => {
+    getUserCreditDetails()
+}, [tokenAvailable])
+
+const addMemberFunc = async () => {
+  try {
+      const { ethereum } = window;
+      if (ethereum) {
+        console.log("Token Entered",tokenValue)
+          const provider = new ethers.providers.Web3Provider(ethereum);
+          const signer = provider.getSigner();
+          if (!provider) {
+              console.log("Metamask is not installed, please install!");
+          }
+          const daoCon = await daoInstance();
+          const addMember = await daoCon.addMember(tokenValue);
+          await addMember.wait();
+          console.log("Output", addMember);
+          
+          console.log(addMemberFunc.value);
+          // const creditsInDecimal = (parseInt(totalCredits._hex, 16)/Math.pow(10,18));
+          // setTokenAvailable(creditsInDecimal);
+          // console.log("Credits Available",creditsInDecimal);
+          // // console.log(totalCredits)
+          // return tokenAvailable;
+      }
+  } catch (error) {
+      console.log(error);
+  }
+}
+
+
   return (
     <>
       <div className="container-fluid BDMPageBg">
@@ -48,8 +107,8 @@ function BecomeDaoMember() {
                       type="text"
                       class="form-control-plaintext"
                       id="formGroupExampleInput2"
-                      value={1000}
-                      readOnly
+                      value={tokenAvailable}
+                      
                     />
                   </div>
                 </div>
@@ -58,7 +117,7 @@ function BecomeDaoMember() {
                     <button
                       type="button"
                       className="MemberBuyTokenBtn col-12 col-md-10"
-                      onClick={handleBuyToken}
+                      onClick={addMemberFunc}
                     >
                       Buy Token
                     </button>
