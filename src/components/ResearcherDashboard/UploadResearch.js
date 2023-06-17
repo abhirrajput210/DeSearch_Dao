@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import lighthouse from "@lighthouse-web3/sdk";
-import "../../styles/researcherDashboard/UploadResearch.css";
+import "../../styles/ResearcherDashboard/UploadResearch.css";
 import { researcherInstance } from "../contracts";
 import { ethers } from 'ethers';
 import {useAddress} from "@thirdweb-dev/react";

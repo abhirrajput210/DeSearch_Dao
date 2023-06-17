@@ -4,7 +4,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import abc from "../../Assets/sicentist using 1_1686046712622.png";
 import logo from "../../Assets/Logo.png";
 // import Votingbtn from "../Voting/Votingbtn";
-import "../../styles/contributorDashboard/activeresearches.css";
+import "../../styles/ContributorDashboard/activeresearches.css";
 // import Quadraticvoting from "../Voting/Quadraticvoting";
 
 function ActiveResearches() {

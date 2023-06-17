@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import { Link, Route, Routes} from "react-router-dom";
 import CardDetailsScreen from "./CardDetailsScreen";
-import "../../styles/showcaseScreen/ShowcaseScreen.css";
+import "../../styles/ShowcaseScreen/ShowcaseScreen.css";
 import { researcherInstance } from "../contracts";
 import { ethers } from 'ethers';
 import { useNavigate } from "react-router-dom";

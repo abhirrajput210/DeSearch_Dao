@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ContributorRequest from "./ContributorRequest";
 import ResearcherResearches from "./ResearcherResearches";
-import "../../styles/researcherDashboard/MainResearcherDashboard.css";
+import "../../styles/ResearcherDashboard/MainResearcherDashboard.css";
 
 function MainResearcherDashboard() {
   const [activeComponent, setActiveComponent] = useState("researches");

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../../styles/researcherDashboard/ResearcherResearches.css";
+import "../../styles/ResearcherDashboard/ResearcherResearches.css";
 import logo from "../../Assets/sicentist using 1_1686046712622.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";

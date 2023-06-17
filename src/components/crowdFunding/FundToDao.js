@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import "../../styles/crowdFunding/fundtodao.css";
+import "../../styles/crowdfunding/fundtodao.css";
 import { tokenInstance, daoInstance } from '../contracts';
 import { ethers } from 'ethers';
 import {useAddress} from "@thirdweb-dev/react";

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../../styles/becomeMember/BecomeDaoMember.css";
+import "../../styles/BecomeMember/BecomeDaoMember.css";
 import { tokenInstance, daoInstance } from '../contracts';
 import { ethers } from 'ethers';
 import {useAddress} from "@thirdweb-dev/react";

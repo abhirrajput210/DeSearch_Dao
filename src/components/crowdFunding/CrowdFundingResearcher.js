@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import lighthouse from "@lighthouse-web3/sdk";
-import "../../styles/crowdFunding/CrowdFundingResearcher.css";
+import "../../styles/crowdfunding/CrowdFundingResearcher.css";
 
 function CrowdFundingResearcher() {
   const [formData, setFormData] = useState({

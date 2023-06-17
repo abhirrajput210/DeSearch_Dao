@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
 import { tokenInstance } from "../contracts";
-import "../../styles/becomeMember/BuyTokens.css";
+import "../../styles/BecomeMember/BuyTokens.css";
 import { useAddress } from "@thirdweb-dev/react";
 import { Link, useNavigate } from "react-router-dom";
 

@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import "../../styles/showcaseScreen/Carddetailsscreen.css";
+import "../../styles/ShowcaseScreen/Carddetailsscreen.css";
 import { useLocation, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
