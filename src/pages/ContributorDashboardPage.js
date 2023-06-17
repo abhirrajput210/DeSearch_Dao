@@ -1,5 +1,5 @@
 import React from "react";
-import ContributorDashboard from "../components/contributorDashboard/ContributorDashboard";
+import ContributorDashboard from "../components/ContributorDashboard/ContributorDashboard";
 
 function ContributorDashboardPage() {
   return (

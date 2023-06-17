@@ -1,5 +1,5 @@
 import React from 'react';
-import BuyTokens from "../components/becomeMember/BuyTokens";
+import BuyTokens from "../components/BecomeMember/BuyTokens";
 
 function BuyTokensPage() {
   return (

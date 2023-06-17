@@ -1,5 +1,5 @@
 import React from "react";
-import ShowcaseScreen from "../components/showcaseScreen/ShowcaseScreen";
+import ShowcaseScreen from "../components/ShowcaseScreen/ShowcaseScreen";
 
 function ShowcaseScreenPage() {
   return (

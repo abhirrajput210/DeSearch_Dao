@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../styles/home/GetStarted.css";
+import "../../styles/home/getstarted.css";
 import image from "../../Assets/sicentist.png";
 
 function GetStarted() {

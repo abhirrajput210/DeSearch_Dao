@@ -3,7 +3,7 @@
     background-color:  #8758FF;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     margin:15px;
     /* background-color: black; */
@@ -31,6 +31,11 @@
 
   .rounded-pill-quadratic-voting-page button{
     color: black;
+}
+
+.rounded-pill-quadratic-voting-page{
+      margin-left: 10px;
+      margin-right: 30px;
   }
 .card-container-quadratic-voting-page{
     background-color: aliceblue;
@@ -103,4 +108,10 @@ h3,p{
     width: 100%;
     height: 80px;
     padding: 10px;
+}
+
+
+
+.view-more-btn-of-voting{
+    /* margin-left: 40px; */
 }

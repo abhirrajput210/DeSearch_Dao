@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/crowdFunding/crowdfundpage.css";
+import "../../styles/crowdfunding/crowdfundpage.css";
 import FundToDao from "./FundToDao"; // Import the Fundtodao component
 
 function Crowdfunding() {

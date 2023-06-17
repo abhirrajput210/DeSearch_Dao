@@ -1,5 +1,5 @@
 import React from "react";
-import BecomeDaoMember from "../components/becomeMember/BecomeDaoMember";
+import BecomeDaoMember from "../components/BecomeMember/BecomeDaoMember";
 
 function BecomeMemberPage() {
   return (

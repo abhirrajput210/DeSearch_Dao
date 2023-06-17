@@ -1,72 +1,72 @@
 import React, { useState, useEffect } from "react";
-import "../../styles/becomeMember/BecomeDaoMember.css";
-import { tokenInstance, daoInstance } from '../contracts';
-import { ethers } from 'ethers';
-import {useAddress} from "@thirdweb-dev/react";
+import "../../styles/BecomeMember/BecomeDaoMember.css";
+import { tokenInstance, daoInstance } from "../contracts";
+import { ethers } from "ethers";
+import { useAddress } from "@thirdweb-dev/react";
 
 function BecomeDaoMember() {
   const [tokenValue, setTokenValue] = useState(0);
-  const [tokenAvailable,setTokenAvailable] = useState(0);
+  const [tokenAvailable, setTokenAvailable] = useState(0);
   const address = useAddress();
 
   const handleTokenChange = (event) => {
     setTokenValue(event.target.value);
-    console.log("Token Inputed",tokenValue);
+    console.log("Token Inputed", tokenValue);
   };
 
   const getUserCreditDetails = async () => {
     try {
-        const { ethereum } = window;
-        if (ethereum) {
-            const provider = new ethers.providers.Web3Provider(ethereum);
-            const signer = provider.getSigner();
-            if (!provider) {
-                console.log("Metamask is not installed, please install!");
-            }
-            const con = await tokenInstance();
-            const totalCredits = await con.balanceOf(address);
-            const creditsInDecimal = (parseInt(totalCredits._hex, 16)/Math.pow(10,18));
-            setTokenAvailable(creditsInDecimal);
-            console.log("Credits Available",creditsInDecimal);
-            // console.log(totalCredits)
-            return tokenAvailable;
-        }
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-useEffect(() => {
-    getUserCreditDetails()
-}, [tokenAvailable])
-
-const addMemberFunc = async () => {
-  try {
       const { ethereum } = window;
       if (ethereum) {
-        console.log("Token Entered",tokenValue)
-          const provider = new ethers.providers.Web3Provider(ethereum);
-          const signer = provider.getSigner();
-          if (!provider) {
-              console.log("Metamask is not installed, please install!");
-          }
-          const daoCon = await daoInstance();
-          const addMember = await daoCon.addMember(tokenValue);
-          await addMember.wait();
-          console.log("Output", addMember);
-          
-          console.log(addMemberFunc.value);
-          // const creditsInDecimal = (parseInt(totalCredits._hex, 16)/Math.pow(10,18));
-          // setTokenAvailable(creditsInDecimal);
-          // console.log("Credits Available",creditsInDecimal);
-          // // console.log(totalCredits)
-          // return tokenAvailable;
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        if (!provider) {
+          console.log("Metamask is not installed, please install!");
+        }
+        const con = await tokenInstance();
+        const totalCredits = await con.balanceOf(address);
+        const creditsInDecimal =
+          parseInt(totalCredits._hex, 16) / Math.pow(10, 18);
+        setTokenAvailable(creditsInDecimal);
+        console.log("Credits Available", creditsInDecimal);
+        // console.log(totalCredits)
+        return tokenAvailable;
       }
-  } catch (error) {
+    } catch (error) {
       console.log(error);
-  }
-}
+    }
+  };
 
+  useEffect(() => {
+    getUserCreditDetails();
+  }, [tokenAvailable]);
+
+  const addMemberFunc = async () => {
+    try {
+      const { ethereum } = window;
+      if (ethereum) {
+        console.log("Token Entered", tokenValue);
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        if (!provider) {
+          console.log("Metamask is not installed, please install!");
+        }
+        const daoCon = await daoInstance();
+        const addMember = await daoCon.addMember(tokenValue);
+        await addMember.wait();
+        console.log("Output", addMember);
+
+        console.log(addMemberFunc.value);
+        // const creditsInDecimal = (parseInt(totalCredits._hex, 16)/Math.pow(10,18));
+        // setTokenAvailable(creditsInDecimal);
+        // console.log("Credits Available",creditsInDecimal);
+        // // console.log(totalCredits)
+        // return tokenAvailable;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -108,7 +108,6 @@ const addMemberFunc = async () => {
                       class="form-control-plaintext"
                       id="formGroupExampleInput2"
                       value={tokenAvailable}
-                      
                     />
                   </div>
                 </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/contributorDashboard/requeststatus.css";
+import "../../styles/ContributorDashboard/requeststatus.css";
 
 // Dummy data
 const dummyData = [
@@ -82,3 +82,51 @@ function RequestStatus() {
 }
 
 export default RequestStatus;
+
+// // RequestStatus.js
+// import React from "react";
+// import "../../styles/ContributorDashboard/requeststatus.css";
+
+// const dummyData = [
+//   // Dummy data here
+// ];
+
+// function RequestStatus({ contributionDetail }) {
+//   return (
+//     <div>
+//       <div className="card-display-request-status">
+//         {dummyData.map((data, index) => (
+//           <div key={index}>
+//             <div className="card-request-status">
+//               <div className="card-body-request-status">
+//                 <div className="card-text-request-status">
+//                   {/* Existing input fields */}
+//                   <strong>Contribution Details:</strong> <br />
+//                   <input
+//                     className="input-request-status"
+//                     type="text"
+//                     readOnly
+//                     value={data.contributionDetails}
+//                   />
+//                   <br />
+//                   {/* Display the contributionDetail prop */}
+//                   <strong>Your Contribution Details:</strong> <br />
+//                   <input
+//                     className="input-request-status"
+//                     type="text"
+//                     readOnly
+//                     value={contributionDetail}
+//                   />
+//                   <br />
+//                   {/* Remaining input fields */}
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default RequestStatus;

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/researcherDashboard/ContributorRequest.css";
+import "../../styles/ResearcherDashboard/ContributorRequest.css";
 
 function ContributorRequest() {
   // Example data array

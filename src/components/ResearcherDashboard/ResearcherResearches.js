@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from "react";
-import "../../styles/researcherDashboard/ResearcherResearches.css";
+import React, { useState, useEffect } from "react";
+import "../../styles/ResearcherDashboard/ResearcherResearches.css";
 import logo from "../../Assets/sicentist using 1_1686046712622.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { researcherInstance } from "../contracts";
-import { ethers } from 'ethers';
-import {useAddress} from "@thirdweb-dev/react";
+import { ethers } from "ethers";
+import { useAddress } from "@thirdweb-dev/react";
 
 function ResearcherResearches() {
   const [allPData, setAllPData] = useState([]);
@@ -30,7 +30,7 @@ function ResearcherResearches() {
     paidPapers.push(paperPaid);
 
     const paperFree = await con.getFreePaper(0);
-      freePapers.push(paperFree);
+    freePapers.push(paperFree);
 
     // for (let i = 0; i < 100; i++) {
     //   const paper = await con.getPaidPaper(0);
@@ -43,10 +43,9 @@ function ResearcherResearches() {
     // }
 
     const allPapers = [...paidPapers, ...freePapers];
-    console.log("All Papers",allPapers);
+    console.log("All Papers", allPapers);
     setAllPData(allPapers);
   };
-
 
   // const researchesData = [
   //   {
@@ -92,7 +91,7 @@ function ResearcherResearches() {
       </div>
 
       <div className="rrMain">
-        {allPData.map((item,key) => (
+        {allPData.map((item, key) => (
           <div className="rr-card-container" key={key}>
             <div className="rr-image-container">
               <img

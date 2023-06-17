@@ -1,5 +1,5 @@
 import React from "react";
-import UploadResearch from "../components/researcherDashboard/UploadResearch";
+import UploadResearch from "../components/ResearcherDashboard/UploadResearch";
 
 function UploadResearchPage() {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/crowdFunding/fundtodao.css";
+import "../../styles/crowdfunding/fundtodao.css";
 
 function Fundtodao() {
   return (

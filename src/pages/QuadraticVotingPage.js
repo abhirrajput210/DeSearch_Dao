@@ -1,5 +1,5 @@
 import React from "react";
-import QuadraticVoting from "../components/voting/QuadraticVoting";
+import QuadraticVoting from "../components/Voting/Quadraticvoting";
 
 function QuadraticVotingPage() {
   return (

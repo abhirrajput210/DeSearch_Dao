@@ -1,0 +1,611 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "DAOAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "DAOContract",
+				"outputs": [
+					{
+						"internalType": "contract DataDAO",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "category",
+						"type": "uint256"
+					}
+				],
+				"name": "addContributorRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_title",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_category",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "__abstract",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_github_link",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_target",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_references",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_image",
+						"type": "string"
+					}
+				],
+				"name": "createCampaign",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "donateToCampaign",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "freePaperCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getCampaign",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "category",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_abstract",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "github_link",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "target",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "references",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountCollected",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "image",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getCampaignDonations",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "contributorAddress",
+						"type": "address"
+					}
+				],
+				"name": "getContributorRequestStatus",
+				"outputs": [
+					{
+						"internalType": "enum Researcher.RequestStatus",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "paperId",
+						"type": "uint256"
+					}
+				],
+				"name": "getFreePaper",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "category",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "coverImage",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_abstract",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "researchWorkFile",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "github_link",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "references",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "paperId",
+						"type": "uint256"
+					}
+				],
+				"name": "getPaidPaper",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "category",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "coverImage",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_abstract",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "researchWorkFile",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "paid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "github_link",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "references",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "numberOfCampaigns",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "paidPaperCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "contributorAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "enum Researcher.RequestStatus",
+						"name": "status",
+						"type": "uint8"
+					}
+				],
+				"name": "respondToContributorRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "category",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "coverImage",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_abstract",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "researchWorkFile",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "github_link",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "references",
+						"type": "string"
+					}
+				],
+				"name": "submitFreePaper",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "category",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "coverImage",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_abstract",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "researchWorkFile",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "paid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "github_link",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "references",
+						"type": "string"
+					}
+				],
+				"name": "submitPaidPaper",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Final Smart Contract/Researcher.sol": "Researcher"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xba43b97fba0d32eb4254f6a5a297b39a19a247082a02d6e69349e071e2946218",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fc980984badf3984b6303b377711220e067722bbd6a135b24669ff5069ef9f32",
+				"dweb:/ipfs/QmPHXMSXj99XjSVM21YsY6aNtLLjLVXDbyN76J5HQYvvrz"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x287b55befed2961a7eabd7d7b1b2839cbca8a5b80ef8dcbb25ed3d4c2002c305",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bd39944e8fc06be6dbe2dd1d8449b5336e23c6a7ba3e8e9ae5ae0f37f35283f5",
+				"dweb:/ipfs/QmPV3FGYjVwvKSgAXKUN3r9T9GwniZz83CxBpM7vyj2G53"
+			]
+		},
+		"@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0x006dd67219697fe68d7fbfdea512e7c4cb64a43565ed86171d67e844982da6fa",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2455248c8ddd9cc6a7af76a13973cddf222072427e7b0e2a7d1aff345145e931",
+				"dweb:/ipfs/QmfYjnjRbWqYpuxurqveE6HtzsY1Xx323J428AKQgtBJZm"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"@openzeppelin/contracts/utils/math/SafeMath.sol": {
+			"keccak256": "0x58b21219689909c4f8339af00813760337f7e2e7f169a97fe49e2896dcfb3b9a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ef8e012e946dec20e59f2d4446f4b44bb098f3fa8bac103b1b5112fff777447b",
+				"dweb:/ipfs/QmVTooKWcLkJ9W68yNX4MgdrbAKiAXwuRN9A7f4NkdcdtQ"
+			]
+		},
+		"Final Smart Contract/DAO.sol": {
+			"keccak256": "0xf4719a2aa0b8bf4f116da153e864da94b13d3abab4e9dc0230d5b21f61091f87",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://466046c0410ff5b3ce5421e7aa9232ad83b7b3d74e3c95a571b99d5a31eebc0e",
+				"dweb:/ipfs/Qmf6k8iyaM5yr17RKTBcSZRaNkEmimsxXJnyUA2TzAwkQZ"
+			]
+		},
+		"Final Smart Contract/Researcher.sol": {
+			"keccak256": "0xd0bc90b69d906f1e1a31f0ac108403cf8640c3c0181edd470d3acfda669f7ee4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ad6817b2b25d54aea517f08817a3f4c2b847ed7f35d4212d7f6193ac1647aab7",
+				"dweb:/ipfs/QmaPbVB11aWHShidjviS7Jonwj65MFjKTrQ4q2W93z5rx6"
+			]
+		}
+	},
+	"version": 1
+}

@@ -3,10 +3,11 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import HomePage from "./pages/HomePage";
 import BecomeMemberPage from "./pages/BecomeMemberPage";
+import Card from "./components/Voting/Card";
 import ResearcherDashboardPage from "./pages/ResearcherDashboardPage";
 import ShowcaseScreenPage from "./pages/ShowcaseScreenPage";
 import UploadResearchPage from "./pages/UploadResearchPage";
-import CardDetailsScreen from "./components/showcaseScreen/CardDetailsScreen";
+import CardDetailsScreen from "./components/ShowcaseScreen/CardDetailsScreen";
 import ContributorDashboardPage from "./pages/ContributorDashboardPage";
 import QuadraticVotingPage from "./pages/QuadraticVotingPage";
 import abc from "./Assets/sicentist using 1_1686046712622.png";
@@ -53,32 +54,32 @@ function App() {
   ];
   return (
     <>
-    <ThirdwebProvider
-      supportedWallets={[metamaskWallet(), walletConnect()]}
-      activeChain="polygon"
-supportedChains={[Mumbai, Ethereum, Polygon]}
-    >
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={<HomePage />} />
-          <Route path="/showcase" element={<ShowcaseScreenPage />} />
-          <Route path="/dao-member" element={<BecomeMemberPage />} />
-          <Route path="/researcher" element={<ResearcherDashboardPage />} />
-          <Route path="/upload-research" element={<UploadResearchPage />} />
-          <Route
-            path="/details/:id"
-            element={<CardDetailsScreen cardData={cardData} />}
-          />
-          <Route
-            path="/contributor-dashboard"
-            element={<ContributorDashboardPage />}
-          />
-          <Route path="/quadratic-voting" element={<QuadraticVotingPage />} />
-          <Route path="/crowd-funding" element={<CrowdFundingPage />} />
-          <Route path="/buy-tokens" element={<BuyTokensPage />} />
-        </Routes>
-      </BrowserRouter>
+      <ThirdwebProvider
+        supportedWallets={[metamaskWallet(), walletConnect()]}
+        activeChain="polygon"
+        supportedChains={[Mumbai, Ethereum, Polygon]}
+      >
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route exact path="/" element={<HomePage />} />
+            <Route path="/showcase" element={<ShowcaseScreenPage />} />
+            <Route path="/dao-member" element={<BecomeMemberPage />} />
+            <Route path="/researcher" element={<ResearcherDashboardPage />} />
+            <Route path="/upload-research" element={<UploadResearchPage />} />
+            <Route path="/card-details" element={<CardDetailsScreen />} />
+            <Route
+              path="/contributor-dashboard"
+              element={<ContributorDashboardPage />}
+            />
+            <Route path="/" element={<Card />} />
+            <Route path="/card-details" element={<CardDetailsScreen />} />
+            <Route path="/quadratic-voting" element={<QuadraticVotingPage />} />
+            <Route path="/crowd-funding" element={<CrowdFundingPage />} />
+            <Route path="/buy-tokens" element={<BuyTokensPage />} />
+          </Routes>
+          {/* <Route path="/card-details" element={<CardDetailsScreen />} /> */}
+        </BrowserRouter>
       </ThirdwebProvider>
     </>
   );
