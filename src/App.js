@@ -3,7 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import HomePage from "./pages/HomePage";
 import BecomeMemberPage from "./pages/BecomeMemberPage";
-import Card from "./components/voting/Card";
+// import Card from "./components/voting/Card";
 import ResearcherDashboardPage from "./pages/ResearcherDashboardPage";
 import ShowcaseScreenPage from "./pages/ShowcaseScreenPage";
 import UploadResearchPage from "./pages/UploadResearchPage";
@@ -63,7 +63,7 @@ function App() {
             path="/contributor-dashboard"
             element={<ContributorDashboardPage />}
           />
-          <Route path="/" elements={<Card />}/>
+          {/* <Route path="/" elements={<Card />}/> */}
           <Route path="/quadratic-voting" element={<QuadraticVotingPage />} />
           <Route path="/crowd-funding" element={<CrowdFundingPage />} />
           <Route path="/buy-tokens" element={<BuyTokensPage />} />

@@ -11,6 +11,7 @@ import {
   faVoteYea,
   faChevronDown,
   faUserGraduate,
+  faBell
 } from "@fortawesome/free-solid-svg-icons";
 import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 
