@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import CardDetailsScreen from "../showcaseScreen/CardDetailsScreen";
+import CardDetailsScreen from "../ShowcaseScreen/CardDetailsScreen";
 import "../../styles/voting/card.css";
 import abc from "../../Assets/sicentist using 1_1686046712622.png";
 import logo from "../../Assets/Logo.png";

@@ -7,7 +7,7 @@ import BecomeMemberPage from "./pages/BecomeMemberPage";
 import ResearcherDashboardPage from "./pages/ResearcherDashboardPage";
 import ShowcaseScreenPage from "./pages/ShowcaseScreenPage";
 import UploadResearchPage from "./pages/UploadResearchPage";
-import CardDetailsScreen from "./components/showcaseScreen/CardDetailsScreen";
+import CardDetailsScreen from "./components/ShowcaseScreen/CardDetailsScreen";
 import ContributorDashboardPage from "./pages/ContributorDashboardPage";
 import QuadraticVotingPage from "./pages/QuadraticVotingPage";
 import CrowdFundingResearcher from "./components/crowdFunding/CrowdFundingResearcher"
@@ -15,7 +15,7 @@ import abc from "./Assets/sicentist using 1_1686046712622.png";
 import logo from "./Assets/Logo.png";
 import CrowdFundingPage from "./pages/CrowdFundingPage";
 import BuyTokensPage from "./pages/BuyTokensPage";
-import ResearcherResearches from "./components/researcherDashboard/ResearcherResearches";
+import ResearcherResearches from "./components/ResearcherDashboard/ResearcherResearches";
 import {
   ThirdwebProvider,
   metamaskWallet,
