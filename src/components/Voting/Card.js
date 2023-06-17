@@ -37,7 +37,6 @@ function Card() {
           <div className="card-container-quadratic-voting-page" key={card.id}>
             <div className="image-container-quadratic-voting-page">
               <img
-                // className="image-container-of-card"
                 src={card.img}
                 alt="img"
                 style={{

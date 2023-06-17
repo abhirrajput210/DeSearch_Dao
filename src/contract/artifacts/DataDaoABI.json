@@ -156,11 +156,6 @@
 				"type": "string"
 			},
 			{
-				"internalType": "enum DataDAO.ProjectCategory",
-				"name": "category",
-				"type": "uint8"
-			},
-			{
 				"internalType": "string",
 				"name": "coverImage",
 				"type": "string"
@@ -348,11 +343,6 @@
 				"internalType": "string",
 				"name": "title",
 				"type": "string"
-			},
-			{
-				"internalType": "enum DataDAO.ProjectCategory",
-				"name": "category",
-				"type": "uint8"
 			},
 			{
 				"internalType": "string",

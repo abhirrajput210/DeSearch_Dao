@@ -7,71 +7,45 @@ import { useNavigate } from "react-router-dom";
 import { researcherInstance } from "../contracts";
 import { ethers } from 'ethers';
 import {useAddress} from "@thirdweb-dev/react";
+import Demo from "../../Assets/Demo.png"
 
 function ResearcherResearches() {
   const [allPData, setAllPData] = useState([]);
   const navigate = useNavigate();
   const address = useAddress();
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
 
   useEffect(() => {
     fetchAllPapers();
   }, []);
 
   const fetchAllPapers = async () => {
-    // const paidPapersLength = await researcherInstance.paidPapers.length;
-    // const freePapersLength = await researcherInstance.freePapers.length;
-
-    const paidPapers = [];
-    const freePapers = [];
-
     const con = await researcherInstance();
 
-    const paperPaid = await con.getPaidPaper(0);
-    paidPapers.push(paperPaid);
+    const paidPapersLength = await con.paidPaperCount();
+    const freePapersLength = await con.freePaperCount();
 
-    const paperFree = await con.getFreePaper(0);
+    const paidPapers = [];  
+    const freePapers = [];
+
+    
+    for (let i = 0; i < paidPapersLength; i++) {
+      const paperPaid = await con.getPaidPaper(i,{ from: address });
+      paidPapers.push(paperPaid);
+    }
+
+    for (let i = 0; i < freePapersLength; i++) {
+      const paperFree = await con.getFreePaper(i,{ from: address });
       freePapers.push(paperFree);
-
-    // for (let i = 0; i < 100; i++) {
-    //   const paper = await con.getPaidPaper(0);
-    //   paidPapers.push(paper);
-    // }
-
-    // for (let i = 0; i < 100; i++) {
-    //   const paper = await con.getFreePaper(0);
-    //   freePapers.push(paper);
-    // }
+    }
 
     const allPapers = [...paidPapers, ...freePapers];
     console.log("All Papers",allPapers);
     setAllPData(allPapers);
   };
-
-
-  // const researchesData = [
-  //   {
-  //     id: 1,
-  //     title: "Research 1",
-  //     img: logo,
-  //     description:
-  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Research 2",
-  //     img: logo,
-  //     description:
-  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Research 2",
-  //     img: logo,
-  //     description:
-  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  //   },
-  //   // Add more research data as needed
-  // ];
 
   const handleAddResearch = () => {
     navigate("/upload-research"); // Replace '/upload-research' with the actual route/path of the UploadResearch page
@@ -95,11 +69,32 @@ function ResearcherResearches() {
         {allPData.map((item,key) => (
           <div className="rr-card-container" key={key}>
             <div className="rr-image-container">
+            {!imageLoaded && (
               <img
-                src={item.coverImage}
-                alt="img"
-                style={{ width: "100%", height: "200px", objectFit: "fill" }}
+                className="dummy-image"
+                src={Demo}
+                alt=""
+                style={{
+                  width: "100%",
+                  height: "200px",
+                  objectFit: "cover",
+                }}
               />
+            )}
+            <img
+              className={`image-card-details-screen ${
+                imageLoaded ? "loaded" : ""
+              }`}
+              src={`https://ipfs.io/ipfs/${item[2]}`}
+              alt="img"
+              style={{
+                width: "100%",
+                height: "200px",
+                objectFit: "cover",
+                display: imageLoaded ? "block" : "none",
+              }}
+              onLoad={handleImageLoad}
+            />
             </div>
 
             <div className="rr-content-container">
@@ -112,7 +107,7 @@ function ResearcherResearches() {
               </div>
 
               <div className="rr-content-btn mt-2 pb-3 rounded-pill">
-                <button className="rounded-pill px-3">View More</button>
+              <button onClick={() => navigate("/card-details", {state:{card:item}})}>View More </button>
               </div>
             </div>
           </div>

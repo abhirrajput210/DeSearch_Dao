@@ -9,10 +9,12 @@ import UploadResearchPage from "./pages/UploadResearchPage";
 import CardDetailsScreen from "./components/showcaseScreen/CardDetailsScreen";
 import ContributorDashboardPage from "./pages/ContributorDashboardPage";
 import QuadraticVotingPage from "./pages/QuadraticVotingPage";
+import CrowdFundingResearcher from "./components/crowdFunding/CrowdFundingResearcher"
 import abc from "./Assets/sicentist using 1_1686046712622.png";
 import logo from "./Assets/Logo.png";
 import CrowdFundingPage from "./pages/CrowdFundingPage";
 import BuyTokensPage from "./pages/BuyTokensPage";
+import ResearcherResearches from "./components/researcherDashboard/ResearcherResearches";
 import {
   ThirdwebProvider,
   metamaskWallet,
@@ -67,8 +69,8 @@ supportedChains={[Mumbai, Ethereum, Polygon]}
           <Route path="/researcher" element={<ResearcherDashboardPage />} />
           <Route path="/upload-research" element={<UploadResearchPage />} />
           <Route
-            path="/details/:id"
-            element={<CardDetailsScreen cardData={cardData} />}
+            path="/card-details"
+            element={<CardDetailsScreen />}
           />
           <Route
             path="/contributor-dashboard"
@@ -77,6 +79,8 @@ supportedChains={[Mumbai, Ethereum, Polygon]}
           <Route path="/quadratic-voting" element={<QuadraticVotingPage />} />
           <Route path="/crowd-funding" element={<CrowdFundingPage />} />
           <Route path="/buy-tokens" element={<BuyTokensPage />} />
+          <Route path="/crowd-funding-researcher" element={<CrowdFundingResearcher />} />
+          <Route path="/researcher-researches" element={<ResearcherResearches />} />
         </Routes>
       </BrowserRouter>
       </ThirdwebProvider>

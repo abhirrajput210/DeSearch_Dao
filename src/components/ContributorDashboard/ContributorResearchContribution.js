@@ -4,7 +4,6 @@ import "../../styles/ContributorDashboardPage/ContributorResearchContribution.cs
 function ContributorResearchContribution() {
   const initialFormData = {
     conResTitle: '',
-    conResCategory: '',
     conResCpImage: '',
     conResAbstract: '',
     conResDetailedDesc: '',
@@ -21,7 +20,6 @@ function ContributorResearchContribution() {
   const fetchDataFromServer = () => {
     const fetchedData = {
       conResTitle: 'Prefilled Title',
-      conResCategory: 'Prefilled Category',
       conResCpImage: 'Prefilled CoverPage Image',
       conResAbstract: 'Prefilled Abstract',
       conResDetailedDesc: 'Editable Detailed Description',
@@ -76,19 +74,6 @@ function ContributorResearchContribution() {
                 className="form-control conResInput"
                 id="conResTitle"
                 value={formData.conResTitle}
-                readOnly // Make the field read-only
-              />
-            </div>
-
-            <div className="mb-3">
-              <label htmlFor="conResCategory" className="form-label conResLabel">
-                Select your category:
-              </label>
-              <input
-                type="text"
-                className="form-control conResInput"
-                id="conResCategory"
-                value={formData.conResCategory}
                 readOnly // Make the field read-only
               />
             </div>

@@ -4,12 +4,14 @@ import "../../styles/researcherDashboard/UploadResearch.css";
 import { researcherInstance } from "../contracts";
 import { ethers } from 'ethers';
 import {useAddress} from "@thirdweb-dev/react";
+import { useNavigate } from "react-router-dom";
 
 function UploadResearch() {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const address = useAddress();
   const [formData, setFormData] = useState({
     title: null,
-    category: null,
     cpimage: null,
     abstract: null,
     detaileddesc: null,
@@ -40,6 +42,9 @@ function UploadResearch() {
         progressCallback
       );
       console.log("File Status:", output);
+      console.log(
+        "Visit at https://gateway.lighthouse.storage/ipfs/" + output.data.Hash
+      );
 
       return output;
     } catch (error) {
@@ -49,7 +54,7 @@ function UploadResearch() {
 
   const uploadFile = async () => {
     try {
-      console.log("in upload image function");
+      console.log("in upload File function");
       const file = formData.rwInput; // Access the file from the array
       const output = await lighthouse.upload(
         file,
@@ -57,7 +62,9 @@ function UploadResearch() {
         progressCallback
       );
       console.log("File Status:", output);
-
+      console.log(
+        "Visit at https://gateway.lighthouse.storage/ipfs/" + output.data.Hash
+      );
       return output;
     } catch (error) {
       console.log(error);
@@ -67,27 +74,11 @@ function UploadResearch() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data:", formData);
-    // Perform any additional actions here, such as sending the data to a server
-
-    // setFormData({
-    //   title: "",
-    //   category: "",
-    //   cpimage: null,
-    //   abstract: "",
-    //   detaileddesc: "",  
-    //   rwInput: null,
-    //   fundsneeded: "",
-    //   githublink: "",
-    //   references: "",
-    //   paymentOption: "free",
-    //   researchCost: "",
-    // });
   };
 
   const uploadResearchFunc = async (e) => {
     try {
       console.log("Form Data:", formData);
-      const researchCost = Number(formData.researchCost);
       const outputCi = await uploadImage();
       const ci = outputCi.data.Hash;
 
@@ -101,14 +92,13 @@ function UploadResearch() {
         if (!provider) {
           console.log("Metamask is not installed, please install!");
         }
-        const researchCost = ethers.BigNumber.from(formData.researchCost);
+        const researchCost = formData.researchCost ? ethers.BigNumber.from(formData.researchCost) : ethers.BigNumber.from(0);
         const researcherCon = await researcherInstance();
-
-        // Call the appropriate smart contract function based on payment option
+       
         if (formData.paymentOption === "free") {
+          setLoading(true);
        const tx = await researcherCon.submitFreePaper(
         formData.title,
-        formData.category,
         ci,
         formData.abstract,
         formData.detaileddesc,
@@ -120,10 +110,12 @@ function UploadResearch() {
        console.log(tx);
         await tx.wait();
         console.log(researcherCon);
+        setLoading(false);
+        navigate("/researcher-researches")
       }else if (formData.paymentOption === "paid") {
+        setLoading(true);
         const tx = await researcherCon.submitPaidPaper(
           formData.title,
-          formData.category,
           ci,
           formData.abstract,
           formData.detaileddesc,
@@ -131,17 +123,19 @@ function UploadResearch() {
           researchCost,
           formData.githublink,
           formData.references,
-          
         );
 
         console.log(tx);
         await tx.wait();
+        setLoading(false);
+        navigate("/researcher-researches")
         console.log(researcherCon);
       }
     }
   }
     catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -175,24 +169,6 @@ function UploadResearch() {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="category" className="form-label researchLabel">
-                Select your category:
-              </label>
-              <select
-                className="form-select researchInput"
-                id="category"
-                value={formData.category}
-                onChange={(e) => {
-                  setFormData({ ...formData, category: e.target.value });
-                }}
-              >
-                <option value="0">Select category</option>
-                <option value="1">ABC</option>
-                <option value="2">DEF</option>
-              </select>
-            </div>
-
-            <div className="mb-3">
               <label htmlFor="cpimage" className="form-label researchLabel">
                 CoverPage Image:
               </label>
@@ -200,9 +176,8 @@ function UploadResearch() {
                 type="file"
                 className="form-control researchInput"
                 id="cpimage"
-                // value={formData.cpimage}
                 onChange={(e) => {
-                  setFormData({ ...formData, cpimage: e.target.value });
+                  setFormData({ ...formData, cpimage: e.target.files });
                 }}
               />
             </div>
@@ -251,7 +226,7 @@ function UploadResearch() {
                 className="form-control researchInput"
                 id="rwInput"
                 onChange={(e) => {
-                  setFormData({ ...formData, rwInput: e.target.value });
+                  setFormData({ ...formData, rwInput: e.target.files });
                 }}
               />
             </div>
@@ -348,16 +323,15 @@ function UploadResearch() {
             </div>
 
             <div className="d-flex justify-content-center mt-3">
-              <button
-                type="submit"
-                className="rounded-pill researchSubmit mr-3"
-              >
-                Draft
-              </button>
               <div className="mx-2"></div>
-              <button type="submit" className="rounded-pill researchSubmit" onClick={uploadResearchFunc}>
-                Publish
-              </button>
+              <button
+                      type="button"
+                      className="BuyTokenBtn col-12 col-md-10"
+                      onClick={uploadResearchFunc}
+                      disabled={loading} // Disable the button while loading is true
+                    >
+                      {loading ? "Loading..." : "Publish"}
+                    </button>
             </div>
           </form>
         </div>

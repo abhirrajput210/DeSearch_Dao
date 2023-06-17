@@ -20,6 +20,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
     "react-router-dom": "^6.12.1",
     "wagmi": "^0.12.6",
     "web-vitals": "^2.1.4"

@@ -6,7 +6,6 @@ import "../../styles/crowdFunding/CrowdFundingResearcher.css";
 function CrowdFundingResearcher() {
   const [formData, setFormData] = useState({
     title: "",
-    category: "",
     cpimage: null,
     abstract: "",
     detaileddesc: "",
@@ -71,7 +70,6 @@ function CrowdFundingResearcher() {
 
     setFormData({
       title: "",
-      category: "",
       cpimage: null,
       abstract: "",
       detaileddesc: "",
@@ -106,22 +104,6 @@ function CrowdFundingResearcher() {
                 value={formData.title}
                 onChange={handleChange}
               />
-            </div>
-
-            <div className="mb-3">
-              <label htmlFor="category" className="form-label cfrLabel">
-                Select your category:
-              </label>
-              <select
-                className="form-select cfrInput"
-                id="category"
-                value={formData.category}
-                onChange={handleChange}
-              >
-                <option value="">Select category</option>
-                <option value="ABC">ABC</option>
-                <option value="DEF">DEF</option>
-              </select>
             </div>
 
             <div className="mb-3">

@@ -13,15 +13,6 @@ function Quadraticvoting() {
           </div>
           <br />
         </div>
-        <div className="category-div">
-          {/* <label for="cars">Choose: </label> */}
-          <select className="option-btn" name="category">
-            <option value="1">category-1</option>
-            <option value="2">category-2</option>
-            <option value="3">category-3</option>
-            <option value="4">category-4</option>
-          </select>
-        </div>{" "}
         <br />
       </div>
       <div className="reseach-category-container">

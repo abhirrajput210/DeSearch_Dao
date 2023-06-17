@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function BuyTokens() {
     const [numOfTokens, setNumOfTokens] = useState("0");
+    const [loading, setLoading] = useState(false);
     const address = useAddress();
     const navigate = useNavigate();
     
@@ -26,16 +27,21 @@ function BuyTokens() {
           const finalAmount = ethAmount/Math.pow(10,18);
 
           console.log("Eth Amount",ethAmount);
+          setLoading(true);
   
           const transaction = await conToken.buyTokens(numOfTokens, {
             value: finalAmount,
           });
           await transaction.wait();
+          setLoading(false);
           console.log("Tokens purchased successfully!");
           navigate('/dao-member');
         }
       } catch (error) {
+        setLoading(false);
         console.log(error);
+      }finally {
+        setLoading(false); // Set loading back to false after transaction completes
       }
     };
   
@@ -75,13 +81,14 @@ function BuyTokens() {
   
                   <div className="BuyTokenBtn-class">
                     <div className="BuyTokenBtn row">
-                      <button
-                        type="button"
-                        className="BuyTokenBtn col-12 col-md-10"
-                        onClick={buyTokens}
-                      >
-                        Buy Token
-                      </button>
+                    <button
+                      type="button"
+                      className="BuyTokenBtn col-12 col-md-10"
+                      onClick={buyTokens}
+                      disabled={loading} // Disable the button while loading is true
+                    >
+                      {loading ? "Loading..." : "Buy Token"}
+                    </button>
                     </div>
                   </div>
                 </form>

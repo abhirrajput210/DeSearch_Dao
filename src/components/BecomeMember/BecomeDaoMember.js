@@ -7,6 +7,7 @@ import {useAddress} from "@thirdweb-dev/react";
 function BecomeDaoMember() {
   const [tokenValue, setTokenValue] = useState(0);
   const [tokenAvailable,setTokenAvailable] = useState(0);
+  const [loading, setLoading] = useState(false);
   const address = useAddress();
 
   const handleTokenChange = (event) => {
@@ -51,22 +52,22 @@ const addMemberFunc = async () => {
               console.log("Metamask is not installed, please install!");
           }
           const daoCon = await daoInstance();
+          setLoading(true);
           const addMember = await daoCon.addMember(tokenValue);
           await addMember.wait();
           console.log("Output", addMember);
           
           console.log(addMemberFunc.value);
-          // const creditsInDecimal = (parseInt(totalCredits._hex, 16)/Math.pow(10,18));
-          // setTokenAvailable(creditsInDecimal);
-          // console.log("Credits Available",creditsInDecimal);
-          // // console.log(totalCredits)
-          // return tokenAvailable;
+          setLoading(false);
+          alert("Congratulations! You are now a DAO member!");
       }
   } catch (error) {
+    setLoading(false);
       console.log(error);
+  }finally {
+    setLoading(false); // Set loading back to false after transaction completes
   }
 }
-
 
   return (
     <>
@@ -78,7 +79,7 @@ const addMemberFunc = async () => {
             </div>{" "}
           </div>
           <p className="mini-title-of-dao-member-page">
-            Enter Tokens to become a DAO member
+            Enter Tokens to become a DAO member (Minimum 50 tokens required)
           </p>
           <div className="d-lg-flex row pb-4 align-items-center BDMPage-form-content justify-content-around">
             <div className="BDMPage-box-bg mb-lg-0 mb-sm-4 mb-4 align-self-stretch py-5 px-4">
@@ -116,10 +117,11 @@ const addMemberFunc = async () => {
                   <div className="MemberBuyTokenBtn row">
                     <button
                       type="button"
-                      className="MemberBuyTokenBtn col-12 col-md-10"
+                      className="BuyTokenBtn col-12 col-md-10"
                       onClick={addMemberFunc}
+                      disabled={loading} // Disable the button while loading is true
                     >
-                      Buy Token
+                      {loading ? "Loading..." : "Become Member"}
                     </button>
                   </div>
                 </div>
@@ -128,6 +130,7 @@ const addMemberFunc = async () => {
           </div>
         </div>
       </div>
+
     </>
   );
 }
