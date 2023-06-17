@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/navbar/Navbar";
 import HomePage from "./pages/HomePage";
 import BecomeMemberPage from "./pages/BecomeMemberPage";
 // import Card from "./components/voting/Card";
