@@ -42,7 +42,9 @@ function App() {
   return (
     <>
     <ThirdwebProvider
-      supportedWallets={[metamaskWallet()]}
+      supportedWallets={[metamaskWallet(),walletConnect({
+          projectId: "7d07203fbea3d91ce1637adf1ccdde10",
+        }),]}
       activeChain="polygon"
       supportedChains={[filecoinCalibration, Mumbai, Ethereum, Polygon]}
     >
