@@ -19,6 +19,7 @@ import ResearcherResearches from "./components/ResearcherDashboard/ResearcherRes
 import {
   ThirdwebProvider,
   metamaskWallet,
+  walletConnect
 } from "@thirdweb-dev/react";
 import { Ethereum, Polygon, Mumbai } from "@thirdweb-dev/chains";
 
