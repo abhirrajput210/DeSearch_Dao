@@ -61,7 +61,7 @@ function ShowcaseScreen() {
                 src={Demo}
                 alt=""
                 style={{
-                  width: "100%",
+                  width: "250px",
                   height: "200px",
                   objectFit: "cover",
                 }}

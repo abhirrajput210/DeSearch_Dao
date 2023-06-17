@@ -21,24 +21,23 @@ function Navbar() {
   const [submenuOpenDm, setSubmenuOpenDm] = useState(false);
   const address = useAddress();
 
-  console.log("Address :",address);
+  console.log("Address :", address);
 
   const verifyNavbar = async () => {
     try {
       if (address) {
-          setIsAuthenticated(true)
-        } else {
-          setIsAuthenticated(false)
-        }
+        setIsAuthenticated(true);
+      } else {
+        setIsAuthenticated(false);
+      }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   useEffect(() => {
-    verifyNavbar()
-  }, [address])
-  
+    verifyNavbar();
+  }, [address]);
 
   const handleSubmenuToggle = () => {
     setSubmenuOpen(!submenuOpen);
@@ -105,7 +104,6 @@ function Navbar() {
                 </li>
               </ul>
             </li>
-
             <li
               className={`has-submenu ${submenuOpen ? "open" : ""}`}
               onMouseEnter={handleSubmenuToggle}
@@ -131,7 +129,11 @@ function Navbar() {
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faVoteYea} className="icons" />
-                  <NavLink exact activeClassName="active" to="/quadratic-voting">
+                  <NavLink
+                    exact
+                    activeClassName="active"
+                    to="/quadratic-voting"
+                  >
                     Quadratic Voting
                   </NavLink>
                 </li>
@@ -154,7 +156,10 @@ function Navbar() {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink activeClassName="active" to="/crowd-funding-researcher">
+                  <NavLink
+                    activeClassName="active"
+                    to="/crowd-funding-researcher"
+                  >
                     <FontAwesomeIcon icon={faUser} className="icons" />
                     For Researcher
                   </NavLink>

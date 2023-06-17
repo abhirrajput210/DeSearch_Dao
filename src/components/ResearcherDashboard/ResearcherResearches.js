@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles/researcherDashboard/ResearcherResearches.css";
 import logo from "../../Assets/sicentist using 1_1686046712622.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -43,7 +43,7 @@ function ResearcherResearches() {
     }
 
     const allPapers = [...paidPapers, ...freePapers];
-    console.log("All Papers",allPapers);
+    console.log("All Papers", allPapers);
     setAllPData(allPapers);
   };
 
@@ -66,7 +66,7 @@ function ResearcherResearches() {
       </div>
 
       <div className="rrMain">
-        {allPData.map((item,key) => (
+        {allPData.map((item, key) => (
           <div className="rr-card-container" key={key}>
             <div className="rr-image-container">
             {!imageLoaded && (

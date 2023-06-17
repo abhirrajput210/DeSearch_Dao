@@ -224,4 +224,18 @@ contract DataDAO is Ownable {
             return 0; // No fund for more than 4 votes
         }
     }
+
+    function getTotalVotesForResearcher(address researcherAddress)
+        public
+        view
+        returns (uint256)
+    {
+        uint256 totalVotes = 0;
+        for (uint256 i = 0; i < numberOfProjects; i++) {
+            if (researchProjects[i].researcher == researcherAddress) {
+                totalVotes += researchProjects[i].totalVotes;
+            }
+        }
+        return totalVotes;
+    }
 }

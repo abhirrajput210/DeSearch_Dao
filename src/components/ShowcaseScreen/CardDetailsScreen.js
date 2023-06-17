@@ -28,9 +28,9 @@ const [imageLoaded, setImageLoaded] = useState(false);
                 src={Demo}
                 alt=""
                 style={{
-                  width: "100%",
-                  height: "380px",
-                  objectFit: "cover",
+                  width: "250px",
+                  height: "300px",
+                  objectFit: "fill",
                 }}
               />
             )}
@@ -41,7 +41,7 @@ const [imageLoaded, setImageLoaded] = useState(false);
               src={`https://ipfs.io/ipfs/${item[2]}`}
               alt="img"
               style={{
-                width: "100%",
+                width: "250px",
                 height: "380px",
                 objectFit: "cover",
                 display: imageLoaded ? "block" : "none",

@@ -87,7 +87,7 @@ function ActiveResearches() {
                   className="rounded-pill px-3"
                   onClick={() => handleRequestContribute(card)}
                 >
-                  Request for Contribute 
+                  Request for Contribute
                 </button>
               </div>
               <br />
@@ -135,3 +135,58 @@ function ActiveResearches() {
 }
 
 export default ActiveResearches;
+
+// ActiveResearches.js
+// import React, { useState } from "react";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faTimes } from "@fortawesome/free-solid-svg-icons";
+// import abc from "../../Assets/sicentist using 1_1686046712622.png";
+// import logo from "../../Assets/Logo.png";
+// import "../../styles/ContributorDashboard/activeresearches.css";
+// import RequestStatus from "./RequestStatus"; // Import the RequestStatus component
+
+// function ActiveResearches() {
+//   const [showPopup, setShowPopup] = useState(false);
+//   const [selectedCard, setSelectedCard] = useState(null);
+//   const [contributionDetail, setContributionDetail] = useState("");
+
+//   const cardData = [
+//     // Card data here
+//   ];
+
+//   const handleRequestContribute = (card) => {
+//     setSelectedCard(card);
+//     setShowPopup(true);
+//   };
+
+//   const handleContributionDetailChange = (event) => {
+//     setContributionDetail(event.target.value);
+//   };
+
+//   const handlePopupSubmit = () => {
+//     // Perform submit logic here
+//     console.log("Contribution detail:", contributionDetail);
+//     // Close the popup
+//     setShowPopup(false);
+//   };
+
+//   const handlePopupCancel = () => {
+//     // Close the popup
+//     setShowPopup(false);
+//   };
+
+//   return (
+//     <div>
+//       <div className="main-active-researchers">{/* Card data mapping */}</div>
+
+//       {showPopup && selectedCard && (
+//         <div className="popup">{/* Popup content */}</div>
+//       )}
+
+//       {/* Pass contributionDetail to the RequestStatus component */}
+//       <RequestStatus contributionDetail={contributionDetail} />
+//     </div>
+//   );
+// }
+
+// export default ActiveResearches;

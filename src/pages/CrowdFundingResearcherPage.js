@@ -1,12 +1,12 @@
-import React from 'react'
-import CrowdFundingResearcher from '../components/crowdFunding/CrowdFundingResearcher'
+import React from "react";
+import CrowdFundingResearcher from "../components/crowdFunding/CrowdFundingResearcher";
 
 function CrowdFundingResearcherPage() {
   return (
     <div>
       <CrowdFundingResearcher />
     </div>
-  )
+  );
 }
 
-export default CrowdFundingResearcherPage
+export default CrowdFundingResearcherPage;

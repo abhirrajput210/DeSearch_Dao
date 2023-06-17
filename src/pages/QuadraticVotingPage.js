@@ -1,10 +1,10 @@
 import React from "react";
-import QuadraticVoting from "../components/voting/QuadraticVoting";
+import Quadraticvoting from "../components/voting/Quadraticvoting";
 
 function QuadraticVotingPage() {
   return (
     <div>
-      <QuadraticVoting />
+      <Quadraticvoting />
     </div>
   );
 }

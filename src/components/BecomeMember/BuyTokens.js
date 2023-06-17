@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { ethers } from 'ethers';
-import { tokenInstance } from '../contracts';
-import "../../styles/becomeMember/BuyTokens.css"
-import {useAddress} from "@thirdweb-dev/react";
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { ethers } from "ethers";
+import { tokenInstance } from "../contracts";
+import "../../styles/becomeMember/BuyTokens.css";
+import { useAddress } from "@thirdweb-dev/react";
+import { Link, useNavigate } from "react-router-dom";
 
 function BuyTokens() {
     const [numOfTokens, setNumOfTokens] = useState("0");
@@ -44,28 +44,31 @@ function BuyTokens() {
         setLoading(false); // Set loading back to false after transaction completes
       }
     };
-  
-    return (
-      <>
-        <div className="container-fluid BTPageBg">
-          <div className="pb-4">
-          <div className="text-center" style={{marginTop:"100px",paddingTop:"100px"}}>
-              <div className="d-flex justify-content-center align-items-center">
+
+  return (
+    <>
+      <div className="container-fluid BTPageBg">
+        <div className="pb-4">
+          <div
+            className="text-center"
+            style={{ marginTop: "100px", paddingTop: "100px" }}
+          >
+             <div className="d-flex justify-content-center align-items-center">
                 <p className="BuyTokenHead">Buy Tokens</p>
               </div>
               <p className="text-center BuyTokenSubHead ">
                 You Need To Buy Tokens For Becoming A Dao Member
               </p>
-            </div>
-  
-            <div className="d-lg-flex row pb-4 align-items-center BTPage-form-content justify-content-around">
-              <div className="BTPage-box-bg mb-lg-0 mb-sm-4 mb-4 align-self-stretch py-5 px-4">
-                <form className="BDMPage-form-main">
-                  <div className="form-group-BTPage row mb-4">
-                    <div className="col-12 col-md-6 BDMPage-LabelTitle">
-                      <label for="formGroupExampleInput">No. of Tokens:</label>
-                    </div>
-                    <div className="col-12 col-md-6 ">
+          </div>
+
+          <div className="d-lg-flex row pb-4 align-items-center BTPage-form-content justify-content-around">
+            <div className="BTPage-box-bg mb-lg-0 mb-sm-4 mb-4 align-self-stretch py-5 px-4">
+              <form className="BDMPage-form-main">
+                <div className="form-group-BTPage row mb-4">
+                  <div className="col-12 col-md-6 BDMPage-LabelTitle">
+                    <label for="formGroupExampleInput">No. of Tokens:</label>
+                  </div>
+                  <div className="col-12 col-md-6 ">
                       <input
                         type="number"
                         class="BTTokenAmtInput-class"
@@ -77,7 +80,7 @@ function BuyTokens() {
                         }}
                       />
                     </div>
-                  </div>
+                    </div>
   
                   <div className="BuyTokenBtn-class">
                     <div className="BuyTokenBtn row">
@@ -91,13 +94,13 @@ function BuyTokens() {
                     </button>
                     </div>
                   </div>
-                </form>
-              </div>
+              </form>
             </div>
           </div>
         </div>
-      </>
-    );
+      </div>
+    </>
+  );
 }
 
 export default BuyTokens;

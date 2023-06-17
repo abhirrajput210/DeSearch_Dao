@@ -96,7 +96,7 @@ function UploadResearch() {
         const researcherCon = await researcherInstance();
        
         if (formData.paymentOption === "free") {
-          setLoading(true);
+        setLoading(true);
        const tx = await researcherCon.submitFreePaper(
         formData.title,
         ci,
@@ -186,8 +186,7 @@ function UploadResearch() {
               <label htmlFor="abstract" className="form-label researchLabel">
                 Abstract:
               </label>
-              <input
-                type="textarea"
+              <textarea
                 className="form-control researchInput"
                 rows="2"
                 id="abstract"

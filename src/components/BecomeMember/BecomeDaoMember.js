@@ -6,8 +6,8 @@ import {useAddress} from "@thirdweb-dev/react";
 
 function BecomeDaoMember() {
   const [tokenValue, setTokenValue] = useState(0);
-  const [tokenAvailable,setTokenAvailable] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [tokenAvailable,setTokenAvailable] = useState(0);
   const address = useAddress();
 
   const handleTokenChange = (event) => {
@@ -56,18 +56,16 @@ const addMemberFunc = async () => {
           const addMember = await daoCon.addMember(tokenValue);
           await addMember.wait();
           console.log("Output", addMember);
-          
           console.log(addMemberFunc.value);
           setLoading(false);
-          alert("Congratulations! You are now a DAO member!");
+          alert("You Are Now A Dao Member")
       }
   } catch (error) {
-    setLoading(false);
-      console.log(error);
-  }finally {
-    setLoading(false); // Set loading back to false after transaction completes
+      console.log(false);
+      setLoading(false);
   }
 }
+
 
   return (
     <>
@@ -79,7 +77,7 @@ const addMemberFunc = async () => {
             </div>{" "}
           </div>
           <p className="mini-title-of-dao-member-page">
-            Enter Tokens to become a DAO member (Minimum 50 tokens required)
+            Enter Tokens to become a DAO member ( Minimum 50 Tokens Required )
           </p>
           <div className="d-lg-flex row pb-4 align-items-center BDMPage-form-content justify-content-around">
             <div className="BDMPage-box-bg mb-lg-0 mb-sm-4 mb-4 align-self-stretch py-5 px-4">
@@ -115,7 +113,7 @@ const addMemberFunc = async () => {
                 </div>
                 <div className="MemberBuyTokenBtn-class">
                   <div className="MemberBuyTokenBtn row">
-                    <button
+                  <button
                       type="button"
                       className="BuyTokenBtn col-12 col-md-10"
                       onClick={addMemberFunc}
@@ -130,7 +128,6 @@ const addMemberFunc = async () => {
           </div>
         </div>
       </div>
-
     </>
   );
 }

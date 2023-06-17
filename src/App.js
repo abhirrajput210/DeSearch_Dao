@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import HomePage from "./pages/HomePage";
 import BecomeMemberPage from "./pages/BecomeMemberPage";
+import Card from "./components/voting/Card";
 import ResearcherDashboardPage from "./pages/ResearcherDashboardPage";
 import ShowcaseScreenPage from "./pages/ShowcaseScreenPage";
 import UploadResearchPage from "./pages/UploadResearchPage";
@@ -23,42 +24,28 @@ import {
 import { Ethereum, Polygon, Mumbai } from "@thirdweb-dev/chains";
 
 function App() {
-  const cardData = [
-    {
-      id: 1,
-      title: "Card Title 1",
-      img: abc,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+
+  const filecoinCalibration = {
+    id: 314159,
+    name: 'Filecoin - Calibration ',
+    network: 'Filecoin — Calibration testnet',
+    nativeCurrency: {
+      decimals: 18,
+      name: 'tFIl',
+      symbol: 'tFIL'
     },
-    {
-      id: 2,
-      title: "Card Title 2",
-      img: logo,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    rpcUrls: {
+      default: 'https://filecoin-calibration.chainup.net/rpc/v1'
     },
-    {
-      id: 3,
-      title: "Card Title 3",
-      img: logo,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industryLorem Ipsum is simply dummy text of the printing and typesetting industry..",
-    },
-    {
-      id: 4,
-      title: "Card Title 4",
-      img: abc,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-  ];
+    testnet: true
+  }
+
   return (
     <>
     <ThirdwebProvider
       supportedWallets={[metamaskWallet(), walletConnect()]}
       activeChain="polygon"
-supportedChains={[Mumbai, Ethereum, Polygon]}
+      supportedChains={[filecoinCalibration, Mumbai, Ethereum, Polygon]}
     >
       <BrowserRouter>
         <Navbar />
@@ -76,6 +63,7 @@ supportedChains={[Mumbai, Ethereum, Polygon]}
             path="/contributor-dashboard"
             element={<ContributorDashboardPage />}
           />
+          <Route path="/" elements={<Card />}/>
           <Route path="/quadratic-voting" element={<QuadraticVotingPage />} />
           <Route path="/crowd-funding" element={<CrowdFundingPage />} />
           <Route path="/buy-tokens" element={<BuyTokensPage />} />
