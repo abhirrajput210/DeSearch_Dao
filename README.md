@@ -1,6 +1,6 @@
 # Permalink for Sponsors used :
 
-Push Protocol - https://github.com/abhirrajput210/DeSearch_Dao/blob/main/src/components/PushNotification.js
+1. Push Protocol - https://github.com/abhirrajput210/DeSearch_Dao/blob/main/src/components/PushNotification.js
 2. Lighthouse - https://github.com/abhirrajput210/DeSearch_Dao/blob/main/src/components/ResearcherDashboard/UploadResearch.js
 3. Spheron - https://desearch-dao-45a481.spheron.app/
 4. Filecoin Smart Contract Deployment:
