@@ -6,7 +6,9 @@
 4. Filecoin Smart Contract Deployment:
    
 Token - 0x7de92203E91A48b6C705a44f5cf0977FA0ec5026
+
 DAO - 0xEd89444CE97046ef8c9A452879e7346B79a6f5ac
+
 Reseacher - 0x7Aa89f308401f789c0237746Da1bA47d6c09Cc6C
 
 # Getting Started with Create React App
