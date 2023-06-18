@@ -169,12 +169,7 @@ function Navbar() {
             </li>
           </>
         ) : (
-          <li>
-            <NavLink activeClassName="active" to="/showcase">
-              <FontAwesomeIcon icon={faChartLine} className="icons" />
-              Showcase
-            </NavLink>
-          </li>
+         <li></li>
         )}
         <ConnectWallet
           theme="light"
