@@ -22,10 +22,9 @@ function VotingBtn() {
 
   const voteForProject = async () => {
     try {
-      const projectId = 0; // Replace with the actual project ID
       const voteAmount = count;
       const con = await daoInstance();
-      const tx = await con.voteForProject(projectId, voteAmount);
+      const tx = await con.voteForProject(voteAmount);
 
       await tx.wait();
 

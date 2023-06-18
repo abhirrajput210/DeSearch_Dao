@@ -7,14 +7,8 @@ function Winner({ winners }) {
     {
       image: Demo,
       title: "CyberSecurity",
-      abstract: "Developing advanced encryption techniques  in a cloud computing environments.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      abstract: "Developing advanced encryption techniques  in a cloud computing environments",
       totalVotes: 10,
-    },
-    {
-      image: Demo,
-      title: "Winner 2",
-      abstract: "Developing advanced encryption techniques  in a cloud computing environments.",
-      totalVotes: 8,
     },
   ];
   return (

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import abc from "../../Assets/sicentist using 1_1686046712622.png";
-import logo from "../../Assets/Logo.png";
+import logo from "../../Assets/Demo.png";
 // import Votingbtn from "../Voting/Votingbtn";
 import "../../styles/ContributorDashboard/activeresearches.css";
 // import Quadraticvoting from "../Voting/Quadraticvoting";
@@ -15,24 +15,10 @@ function ActiveResearches() {
   const cardData = [
     {
       id: 1,
-      title: "Card Title 1",
-      img: abc,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-      id: 2,
-      title: "Card Title 2",
+      title: "Cyber Security",
       img: logo,
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-      id: 3,
-      title: "Card Title 3",
-      img: logo,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industryLorem Ipsum is simply dummy text of the printing and typesetting industry..",
+        "Developing advanced encryption techniques  in a cloud computing environments.",
     },
   ];
 

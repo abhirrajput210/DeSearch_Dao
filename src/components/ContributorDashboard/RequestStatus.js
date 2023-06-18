@@ -4,18 +4,11 @@ import "../../styles/ContributorDashboard/requeststatus.css";
 // Dummy data
 const dummyData = [
   {
-    title: "Sample Title 1",
-    abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    contributionDetails: "Sample contribution details ",
+    title: "Cyber Security",
+    abstract: "Developing advanced encryption techniques  in a cloud computing environments.",
+    contributionDetails: "This research focuses on enhancing cybersecurity measures in cloud computing environments through the development of advanced encryption techniques and effective intrusion detection systems to protect sensitive data from potential threats",
     requestStatus: "Pending",
   },
-  {
-    title: "Sample Title 2",
-    abstract: "Sed do eiusmod tempor incididunt ut labore et dolore mag.",
-    contributionDetails: "Sample contribution details 2",
-    requestStatus: "Approved",
-  }
-  // Add more dummy data entries as needed
 ];
 
 function RequestStatus() {
