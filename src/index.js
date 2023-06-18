@@ -3,10 +3,6 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { mainnet, polygon, optimism, arbitrum } from "wagmi/chains";
-import { alchemyProvider } from "wagmi/providers/alchemy";
-import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 
 const BTTChain = {
   id: 1029,
@@ -33,22 +29,11 @@ const BTTChain = {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const { chains, provider } = configureChains(
-  // [BTTChain],
-  [BTTChain, mainnet, polygon, optimism, arbitrum],
-  [
-    jsonRpcProvider({
-      rpc: (chain) => ({ http: "https://pre-rpc.bittorrentchain.io/" }),
-    }),
-    alchemyProvider({ apiKey: "sBJaf_DeCXnYD5KRiK36IeGjdc0hQCEs" }),
-    // publicProvider(),
-  ]
+root.render(
+  <React.StrictMode>
+        <App />
+  </React.StrictMode>
 );
-
-
-
-
-
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
