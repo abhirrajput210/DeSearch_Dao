@@ -1,26 +1,20 @@
 import React from "react";
 import "../../styles/voting/winner.css";
-import dummy from "../../Assets/Sponsors/ens.png";
+import Demo from "../../Assets/Demo.png"
 function Winner({ winners }) {
   // Dummy data for the three winners
   const dummyWinners = [
     {
-      image: dummy,
-      title: "Winner 1",
-      abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      image: Demo,
+      title: "CyberSecurity",
+      abstract: "Developing advanced encryption techniques  in a cloud computing environments.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       totalVotes: 10,
     },
     {
-      image: dummy,
+      image: Demo,
       title: "Winner 2",
-      abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      abstract: "Developing advanced encryption techniques  in a cloud computing environments.",
       totalVotes: 8,
-    },
-    {
-      image: dummy,
-      title: "Winner 3",
-      abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      totalVotes: 5,
     },
   ];
   return (

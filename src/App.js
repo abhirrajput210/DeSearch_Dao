@@ -19,6 +19,7 @@ import ResearcherResearches from "./components/ResearcherDashboard/ResearcherRes
 import {
   ThirdwebProvider,
   metamaskWallet,
+  walletConnect
 } from "@thirdweb-dev/react";
 import { Ethereum, Polygon, Mumbai } from "@thirdweb-dev/chains";
 
@@ -42,7 +43,9 @@ function App() {
   return (
     <>
     <ThirdwebProvider
-      supportedWallets={[metamaskWallet()]}
+      supportedWallets={[metamaskWallet(),walletConnect({
+          projectId: "7d07203fbea3d91ce1637adf1ccdde10",
+        }),]}
       activeChain="polygon"
       supportedChains={[filecoinCalibration, Mumbai, Ethereum, Polygon]}
     >

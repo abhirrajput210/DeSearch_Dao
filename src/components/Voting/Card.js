@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import CardDetailsScreen from "../ShowcaseScreen/CardDetailsScreen";
+import { useNavigate } from "react-router-dom";
 import "../../styles/voting/card.css";
-import abc from "../../Assets/sicentist using 1_1686046712622.png";
-import logo from "../../Assets/Logo.png";
+import Demo from "../../Assets/Demo.png"
 import Votingbtn from "./Votingbtn";
 import { daoInstance, researcherInstance } from "../contracts";
 import Winner from "./Winner";
@@ -43,11 +41,11 @@ function Card() {
     const paidPapers = [];
     const freePapers = [];
     for (let i = 0; i < paidPapersLength; i++) {
-      const paperPaid = await con.getPaidPaper(i);
+      const paperPaid = await daoCon.getPaidPaper(i);
       paidPapers.push(paperPaid);
     }
     for (let i = 0; i < freePapersLength; i++) {
-      const paperFree = await con.getFreePaper(i);
+      const paperFree = await daoCon.getFreePaper(i);
       freePapers.push(paperFree);
     }
     const allPapers = [...paidPapers, ...freePapers];
@@ -81,12 +79,12 @@ function Card() {
         {/* <h2 className="title">Research Forum</h2> */}
       </div>
       <div className="main-quadratic-voting-page">
-        {allPData.map((card, key) => (
+        {allPData.map((item, key) => (
           <div className="card-container-quadratic-voting-page" key={key}>
             <div className="image-container-quadratic-voting-page">
               {!imageLoaded && (
                 <img
-                  src={abc}
+                  src={Demo}
                   alt=""
                   style={{
                     width: "100%",
@@ -99,12 +97,12 @@ function Card() {
                 className={`image-container-of-card ${
                   imageLoaded ? "loaded" : ""
                 }`}
-                src={`https://ipfs.io/ipfs/${card[2]}`}
+                src={`https://ipfs.io/ipfs/${item[2]}`}
                 alt="img"
                 style={{
                   width: "100%",
                   height: "200px",
-                  objectFit: "fill",
+                  objectFit: "cover",
                   display: imageLoaded ? "block" : "none",
                 }}
                 onLoad={handleImageLoad}
@@ -112,10 +110,10 @@ function Card() {
             </div>
             <div className="card-content-quadratic-voting-page">
               <div className="card-title-quadratic-voting-page">
-                <h5>{card.title}</h5>
+                <h5>{item.title}</h5>
               </div>
               <div className="card-body-quadratic-voting-page">
-                <p>{card.description}</p>
+                <p>{item.description}</p>
               </div>
             </div>
             <div>
@@ -123,13 +121,7 @@ function Card() {
             </div>
             <div className="card-btn-quadratic-voting-page pb-3 rounded-pill">
               <div className="view-more-btn-of-voting">
-                <button
-                  onClick={() =>
-                    navigate("/card-details", { state: { item: card } })
-                  }
-                >
-                  View More{" "}
-                </button>
+                <button onClick={() => navigate("/card-details", {state:{card:item}})}>View More </button>
               </div>
             </div>
             <div className="total-votes-display-input">

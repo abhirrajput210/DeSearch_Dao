@@ -181,6 +181,11 @@ function Navbar() {
           style={{ height: "50px" }}
           // onConnect={verifyNavbar}
         />
+
+        <li>
+            <FontAwesomeIcon icon={faBell} className="icons" style={{Width:"25px",height:"25px"}}/>
+            {/* Add your notification component here */}
+          </li>
       </ul>
     </nav>
   );
